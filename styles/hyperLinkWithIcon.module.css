@@ -1,0 +1,9 @@
+.hyperLinkWithIcon {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.linkText {
+    padding-left: 10px;
+}

@@ -1,0 +1,48 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 1440px;
+    margin: auto;
+    background-color: white;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.footer {
+    width: 100%;
+    background-color: #0e1428;
+    padding: 20px 150px 20px 150px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #184467;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/*-----------------*/
+.aboutText {
+    font-size: 24px;
+    width: 60%;
+}
+/*-----------------*/
+
+.footerRow {
+    display: flex;
+}
+.footerText {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    font-size: 30px;
+}

@@ -1,0 +1,34 @@
+.cardSection {
+	width: 100%;
+	display: flex;
+	flex: 1;
+	margin: 20px 0px 20px 0px;
+}
+.cardHolder {
+	background-color: #eb6534;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	flex: initial;
+	padding: 0px 50px 50px 50px;
+	border-radius: 20px 0px 0px 20px;
+	text-shadow: 4px 4px 5px #00000025;
+	box-shadow: 4px 4px 5px #00000025;
+}
+.title {
+	font-size: 36px;
+	padding: 20px 0px 10px 0px;
+}
+.cards {
+	display: flex;
+}
+.cardExtensionLeft,
+.cardExtensionRight {
+	display: flex;
+	flex: 1;
+}
+.cardExtensionRight {
+	background-color: #eb6534;
+	box-shadow: 4px 4px 5px #00000025;
+}

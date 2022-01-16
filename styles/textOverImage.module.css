@@ -1,0 +1,43 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 810px;
+}
+
+.image {
+    position: absolute;
+    filter: blur(2px);
+}
+
+.textContainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: #00000025;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.triangleRight {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid #184467;
+    border-right: 60vw solid transparent;
+    bottom: 0px;
+}
+.triangleLeft {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid #184467;
+    border-left: 60vw solid transparent;
+    bottom: 0px;
+    right: 0px;
+}

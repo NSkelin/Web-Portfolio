@@ -1,0 +1,29 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true,
+        "browser": true
+    },
+    "extends": ["eslint:recommended", "next/core-web-vitals"],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [],
+    "rules": {
+        "semi": ["error", "always"],
+        "camelcase": ["error", {"properties": "always"}],
+        "quotes": ["error", "double"],
+        "func-call-spacing": ["error", "never"],
+        "arrow-spacing": ["error", {"before": true, "after": true}],
+        "no-trailing-spaces": [
+            "error",
+            {"skipBlankLines": false, "ignoreComments": false}
+        ],
+        "space-before-blocks": ["error", "always"]
+    }
+}
