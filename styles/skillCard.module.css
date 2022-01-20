@@ -26,3 +26,11 @@
 .hr {
 	width: 70%;
 }
+
+.title {
+	display: flex;
+	align-items: center;
+	height: 56px;
+	text-align: center;
+	width: 80%;
+}
