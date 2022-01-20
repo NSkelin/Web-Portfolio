@@ -16,7 +16,7 @@ export default function SkillCard({backgroundImage, title, links}) {
 	if (hovered) {
 		return (
 			<div onMouseLeave={() => setHover(false)} className={styles.linkCard}>
-				<Image classname={styles.overlay} src={backgroundImage} alt="Icon to represent the skill" width="250" height="175" />
+				<Image className={styles.overlay} src={backgroundImage} alt="Icon to represent the skill" width="250" height="175" />
 				<div className={styles.overlay}>
 					<div className={styles.iconContainer}>{linkElements}</div>
 					<div className={styles.siteName}>
@@ -30,7 +30,7 @@ export default function SkillCard({backgroundImage, title, links}) {
 	} else {
 		return (
 			<div onMouseEnter={() => setHover(true)} className={styles.linkCard}>
-				<Image src={backgroundImage} alt="Icon to represent the skill" width="250" height="175" />
+				<Image className={styles.cardImg} src={backgroundImage} alt="Icon to represent the skill" width="250" height="175" />
 			</div>
 		);
 	}

@@ -43,4 +43,5 @@
 }
 .cardImg {
 	position: absolute;
+	border-radius: 15px;
 }
