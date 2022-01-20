@@ -13,6 +13,8 @@ import LineTitle from "../components/lineTitle.jsx";
 import ContactMe from "../components/contactMe.jsx";
 import BackgroundCode from "../public/background_code.png";
 import TextOverImage from "../components/textOverImage.jsx";
+import PortfolioImage from "../public/Portfolio.png";
+import acceskenyaImage from "../public/acceskenya.png";
 
 const skillCarder = {
     cards: [
@@ -24,19 +26,17 @@ const skillCarder = {
 const linkCarder = {
     cards: [
         {
-            title: "Front-end Development",
-            imageSource: cubeGearIcon,
-            links: [{image: externalLinkIcon, link: "https://nextjs.org/docs/api-reference/next/image"}],
+            title: "Portfolio",
+            imageSource: PortfolioImage,
+            links: [
+                {image: externalLinkIcon, link: "http://localhost:3000/"},
+                {image: githubIcon, link: "https://github.com/NSkelin/Web-Portfolio"},
+            ],
         },
         {
-            title: "Back-end Development",
-            imageSource: codeGearIcon,
-            links: [{image: externalLinkIcon, link: "https://nextjs.org/docs/api-reference/next/image"}],
-        },
-        {
-            title: "Database & Hosting",
-            imageSource: serverIcon,
-            links: [{image: externalLinkIcon, link: "https://nextjs.org/docs/api-reference/next/image"}],
+            title: "AccesKenya",
+            imageSource: acceskenyaImage,
+            links: [{image: externalLinkIcon, link: "https://www.acceskenya.org/"}],
         },
     ],
 };
