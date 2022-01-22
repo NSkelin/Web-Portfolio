@@ -1,5 +1,5 @@
 import styles from "../styles/cardHolder.module.css";
-import SkillCard from "../components/skillcard.jsx";
+import SkillCard from "../components/skillCard.jsx";
 
 export default function cardHolder({title, cards}) {
 	const cardElements = cards.map((card) => <SkillCard key={card.title} imageSource={card.imageSource} title={card.title} skills={card.skills} />);
