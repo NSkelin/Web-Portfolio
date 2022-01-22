@@ -68,9 +68,9 @@ export default function Home() {
                 <div className={styles.about}>
                     <LineTitle title="About me" />
                     <div className={styles.aboutText}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nam sed semper quam. Quisque interdum mauris nunc,
-                        ut.Nisi volutpat turpis libero dui velit, ac lectus eget at. Vel porttitor scelerisque fusce venenatis sodales. Sem amet,
-                        dignissim non malesuada eget purus
+                        Im a graduate of BCIT's Computer information technology diploma program and specialize in full-stack web development. I have a
+                        years worth of experience in web development and can even design your website to suit your needs. If you want to see the
+                        specifics of my skill-set or previous works, just check below!
                     </div>
                 </div>
 
