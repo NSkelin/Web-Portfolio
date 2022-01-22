@@ -1,12 +1,12 @@
 import Image from "next/image";
 import styles from "../styles/hyperLinkWithIcon.module.css";
 
-export default function HyperLinkWithIcon({linkText, imageSource, imageWidth, imageHeight, imageAlt, href}) {
+export default function HyperLinkWithIcon({text, icon: {source, width, height, alt}, href}) {
 	return (
 		<div className={styles.hyperLinkWithIcon}>
-			<Image src={imageSource} width={imageWidth} height={imageHeight} alt={imageAlt} />
+			<Image src={source} width={width} height={height} alt={alt} />
 			<a href={href}>
-				<span className={styles.linkText}>{linkText}</span>
+				<span className={styles.text}>{text}</span>
 			</a>
 		</div>
 	);
