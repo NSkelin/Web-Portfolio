@@ -7,7 +7,7 @@ import cubeGearIcon from "../public/icon_cube_code.png";
 import serverIcon from "../public/icon_server.png";
 import emailIcon from "../public/icon_email.png";
 import githubIcon from "../public/icon_github.png";
-import linkedInIcon from "../public/icon_linkedIn.png";
+import linkedInIcon from "../public/icon_linkedin.png";
 import externalLinkIcon from "../public/icon_external_link.png";
 import LineTitle from "../components/lineTitle.jsx";
 import ContactMe from "../components/contactMe.jsx";
