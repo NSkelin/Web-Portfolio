@@ -1,7 +1,10 @@
-.hyperLink {
+.container {
+    padding: 3px;
+}
+
+.link {
     display: flex;
     align-items: center;
-    padding-bottom: 5px;
 }
 
 .text {
