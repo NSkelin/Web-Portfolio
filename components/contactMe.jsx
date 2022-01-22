@@ -3,9 +3,8 @@ import LineTitle from "../components/lineTitle";
 import HyperLink from "../components/hyperLink";
 
 export default function ContactMe({title, description, links}) {
-	const linkElement = links.map((link) => {
-		const icon = {source: link.imageSource, width: link.imageWidth, height: link.imageHeight, alt: link.alt};
-		return <HyperLink key={link.text} text={link.text} icon={icon} alt={link.alt} href={link.href} />;
+	const linkElement = links.map(({text, icon, href}) => {
+		return <HyperLink key={text} text={text} icon={icon} href={href} />;
 	});
 
 	return (
