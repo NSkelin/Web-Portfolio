@@ -1,20 +1,11 @@
 import styles from "../styles/contactMe.module.css";
 import LineTitle from "../components/lineTitle";
-import HyperLinkWithIcon from "../components/hyperLinkWithIcon";
+import HyperLink from "../components/hyperLink";
 
 export default function ContactMe({title, description, links}) {
 	const linkElement = links.map((link) => {
-		return (
-			<HyperLinkWithIcon
-				key={link.text}
-				linkText={link.text}
-				imageSource={link.imageSource}
-				imageHeight={link.imageHeight}
-				imageWidth={link.imageWidth}
-				alt={link.alt}
-				href={link.href}
-			/>
-		);
+		const icon = {source: link.imageSource, width: link.imageWidth, height: link.imageHeight, alt: link.alt};
+		return <HyperLink key={link.text} text={link.text} icon={icon} alt={link.alt} href={link.href} />;
 	});
 
 	return (
