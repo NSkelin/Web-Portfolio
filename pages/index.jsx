@@ -42,14 +42,14 @@ const linkCarder = {
 };
 
 const contactLinks = [
-    {text: "nick.skelin@gmail.com", icon: {source: emailIcon, height: "35", width: "35", alt: "Icon"}},
-    {text: "Github", icon: {source: githubIcon, height: "35", width: "35", alt: "Icon"}, href: "https://github.com/NSkelin"},
+    {text: "nick.skelin@gmail.com", icon: {source: emailIcon, height: 35, width: 35, alt: "Icon"}},
+    {text: "Github", icon: {source: githubIcon, height: 35, width: 35, alt: "Icon"}, href: "https://github.com/NSkelin"},
     {
         text: "LinkedIn",
         icon: {
             source: linkedInIcon,
-            height: "35",
-            width: "35",
+            height: 35,
+            width: 35,
             alt: "Icon",
         },
         href: "https://www.linkedin.com/in/nicholas-skelin-401014173/",
