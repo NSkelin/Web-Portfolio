@@ -1,7 +1,8 @@
 import Image from "next/image";
 import styles from "../styles/textOverImage.module.css";
+import PropTypes from "prop-types";
 
-export default function TextOverImage({imageSource, alt, title, description}) {
+function TextOverImage({imageSource, alt, title, description}) {
 	return (
 		<div className={styles.container}>
 			<Image className={styles.image} src={imageSource} alt={alt} />
@@ -14,3 +15,12 @@ export default function TextOverImage({imageSource, alt, title, description}) {
 		</div>
 	);
 }
+
+TextOverImage.propTypes = {
+	imageSource: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+	alt: PropTypes.string,
+	title: PropTypes.string,
+	description: PropTypes.string,
+};
+
+export default TextOverImage;
