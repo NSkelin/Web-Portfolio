@@ -5,14 +5,12 @@
 	margin: 20px 0px 20px 0px;
 }
 .cardHolder {
-	background-color: #2274a5;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	color: white;
 	flex: initial;
 	padding: 0px 50px 50px 50px;
-	border-radius: 0px 20px 20px 0px;
 	text-shadow: 4px 4px 5px #00000025;
 	box-shadow: 4px 4px 5px #00000025;
 }
@@ -23,12 +21,16 @@
 .cards {
 	display: flex;
 }
+.cardExtension,
 .cardExtensionLeft,
 .cardExtensionRight {
 	display: flex;
 	flex: 1;
 }
 .cardExtensionLeft {
-	background-color: #2274a5;
+	box-shadow: 4px 4px 5px #00000025;
+}
+
+.cardExtensionRight {
 	box-shadow: 4px 4px 5px #00000025;
 }

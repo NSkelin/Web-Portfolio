@@ -18,25 +18,42 @@ import acceskenyaImage from "../public/acceskenya.png";
 
 const skillCarder = {
     cards: [
-        {title: "Front-end Development", imageSource: cubeGearIcon, skills: ["HTML5", "CSS3", "ReactJS", "JavaScript"]},
-        {title: "Back-end Development", imageSource: codeGearIcon, skills: ["NodeJS", "NextJS", "Python", "Electron"]},
-        {title: "Database & Hosting", imageSource: serverIcon, skills: ["MySQL", "MongoDB", "FireBase", "Amazon Web Services"]},
+        {
+            cardType: "skill",
+            title: "Front-end Development",
+            imageSource: cubeGearIcon,
+            array: ["HTML5", "CSS3", "ReactJS", "JavaScript"],
+        },
+        {
+            cardType: "skill",
+            title: "Back-end Development",
+            imageSource: codeGearIcon,
+            array: ["NodeJS", "NextJS", "Python", "Electron"],
+        },
+        {
+            cardType: "skill",
+            title: "Database & Hosting",
+            imageSource: serverIcon,
+            array: ["MySQL", "MongoDB", "FireBase", "Amazon Web Services"],
+        },
     ],
 };
 const linkCarder = {
     cards: [
         {
+            cardType: "link",
             title: "Portfolio",
             imageSource: PortfolioImage,
-            links: [
+            array: [
                 {image: externalLinkIcon, link: "http://localhost:3000/"},
                 {image: githubIcon, link: "https://github.com/NSkelin/Web-Portfolio"},
             ],
         },
         {
+            cardType: "link",
             title: "AccesKenya",
             imageSource: acceskenyaImage,
-            links: [{image: externalLinkIcon, link: "https://www.acceskenya.org/"}],
+            array: [{image: externalLinkIcon, link: "https://www.acceskenya.org/"}],
         },
     ],
 };
@@ -76,8 +93,8 @@ export default function Home() {
                     </div>
                 </div>
 
-                <SkillCardHolder title="Skills" cards={skillCarder.cards} />
-                <LinkCardHolder title="Recent works" cards={linkCarder.cards} />
+                <SkillCardHolder title="Skills" cards={skillCarder.cards} style={{direction: "left", color: "#2274a5"}} />
+                <SkillCardHolder title="Recent works" cards={linkCarder.cards} style={{direction: "right", color: "#eb6534"}} />
                 <ContactMe
                     title="Get in Touch"
                     description="Im always available by email and will do my best to get back to you in a timely fashion. In the mean time feel free to
