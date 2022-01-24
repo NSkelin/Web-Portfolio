@@ -1,6 +1,7 @@
 import styles from "../styles/lineTitle.module.css";
+import PropTypes from "prop-types";
 
-export default function LineTitle({title}) {
+function LineTitle({title}) {
     return (
         <div className={styles.title}>
             <hr className={styles.hr}></hr>
@@ -9,3 +10,9 @@ export default function LineTitle({title}) {
         </div>
     );
 }
+
+LineTitle.propTypes = {
+    title: PropTypes.string.isRequired,
+};
+
+export default LineTitle;
