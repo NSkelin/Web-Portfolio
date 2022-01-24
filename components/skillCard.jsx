@@ -1,7 +1,8 @@
 import Image from "next/image";
 import styles from "../styles/skillCard.module.css";
+import PropTypes from "prop-types";
 
-export default function SkillCard({imageSource, title, skills}) {
+function SkillCard({imageSource, title, skills}) {
 	const skillsElement = skills.map((skill) => <li key={skill}>{skill}</li>);
 
 	return (
@@ -15,3 +16,11 @@ export default function SkillCard({imageSource, title, skills}) {
 		</div>
 	);
 }
+
+SkillCard.propTypes = {
+	imageSource: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+	title: PropTypes.string.isRequired,
+	skills: PropTypes.array.isRequired,
+};
+
+export default SkillCard;
