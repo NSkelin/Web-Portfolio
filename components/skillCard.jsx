@@ -3,7 +3,7 @@ import styles from "../styles/skillCard.module.css";
 import PropTypes from "prop-types";
 
 function SkillCard({imageSource, title, skills}) {
-	const skillsElement = skills.map((skill) => <li key={skill}>{skill}</li>);
+	const skillsElement = skills.map((skill, index) => <li key={index}>{skill}</li>);
 
 	return (
 		<div className={styles.skillCard}>
