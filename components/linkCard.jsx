@@ -2,7 +2,7 @@ import Image from "next/image";
 import styles from "../styles/linkCard.module.css";
 import {useState} from "react";
 
-export default function SkillCard({backgroundImage, title, links}) {
+export default function LinkCard({backgroundImage, title, links}) {
 	const [hovered, setHover] = useState(false);
 
 	const linkElements = links.map((link, index) => {
