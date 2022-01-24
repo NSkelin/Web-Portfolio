@@ -6,10 +6,10 @@ import PropTypes from "prop-types";
 function LinkCard({backgroundImage, title, links}) {
 	const [hovered, setHover] = useState(false);
 
-	const linkElements = links.map((link, index) => {
+	const linkElements = links.map(({link, image}, index) => {
 		return (
-			<a key={index} href={link.link}>
-				<Image className={styles.icon} src={link.image} width="35" height="35" alt="icon" />
+			<a key={index} href={link}>
+				<Image className={styles.icon} src={image} width="35" height="35" alt="icon" />
 			</a>
 		);
 	});
