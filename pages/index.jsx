@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/home.module.css";
-import LinkCardHolder from "../components/linkCardHolder.jsx";
-import SkillCardHolder from "../components/skillCardHolder.jsx";
+import CardHolder from "../components/cardHolder.jsx";
 import codeGearIcon from "../public/icon_gear_code.png";
 import cubeGearIcon from "../public/icon_cube_code.png";
 import serverIcon from "../public/icon_server.png";
@@ -93,8 +92,8 @@ export default function Home() {
                     </div>
                 </div>
 
-                <SkillCardHolder title="Skills" cards={skillCarder.cards} style={{direction: "left", color: "#2274a5"}} />
-                <SkillCardHolder title="Recent works" cards={linkCarder.cards} style={{direction: "right", color: "#eb6534"}} />
+                <CardHolder title="Skills" cards={skillCarder.cards} style={{direction: "left", color: "#2274a5"}} />
+                <CardHolder title="Recent works" cards={linkCarder.cards} style={{direction: "right", color: "#eb6534"}} />
                 <ContactMe
                     title="Get in Touch"
                     description="Im always available by email and will do my best to get back to you in a timely fashion. In the mean time feel free to
