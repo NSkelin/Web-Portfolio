@@ -5,7 +5,7 @@ function LineTitle({title}) {
     return (
         <div className={styles.title}>
             <hr className={styles.hr}></hr>
-            <span className={styles.titleText}>{title}</span>
+            <h1 className={styles.titleText}>{title}</h1>
             <hr className={styles.hr}></hr>
         </div>
     );

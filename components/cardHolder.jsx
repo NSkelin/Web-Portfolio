@@ -17,7 +17,7 @@ function cardHolder({title, cards, style}) {
 			<div className={styles.cardSection}>
 				<div style={{backgroundColor: style.color}} className={styles.cardExtensionLeft}></div>
 				<div style={{borderRadius: "0px 20px 20px 0px", backgroundColor: style.color}} className={styles.cardHolder}>
-					<span className={styles.title}>{title}</span>
+					<h1 className={styles.title}>{title}</h1>
 					<div className={styles.cards}>{cardElements}</div>
 				</div>
 				<div className={styles.cardExtension}></div>

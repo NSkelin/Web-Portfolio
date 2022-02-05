@@ -82,14 +82,20 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-                <TextOverImage imageSource={BackgroundCode} alt="Image" title="Hey, I'm Nick!" description="I design and develop websites!" />
+                <TextOverImage
+                    imageSource={BackgroundCode}
+                    alt="Image"
+                    title="Hey, I'm Nick!"
+                    description="I design and develop websites!"
+                    layout="fill"
+                />
                 <div className={styles.about}>
                     <LineTitle title="About me" />
-                    <div className={styles.aboutText}>
-                        Im a graduate of BCIT&apos;s Computer information technology diploma program and specialize in full-stack web development. I
-                        have a years worth of experience in web development and can even design your website to suit your needs. If you want to see
-                        the specifics of my skill-set or previous works, just check below!
-                    </div>
+                    <p className={styles.aboutText}>
+                        Im a graduate of BCIT&apos;s Computer information technology diploma program and specialize in full-stack
+                        web development. I have a years worth of experience in web development and can even design your website to
+                        suit your needs. If you want to see the specifics of my skill-set or previous works, just check below!
+                    </p>
                 </div>
 
                 <CardHolder title="Skills" cards={skillCarder.cards} style={{direction: "left", color: "#2274a5"}} />
@@ -103,22 +109,16 @@ export default function Home() {
             </main>
 
             <footer className={styles.footer}>
-                <div className={styles.footerRow}>
-                    <span className={styles.footerText}>nick.skelin@gmail.com</span>
-                    <a href="https://github.com/NSkelin" className={styles.footerText}>
-                        Github
-                    </a>
-                    <a href="https://icons8.com/" className={styles.footerText}>
-                        Icons8.com
-                    </a>
-                </div>
-                <div className={styles.footerRow}>
-                    <a href="https://www.linkedin.com/in/nicholas-skelin-401014173/" className={styles.footerText}>
-                        LinkedIn
-                    </a>
-                    <span className={styles.footerText}></span>
-                    <span className={styles.footerText}></span>
-                </div>
+                <span className={styles.footerText}>nick.skelin@gmail.com</span>
+                <a href="https://github.com/NSkelin" className={styles.footerText}>
+                    Github
+                </a>
+                <a href="https://icons8.com/" className={styles.footerText}>
+                    Icons8.com
+                </a>
+                <a href="https://www.linkedin.com/in/nicholas-skelin-401014173/" className={styles.footerText}>
+                    LinkedIn
+                </a>
             </footer>
         </div>
     );
