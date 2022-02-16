@@ -1,5 +1,4 @@
 import styles from "../styles/contactMe.module.css";
-import LineTitle from "../components/lineTitle";
 import HyperLink from "../components/hyperLink";
 import PropTypes from "prop-types";
 
@@ -9,11 +8,16 @@ function ContactMe({title, description, links}) {
 	});
 
 	return (
-		<div className={styles.contactMe}>
-			<LineTitle title={title} />
-			<div className={styles.description}>
-				<p className={styles.text}>{description}</p>
-				<div className={styles.links}>{linkElement}</div>
+		<div className={styles.footer}>
+			<form className={styles.form}>
+				<h2>Send a message</h2>
+				<input className={styles.input} placeholder="Your email (so i can respond)."></input>
+				<textArea className={styles.textArea} rows="7" placeholder="Your message goes here."></textArea>
+				<button className={styles.button}>Submit</button>
+			</form>
+			<div className={styles.links}>
+				<h2>Social links</h2>
+				{linkElement}
 			</div>
 		</div>
 	);

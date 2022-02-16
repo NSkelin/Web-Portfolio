@@ -1,35 +1,77 @@
-.contactMe {
+.footer {
     display: flex;
     flex-direction: column;
-    flex: 1;
     background-color: #184467;
-    color: white;
     width: 100%;
-    padding: 20px;
-}
-
-.description {
-    display: flex;
-    flex-direction: column;
+    padding: 40px;
     font-size: 24px;
 }
-
-.text {
-    margin-top: 0px;
-}
-.links {
+.form {
     display: flex;
-    flex: 4;
     flex-direction: column;
 }
 
+.input,
+.textArea,
+.button {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 20px;
+}
+.textArea {
+    resize: none;
+}
+.button {
+    width: 40%;
+    box-shadow: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-color: #a6c4ff;
+}
+.button:hover {
+    background-color: #bcd3ff;
+}
+.button:active {
+    background-color: #85aeff;
+}
+
+/*tablet*/
 @media only screen and (min-width: 430px) and (max-width: 960px) {
-    .description {
-        flex-direction: row;
+    .footer {
+        padding: 60px;
+    }
+    .form,
+    .links {
+        padding: 15px;
     }
 }
+/*desktop*/
 @media only screen and (min-width: 961px) {
-    .description {
+    .footer {
+        padding: 120px;
+    }
+    .form,
+    .links {
+        padding: 30px;
+    }
+}
+/*tablet & desktop*/
+@media only screen and (min-width: 430px) {
+    .footer {
         flex-direction: row;
+    }
+    .form {
+        flex: 2;
+    }
+    .links {
+        flex: 1;
+    }
+    .input,
+    .textArea,
+    .button {
+        font-size: 24px;
     }
 }
