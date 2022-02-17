@@ -31,17 +31,10 @@
 /*-----------------*/
 .footer {
     width: 100%;
-    background-color: #0e1428;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.footerText {
-    width: 100%;
-    font-size: 30px;
-    text-align: center;
-    padding: 5px 0 5px 0;
+    color: #636363;
+    padding: 5px;
+    padding-left: 20px;
+    font-size: 20px;
 }
 
 @media only screen and (min-width: 430px) and (max-width: 960px) {
