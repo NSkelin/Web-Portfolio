@@ -99,12 +99,7 @@ export default function Home() {
 
                 <CardHolder title="Skills" cards={skillCarder.cards} style={{direction: "left", color: "#2274a5"}} />
                 <CardHolder title="Recent works" cards={linkCarder.cards} style={{direction: "right", color: "#eb6534"}} />
-                <ContactMe
-                    title="Get in Touch"
-                    description="Im always available by email and will do my best to get back to you in a timely fashion. In the mean time feel free to
-                            check out my Github or LinkedIn."
-                    links={contactLinks}
-                />
+                <ContactMe links={contactLinks} />
             </main>
 
             <footer className={styles.footer}>

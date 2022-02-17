@@ -2,7 +2,7 @@ import styles from "../styles/contactMe.module.css";
 import HyperLink from "../components/hyperLink";
 import PropTypes from "prop-types";
 
-function ContactMe({title, description, links}) {
+function ContactMe({links}) {
 	const linkElement = links.map(({text, icon, href}, index) => {
 		return <HyperLink key={index} text={text} icon={icon} href={href} />;
 	});
