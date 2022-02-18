@@ -24,8 +24,6 @@ function ContactMe({links}) {
 }
 
 ContactMe.propTypes = {
-	title: PropTypes.string.isRequired,
-	description: PropTypes.string.isRequired,
 	links: PropTypes.arrayOf(
 		PropTypes.shape({
 			text: PropTypes.string,
