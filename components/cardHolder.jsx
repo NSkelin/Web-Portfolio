@@ -12,14 +12,14 @@ function cardHolder({title, cards, style}) {
 	const cardElements = cards.map(({cardType, title, imageSource, array}, index) => {
 		if (cardType === "skill") {
 			return (
-				<SwiperSlide>
-					<SkillCard key={index} imageSource={imageSource} title={title} skills={array} />
+				<SwiperSlide key={index}>
+					<SkillCard imageSource={imageSource} title={title} skills={array} />
 				</SwiperSlide>
 			);
 		} else if (cardType === "link") {
 			return (
-				<SwiperSlide>
-					<LinkCard key={title} backgroundImage={imageSource} title={title} links={array} />
+				<SwiperSlide key={title}>
+					<LinkCard backgroundImage={imageSource} title={title} links={array} />
 				</SwiperSlide>
 			);
 		}
