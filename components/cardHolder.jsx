@@ -2,13 +2,26 @@ import styles from "../styles/cardHolder.module.css";
 import SkillCard from "../components/skillCard.jsx";
 import LinkCard from "../components/linkCard.jsx";
 import PropTypes from "prop-types";
+import {Navigation, Pagination} from "swiper";
+import {Swiper, SwiperSlide} from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function cardHolder({title, cards, style}) {
 	const cardElements = cards.map(({cardType, title, imageSource, array}, index) => {
 		if (cardType === "skill") {
-			return <SkillCard key={index} imageSource={imageSource} title={title} skills={array} />;
+			return (
+				<SwiperSlide>
+					<SkillCard key={index} imageSource={imageSource} title={title} skills={array} />
+				</SwiperSlide>
+			);
 		} else if (cardType === "link") {
-			return <LinkCard key={title} backgroundImage={imageSource} title={title} links={array} />;
+			return (
+				<SwiperSlide>
+					<LinkCard key={title} backgroundImage={imageSource} title={title} links={array} />
+				</SwiperSlide>
+			);
 		}
 	});
 
@@ -18,7 +31,23 @@ function cardHolder({title, cards, style}) {
 				<div style={{backgroundColor: style.color}} className={styles.cardExtensionLeft}></div>
 				<div style={{borderRadius: "0px 20px 20px 0px", backgroundColor: style.color}} className={styles.cardHolder}>
 					<h1 className={styles.title}>{title}</h1>
-					<div className={styles.cards}>{cardElements}</div>
+					<div className={styles.cards}>
+						<Swiper
+							modules={[Pagination]}
+							className={styles.mySwiper}
+							pagination={{clickable: true}}
+							spaceBetween={50}
+							slidesPerView={1}
+							breakpoints={{
+								430: {
+									slidesPerView: 3,
+									spaceBetween: 0,
+								},
+							}}
+						>
+							{cardElements}
+						</Swiper>
+					</div>
 				</div>
 				<div className={styles.cardExtension}></div>
 			</div>
@@ -29,7 +58,25 @@ function cardHolder({title, cards, style}) {
 				<div className={styles.cardExtension}></div>
 				<div style={{borderRadius: "20px 0px 0px 20px", backgroundColor: style.color}} className={styles.cardHolder}>
 					<span className={styles.title}>{title}</span>
-					<div className={styles.cards}>{cardElements}</div>
+					<Swiper
+						modules={[Navigation]}
+						className={styles.mySwiper2}
+						navigation
+						spaceBetween={50}
+						slidesPerView={1}
+						breakpoints={{
+							430: {
+								slidesPerView: 2,
+								spaceBetween: 0,
+							},
+							960: {
+								slidesPerView: 3,
+								spaceBetween: 0,
+							},
+						}}
+					>
+						{cardElements}
+					</Swiper>
 				</div>
 				<div style={{backgroundColor: style.color}} className={styles.cardExtensionRight}></div>
 			</div>
