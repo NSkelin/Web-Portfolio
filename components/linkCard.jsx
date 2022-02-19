@@ -1,3 +1,4 @@
+import {Icon} from "@iconify/react";
 import Image from "next/image";
 import styles from "../styles/linkCard.module.css";
 import {useState} from "react";
@@ -6,10 +7,10 @@ import PropTypes from "prop-types";
 function LinkCard({backgroundImage, title, links}) {
 	const [hovered, setHover] = useState(false);
 
-	const linkElements = links.map(({link, image}, index) => {
+	const linkElements = links.map(({link, icon: {source, width = 24, height = 24, color = "darkgray"}}, index) => {
 		return (
 			<a key={index} href={link}>
-				<Image className={styles.icon} src={image} width="35" height="35" alt="icon" />
+				<Icon className={styles.icon} icon={source} width={width} height={height} color={color} />
 			</a>
 		);
 	});
