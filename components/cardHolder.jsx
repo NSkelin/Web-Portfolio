@@ -13,7 +13,7 @@ function cardHolder({title, cards, style}) {
 		if (cardType === "skill") {
 			return (
 				<SwiperSlide key={index}>
-					<SkillCard imageSource={imageSource} title={title} skills={array} />
+					<SkillCard icon={imageSource} title={title} skills={array} />
 				</SwiperSlide>
 			);
 		} else if (cardType === "link") {
