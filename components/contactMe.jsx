@@ -1,6 +1,7 @@
 import styles from "../styles/contactMe.module.css";
 import HyperLink from "../components/hyperLink";
 import PropTypes from "prop-types";
+import SendMessageForm from "../components/sendMessageForm.jsx";
 
 function ContactMe({links}) {
 	const linkElement = links.map(({text, icon, href}, index) => {
@@ -9,12 +10,8 @@ function ContactMe({links}) {
 
 	return (
 		<div className={styles.footer}>
-			<form className={styles.form}>
-				<h2>Send a message</h2>
-				<input className={styles.input} placeholder="Your email (so i can respond)."></input>
-				<textarea className={styles.textArea} rows="7" placeholder="Your message goes here."></textarea>
-				<button className={styles.button}>Submit</button>
-			</form>
+			<SendMessageForm />
+
 			<div className={styles.links}>
 				<h2>Social links</h2>
 				{linkElement}
