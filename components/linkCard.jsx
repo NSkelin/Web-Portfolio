@@ -54,7 +54,15 @@ LinkCard.propTypes = {
 	backgroundImage: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
 	title: PropTypes.string.isRequired,
 	links: PropTypes.arrayOf(
-		PropTypes.shape({link: PropTypes.string, image: PropTypes.oneOfType([PropTypes.string, PropTypes.object])})
+		PropTypes.shape({
+			link: PropTypes.string,
+			icon: PropTypes.shape({
+				source: PropTypes.string,
+				width: PropTypes.number,
+				height: PropTypes.number,
+				color: PropTypes.string,
+			}),
+		})
 	).isRequired,
 };
 
