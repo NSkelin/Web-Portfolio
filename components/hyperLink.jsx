@@ -1,12 +1,12 @@
-import Image from "next/image";
+import {Icon} from "@iconify/react";
 import styles from "../styles/hyperLink.module.css";
 import PropTypes from "prop-types";
 
-function HyperLink({text = "link", icon: {source, height = 35, alt = "icon", width = 35}, href}) {
+function HyperLink({text = "link", icon: {source, height = 35, color = "white", width = 35}, href}) {
 	return (
 		<div className={styles.container}>
 			<a className={styles.link} href={href}>
-				{source && <Image src={source} width={width} height={height} alt={alt} />}
+				{source && <Icon icon={source} width={width} height={height} color={color} />}
 				<span className={styles.text}>{text}</span>
 			</a>
 		</div>
@@ -17,10 +17,10 @@ HyperLink.propTypes = {
 	text: PropTypes.string,
 	href: PropTypes.string.isRequired,
 	icon: PropTypes.shape({
-		source: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+		source: PropTypes.string.isRequired,
 		height: PropTypes.number,
 		width: PropTypes.number,
-		alt: PropTypes.string,
+		color: PropTypes.string,
 	}),
 };
 

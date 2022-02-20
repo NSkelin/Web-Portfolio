@@ -1,13 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/home.module.css";
 import CardHolder from "../components/cardHolder.jsx";
-import codeGearIcon from "../public/icon_gear_code.png";
-import cubeGearIcon from "../public/icon_cube_code.png";
-import serverIcon from "../public/icon_server.png";
-import emailIcon from "../public/icon_email.png";
-import githubIcon from "../public/icon_github.png";
-import linkedInIcon from "../public/icon_linkedin.png";
-import externalLinkIcon from "../public/icon_external_link.png";
 import LineTitle from "../components/lineTitle.jsx";
 import ContactMe from "../components/contactMe.jsx";
 import BackgroundCode from "../public/background_code.png";
@@ -21,19 +14,19 @@ const skillCarder = {
         {
             cardType: "skill",
             title: "Front-end Development",
-            imageSource: cubeGearIcon,
+            imageSource: {source: "bx:code-block", width: 75, height: 75, color: "#ba55d3"},
             array: ["HTML5", "CSS3", "ReactJS", "JavaScript"],
         },
         {
             cardType: "skill",
             title: "Back-end Development",
-            imageSource: codeGearIcon,
+            imageSource: {source: "akar-icons:gear", width: 75, height: 75, color: "#ba55d3"},
             array: ["NodeJS", "NextJS", "Python", "Electron"],
         },
         {
             cardType: "skill",
             title: "Database & Hosting",
-            imageSource: serverIcon,
+            imageSource: {source: "bx:coin-stack", width: 75, height: 75, color: "#ba55d3"},
             array: ["MySQL", "MongoDB", "FireBase", "Amazon Web Services"],
         },
     ],
@@ -45,29 +38,36 @@ const linkCarder = {
             title: "Portfolio",
             imageSource: PortfolioImage,
             array: [
-                {image: externalLinkIcon, link: "http://localhost:3000/"},
-                {image: githubIcon, link: "https://github.com/NSkelin/Web-Portfolio"},
+                {icon: {source: "line-md:external-link", width: 40, height: 40, color: "white"}, link: "http://localhost:3000/"},
+                {
+                    icon: {source: "akar-icons:github-fill", width: 40, height: 40, color: "white"},
+                    link: "https://github.com/NSkelin/Web-Portfolio",
+                },
             ],
         },
         {
             cardType: "link",
             title: "AccesKenya",
             imageSource: acceskenyaImage,
-            array: [{image: externalLinkIcon, link: "https://www.acceskenya.org/"}],
+            array: [
+                {
+                    icon: {source: "line-md:external-link", width: 40, height: 40, color: "white"},
+                    link: "https://www.acceskenya.org/",
+                },
+            ],
         },
     ],
 };
 
 const contactLinks = [
-    {text: "Github", icon: {source: githubIcon, height: 35, width: 35, alt: "Icon"}, href: "https://github.com/NSkelin"},
+    {
+        text: "Github",
+        icon: {source: "akar-icons:github-fill", width: 40, height: 40, color: "white"},
+        href: "https://github.com/NSkelin",
+    },
     {
         text: "LinkedIn",
-        icon: {
-            source: linkedInIcon,
-            height: 35,
-            width: 35,
-            alt: "Icon",
-        },
+        icon: {source: "akar-icons:linkedin-box-fill", width: 40, height: 40, color: "#0077b5"},
         href: "https://www.linkedin.com/in/nicholas-skelin-401014173/",
     },
 ];
