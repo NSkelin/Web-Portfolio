@@ -112,12 +112,10 @@ export default function Home() {
                         </b>
                     </a>
                     . Click{" "}
-                    <Link href="/license">
-                        <a>
-                            <b>
-                                <u>here</u>
-                            </b>{" "}
-                        </a>
+                    <Link href={"/license"} passHref>
+                        <b>
+                            <u>here</u>
+                        </b>{" "}
                     </Link>
                     for open source software licensing.
                 </p>
