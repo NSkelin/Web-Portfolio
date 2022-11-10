@@ -2,10 +2,10 @@ import Image from "next/image";
 import styles from "../styles/textOverImage.module.css";
 import PropTypes from "prop-types";
 
-function TextOverImage({imageSource, alt, title, description, layout = "intrinsic"}) {
+function TextOverImage({imageSource, alt, title, description}) {
 	return (
 		<div className={styles.container}>
-			<Image className={styles.image} src={imageSource} alt={alt} layout={layout} />
+			<Image className={styles.image} src={imageSource} alt={alt} sizes="100vw" fill />
 			<div className={styles.textContainer}>
 				<h1>{title}</h1>
 				<h2>{description}</h2>

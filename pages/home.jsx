@@ -87,7 +87,6 @@ export default function Home() {
                     alt="Image"
                     title="Hey, I'm Nick!"
                     description="I design and develop websites!"
-                    layout="fill"
                 />
                 <div className={styles.about}>
                     <LineTitle title="About me" />
