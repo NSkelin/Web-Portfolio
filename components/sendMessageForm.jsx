@@ -1,5 +1,4 @@
 import styles from "../styles/sendMessageForm.module.css";
-import {useState} from "react";
 
 function SendMessageForm() {
 	return (
