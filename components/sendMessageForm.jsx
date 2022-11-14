@@ -13,14 +13,35 @@ function SendMessageForm() {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		verifyInput();
+		if (verifyInput() === false) return;
+
+		let body = {
+			"email": email,
+			"message": userMessage,
+		};
+
+		let res = await fetch("/api/contact", {
+			method: "POST",
+			body: JSON.stringify(body),
+		});
+
+		if (res.status === 500) {
+			setSummaryMessage("Failed to send, please try again later.");
+			setSummaryError(true);
+		} else if (res.status === 200) {
+			setSummaryMessage("Success! Message sent. I will reply soon.");
+			setSummaryError(false);
+		}
 	}
 
 	function verifyInput() {
+		let noError = true;
+
 		// check email input
 		if (email.length === 0) {
 			setEmailIncorrect(true);
 			setEmailError("Email cannot be blank.");
+			noError = false;
 		} else {
 			setEmailIncorrect(false);
 			setEmailError("");
@@ -30,10 +51,13 @@ function SendMessageForm() {
 		if (userMessage.length < 50) {
 			setMessageIncorrect(true);
 			setMessageError("Message must be more than 50 characters.");
+			noError = false;
 		} else {
 			setMessageIncorrect(false);
 			setMessageError("");
 		}
+
+		return noError;
 	}
 
 	return (
