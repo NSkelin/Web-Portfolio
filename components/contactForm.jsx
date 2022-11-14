@@ -1,7 +1,7 @@
-import styles from "../styles/sendMessageForm.module.css";
+import styles from "../styles/contactForm.module.css";
 import {useState} from "react";
 
-function SendMessageForm() {
+function ContactForm() {
 	const [email, setEmail] = useState("");
 	const [userMessage, setUserMessage] = useState("");
 	const [emailIncorrect, setEmailIncorrect] = useState(false);
@@ -84,4 +84,4 @@ function SendMessageForm() {
 	);
 }
 
-export default SendMessageForm;
+export default ContactForm;
