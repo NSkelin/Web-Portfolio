@@ -27,8 +27,8 @@ function SendMessageForm() {
 		}
 
 		// check message input
-		if (!userMessage.length >= 50) {
-			setMessageIncorrect(true)
+		if (userMessage.length < 50) {
+			setMessageIncorrect(true);
 			setMessageError("Message must be more than 50 characters.");
 		} else {
 			setMessageIncorrect(false);
