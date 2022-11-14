@@ -4,13 +4,12 @@ import {useState} from "react";
 function SendMessageForm() {
 	const [email, setEmail] = useState("");
 	const [userMessage, setUserMessage] = useState("");
-
-	let emailIncorrect = true;
-	let emailError = "invalid email";
-	let messageIncorrect = true;
-	let messageError = "Message must be more than 50 characters";
-	let summaryMessage = "Message sent!";
-	let summaryError = false;
+	const [emailIncorrect, setEmailIncorrect] = useState(false);
+	const [emailError, setEmailError] = useState("");
+	const [messageIncorrect, setMessageIncorrect] = useState(false);
+	const [messageError, setMessageError] = useState("");
+	const [summaryMessage, setSummaryMessage] = useState("");
+	const [summaryError, setSummaryError] = useState(false);
 
 	async function handleSubmit(e) {
 		e.preventDefault();
@@ -19,23 +18,21 @@ function SendMessageForm() {
 
 	function verifyInput() {
 		// check email input
-		console.log("t");
 		if (email.length === 0) {
-			console.log("t1");
-			emailIncorrect = true;
-			emailError = "Email cannot be blank.";
+			setEmailIncorrect(true);
+			setEmailError("Email cannot be blank.");
 		} else {
-			emailIncorrect = false;
-			emailError = "";
+			setEmailIncorrect(false);
+			setEmailError("");
 		}
 
 		// check message input
 		if (!userMessage.length >= 50) {
-			messageIncorrect = true;
-			messageError = "Message must be more than 50 characters.";
+			setMessageIncorrect(true)
+			setMessageError("Message must be more than 50 characters.");
 		} else {
-			messageIncorrect = false;
-			messageError = "";
+			setMessageIncorrect(false);
+			setMessageError("");
 		}
 	}
 
