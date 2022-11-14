@@ -29,6 +29,8 @@ function ContactForm() {
 			setSummaryMessage("Failed to send, please try again later.");
 			setSummaryError(true);
 		} else if (res.status === 200) {
+			setEmail("");
+			setUserMessage("");
 			setSummaryMessage("Success! Message sent. I will reply soon.");
 			setSummaryError(false);
 		}
