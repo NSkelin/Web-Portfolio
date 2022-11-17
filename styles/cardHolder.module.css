@@ -18,7 +18,7 @@
 }
 .cards {
 	display: flex;
-	flex-wrap: wrap;
+	flex: 1;
 }
 .cardExtension,
 .cardExtensionLeft,
@@ -33,9 +33,26 @@
 .cardExtensionRight {
 	box-shadow: 4px 4px 5px #00000025;
 }
+.mySwiper,
+.mySwiper2 {
+	width: 260px;
+}
 
 @media only screen and (min-width: 430px) {
 	.cardHolder {
 		flex: initial;
+	}
+	.mySwiper,
+	.mySwiper2 {
+		width: 800px;
+	}
+}
+
+@media only screen and (min-width: 431px) and (max-width: 960px) {
+	.mySwiper {
+		width: 650px;
+	}
+	.mySwiper2 {
+		width: 550px;
 	}
 }

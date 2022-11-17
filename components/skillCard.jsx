@@ -1,13 +1,13 @@
-import Image from "next/image";
+import {Icon} from "@iconify/react";
 import styles from "../styles/skillCard.module.css";
 import PropTypes from "prop-types";
 
-function SkillCard({imageSource, title, skills}) {
+function SkillCard({icon: {source, width = 24, height = 24, color = "darkgray"}, title, skills}) {
 	const skillsElement = skills.map((skill, index) => <li key={index}>{skill}</li>);
 
 	return (
 		<div className={styles.skillCard}>
-			<Image src={imageSource} alt="Icon to represent the skill" />
+			<Icon icon={source} width={width} height={height} color={color} />
 			<div className={styles.title}>
 				<b>{title}</b>
 			</div>
@@ -18,7 +18,12 @@ function SkillCard({imageSource, title, skills}) {
 }
 
 SkillCard.propTypes = {
-	imageSource: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
+	icon: PropTypes.shape({
+		source: PropTypes.string.isRequired,
+		width: PropTypes.number,
+		height: PropTypes.number,
+		color: PropTypes.string,
+	}),
 	title: PropTypes.string.isRequired,
 	skills: PropTypes.array.isRequired,
 };
