@@ -6,7 +6,6 @@ import ContactMe from "../components/contactMe.jsx";
 import BackgroundCode from "../public/background_code.png";
 import TextOverImage from "../components/textOverImage.jsx";
 import PortfolioImage from "../public/Portfolio.png";
-import acceskenyaImage from "../public/acceskenya.png";
 import Link from "next/link";
 
 const skillCarder = {
@@ -42,17 +41,6 @@ const linkCarder = {
                 {
                     icon: {source: "akar-icons:github-fill", width: 40, height: 40, color: "white"},
                     link: "https://github.com/NSkelin/Web-Portfolio",
-                },
-            ],
-        },
-        {
-            cardType: "link",
-            title: "AccesKenya",
-            imageSource: acceskenyaImage,
-            array: [
-                {
-                    icon: {source: "line-md:external-link", width: 40, height: 40, color: "white"},
-                    link: "https://www.acceskenya.org/",
                 },
             ],
         },
