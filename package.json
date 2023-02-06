@@ -12,17 +12,16 @@
     "dotenv": "^16.0.3",
     "next": "^13.0.2",
     "nodemailer": "^6.8.0",
-    "prettier": "^2.4.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.3",
     "swiper": "^8.0.6"
   },
   "devDependencies": {
     "@iconify/react": "^4.0.0",
     "eslint": "^8.27.0",
     "eslint-config-next": "^13.0.2",
-    "eslint-plugin-import": "^2.25.4"
+    "eslint-plugin-import": "^2.25.4",
+    "prettier": "^2.4.1"
   }
 }
