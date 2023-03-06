@@ -4,8 +4,11 @@ import LinkCard from "../components/linkCard.jsx";
 import PropTypes from "prop-types";
 import {Navigation, Pagination} from "swiper";
 import {Swiper, SwiperSlide} from "swiper/react";
+// eslint-disable-next-line import/no-unresolved
 import "swiper/css";
+// eslint-disable-next-line import/no-unresolved
 import "swiper/css/navigation";
+// eslint-disable-next-line import/no-unresolved
 import "swiper/css/pagination";
 
 function cardHolder({title, cards, style}) {
