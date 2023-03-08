@@ -5,59 +5,8 @@ import LineTitle from "../components/lineTitle.jsx";
 import ContactMe from "../components/contactMe.jsx";
 import BackgroundCode from "../public/background_code.png";
 import TextOverImage from "../components/textOverImage.jsx";
-import PortfolioImage from "../public/Portfolio.png";
+import {projectsCarouselData, skillCarouselData, contactLinks} from "../data";
 import Link from "next/link";
-
-const skillCarouselData = {
-	cards: [
-		{
-			cardType: "skill",
-			title: "Front-end Development",
-			imageSource: {source: "bx:code-block", width: 75, height: 75, color: "#ba55d3"},
-			array: ["HTML5", "CSS3", "ReactJS", "JavaScript"],
-		},
-		{
-			cardType: "skill",
-			title: "Back-end Development",
-			imageSource: {source: "akar-icons:gear", width: 75, height: 75, color: "#ba55d3"},
-			array: ["NodeJS", "NextJS", "Python", "Electron"],
-		},
-		{
-			cardType: "skill",
-			title: "Database & Hosting",
-			imageSource: {source: "bx:coin-stack", width: 75, height: 75, color: "#ba55d3"},
-			array: ["MySQL", "MongoDB", "FireBase", "Amazon Web Services"],
-		},
-	],
-};
-const projectsCarouselData = {
-	cards: [
-		{
-			cardType: "link",
-			title: "Portfolio",
-			imageSource: PortfolioImage,
-			array: [
-				{
-					icon: {source: "akar-icons:github-fill", width: 40, height: 40, color: "white"},
-					link: "https://github.com/NSkelin/Web-Portfolio",
-				},
-			],
-		},
-	],
-};
-
-const contactLinks = [
-	{
-		text: "Github",
-		icon: {source: "akar-icons:github-fill", width: 40, height: 40, color: "white"},
-		href: "https://github.com/NSkelin",
-	},
-	{
-		text: "LinkedIn",
-		icon: {source: "akar-icons:linkedin-box-fill", width: 40, height: 40, color: "#0077b5"},
-		href: "https://www.linkedin.com/in/nicholas-skelin-401014173/",
-	},
-];
 
 export default function Home() {
 	return (
