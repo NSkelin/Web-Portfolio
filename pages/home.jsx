@@ -8,7 +8,7 @@ import TextOverImage from "../components/textOverImage.jsx";
 import PortfolioImage from "../public/Portfolio.png";
 import Link from "next/link";
 
-const skillCarder = {
+const skillCarouselData = {
 	cards: [
 		{
 			cardType: "skill",
@@ -30,7 +30,7 @@ const skillCarder = {
 		},
 	],
 };
-const linkCarder = {
+const projectsCarouselData = {
 	cards: [
 		{
 			cardType: "link",
@@ -84,8 +84,12 @@ export default function Home() {
 					</p>
 				</div>
 
-				<CardHolder title="Skills" cards={skillCarder.cards} style={{direction: "left", color: "#2274a5"}} />
-				<CardHolder title="Recent works" cards={linkCarder.cards} style={{direction: "right", color: "#eb6534"}} />
+				<CardHolder title="Skills" cards={skillCarouselData.cards} style={{direction: "left", color: "#2274a5"}} />
+				<CardHolder
+					title="Recent works"
+					cards={projectsCarouselData.cards}
+					style={{direction: "right", color: "#eb6534"}}
+				/>
 				<ContactMe links={contactLinks} />
 			</main>
 
