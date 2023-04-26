@@ -1,10 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/home.module.css";
 import CardHolder from "../components/cardHolder.jsx";
-import LineTitle from "../components/lineTitle.jsx";
 import ContactMe from "../components/contactMe.jsx";
-import BackgroundCode from "../public/background_code.png";
-import TextOverImage from "../components/textOverImage.jsx";
 import {projectsCarouselData, skillCarouselData, contactLinks} from "../data";
 import Link from "next/link";
 import pfp from "../public/profile_picture.png";
