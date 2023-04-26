@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/home.module.css";
+import styles from "../styles/index.module.css";
 import CardHolder from "../components/cardHolder.jsx";
 import ContactMe from "../components/contactMe.jsx";
 import {projectsCarouselData, skillCarouselData, contactLinks} from "../data";
