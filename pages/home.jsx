@@ -7,6 +7,9 @@ import BackgroundCode from "../public/background_code.png";
 import TextOverImage from "../components/textOverImage.jsx";
 import {projectsCarouselData, skillCarouselData, contactLinks} from "../data";
 import Link from "next/link";
+import pfp from "../public/profile_picture.png";
+
+import Landing from "../components/landing.jsx";
 
 export default function Home() {
 	return (
@@ -18,7 +21,7 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<TextOverImage
+				{/* <TextOverImage
 					imageSource={BackgroundCode}
 					alt="Image"
 					title="Hey, I'm Nick!"
@@ -31,7 +34,8 @@ export default function Home() {
 						web development. I have a years worth of experience in web development and can even design your website to
 						suit your needs. If you want to see the specifics of my skill-set or previous works, just check below!
 					</p>
-				</div>
+				</div> */}
+				<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites & stuff"}></Landing>
 
 				<CardHolder title="Skills" cards={skillCarouselData.cards} style={{direction: "left", color: "#2274a5"}} />
 				<CardHolder
