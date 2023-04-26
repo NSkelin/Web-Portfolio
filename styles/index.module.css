@@ -5,7 +5,7 @@
     align-items: center;
     color: white;
     margin: auto;
-    background-color: white;
+    background: linear-gradient(90deg, #42495C 0%, #3F4863 47.4%, #42495C 100%);
 }
 .main {
     display: flex;
