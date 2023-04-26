@@ -18,20 +18,6 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				{/* <TextOverImage
-					imageSource={BackgroundCode}
-					alt="Image"
-					title="Hey, I'm Nick!"
-					description="I design and develop websites!"
-				/>
-				<div className={styles.about}>
-					<LineTitle title="About me" />
-					<p className={styles.aboutText}>
-						Im a graduate of BCIT&apos;s Computer information technology diploma program and specialize in full-stack
-						web development. I have a years worth of experience in web development and can even design your website to
-						suit your needs. If you want to see the specifics of my skill-set or previous works, just check below!
-					</p>
-				</div> */}
 				<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites & stuff"}></Landing>
 
 				<CardHolder title="Skills" cards={skillCarouselData.cards} style={{direction: "left", color: "#2274a5"}} />
