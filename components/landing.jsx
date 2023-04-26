@@ -16,7 +16,7 @@ function Landing({imageSrc, title, subtitle}) {
 			</div>
 
 			<button className={styles.button}>
-				Take a look! <span class="material-symbols-outlined">arrow_downward</span>
+				Take a look! <span className="material-symbols-outlined">arrow_downward</span>
 			</button>
 		</div>
 	);
