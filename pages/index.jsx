@@ -8,7 +8,7 @@ import pfp from "../public/profile_picture.png";
 
 import Landing from "../components/landing.jsx";
 
-export default function Home() {
+export default function Index() {
 	return (
 		<div className={styles.container}>
 			<Head>
