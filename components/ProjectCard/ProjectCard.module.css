@@ -1,0 +1,74 @@
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    width: 1194px;
+    height: 633px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 3px 8px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #373737;
+    align-items: center;
+    padding: 25px 50px;
+}
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.navItemGithub, .navItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.navItem {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
+}
+.navItemGithub {
+    gap: 5px;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    background: #414141;
+    box-shadow: 0px 8px 4px -4px rgba(0, 0, 0, 0.35) inset;
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    flex: 1;
+}
+.descriptionBox {
+    padding: 30px 40px;
+    background: #4B4B4B;
+    flex: 1;
+    margin: 0;
+    box-shadow: 0px 8px 4px -4px rgba(0, 0, 0, 0.42) inset;
+}
+.aside {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 40px;
+    gap: 15px;
+}
+.line {
+    border: 1px solid #FFFFFF;
+}
+.imageWrapper {
+    flex: 2;
+    box-shadow: inset 5px 0px 3px -3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
