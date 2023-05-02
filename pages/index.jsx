@@ -2,11 +2,12 @@ import Head from "next/head";
 import styles from "../styles/index.module.css";
 import CardHolder from "../components/cardHolder.jsx";
 import ContactMe from "../components/contactMe.jsx";
-import {projectsCarouselData, skillCarouselData, contactLinks} from "../data";
+import {skillCarouselData, contactLinks} from "../data";
 import Link from "next/link";
 import pfp from "../public/profile_picture.png";
 
 import Landing from "../components/landing.jsx";
+import Projects from "../components/Projects/";
 
 export default function Index() {
 	return (
@@ -19,13 +20,10 @@ export default function Index() {
 
 			<main className={styles.main}>
 				<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites & stuff"}></Landing>
+				<Projects></Projects>
 
 				<CardHolder title="Skills" cards={skillCarouselData.cards} style={{direction: "left", color: "#2274a5"}} />
-				<CardHolder
-					title="Recent works"
-					cards={projectsCarouselData.cards}
-					style={{direction: "right", color: "#eb6534"}}
-				/>
+
 				<ContactMe links={contactLinks} />
 			</main>
 
