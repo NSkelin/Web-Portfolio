@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Projects.module.css";
 import ProjectCard from "../ProjectCard/ProjectCard.jsx";
 import testImg from "../../public/background_code.png";
+import AccentTitle from "../AccentTitle/AccentTitle";
 
 const tempDesc = `
 D2Statmap is a third party webapp for the videogame Destiny 2. In the game you can collect armor, each with their own unique stats.
@@ -12,10 +13,7 @@ function Projects() {
 	return (
 		<>
 			<div className={styles.projects}>
-				<div className={styles.titleWrapper}>
-					<h1 className={styles.title}>Projects</h1>
-					<div className={styles.line}></div>
-				</div>
+				<AccentTitle title={"Projects"} />
 				<div className={styles.carousel}>
 					<ProjectCard
 						title={"D2StatMap"}
