@@ -1,5 +1,6 @@
-import styles from "../styles/landing.module.css";
+import React from "react";
 import PropTypes from "prop-types";
+import styles from "./Landing.module.css";
 import Image from "next/image";
 
 function Landing({imageSrc, title, subtitle}) {
@@ -21,6 +22,8 @@ function Landing({imageSrc, title, subtitle}) {
 		</div>
 	);
 }
+
+Landing.defaultProps = {};
 
 Landing.propTypes = {
 	imageSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),

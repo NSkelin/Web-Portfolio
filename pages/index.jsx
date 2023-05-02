@@ -6,7 +6,7 @@ import {skillCarouselData, contactLinks} from "../data";
 import Link from "next/link";
 import pfp from "../public/profile_picture.png";
 
-import Landing from "../components/landing.jsx";
+import Landing from "../components/Landing/";
 import Projects from "../components/Projects/";
 
 export default function Index() {
