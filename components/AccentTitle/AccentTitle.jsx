@@ -14,7 +14,7 @@ function AccentTitle({title, headingLevel}) {
 
 AccentTitle.defaultProps = {
 	title: "Title",
-	headingLevel: 1,
+	headingLevel: 2,
 };
 
 AccentTitle.propTypes = {
