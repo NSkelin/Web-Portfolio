@@ -62,7 +62,7 @@ ProjectCard.defaultProps = {
 ProjectCard.propTypes = {
 	title: PropTypes.string,
 	description: PropTypes.string,
-	src: PropTypes.string,
+	src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 	alt: PropTypes.string,
 	width: PropTypes.number,
 	height: PropTypes.number,
