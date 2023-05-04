@@ -1,8 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/index.module.css";
-import CardHolder from "../components/cardHolder.jsx";
 import ContactMe from "../components/contactMe.jsx";
-import {skillCarouselData, contactLinks} from "../data";
+import {contactLinks} from "../data";
 import Link from "next/link";
 import pfp from "../public/profile_picture.png";
 
@@ -23,8 +22,6 @@ export default function Index() {
 				<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites & stuff"}></Landing>
 				<Projects />
 				<About />
-
-				<CardHolder title="Skills" cards={skillCarouselData.cards} style={{direction: "left", color: "#2274a5"}} />
 
 				<ContactMe links={contactLinks} />
 			</main>
