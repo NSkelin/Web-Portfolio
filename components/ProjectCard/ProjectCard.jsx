@@ -28,7 +28,7 @@ function ProjectCard({title, description, src, alt, width, height, source, live,
 	return (
 		<article className={styles.projectCard}>
 			<header className={styles.header}>
-				<h2>{title}</h2>
+				<h3>{title}</h3>
 				<nav className={styles.nav}>
 					{github} {view} {demo}
 				</nav>
@@ -37,7 +37,7 @@ function ProjectCard({title, description, src, alt, width, height, source, live,
 				<div className={styles.details}>
 					<p className={styles.descriptionBox}>{description}</p>
 					<aside className={styles.aside}>
-						<h3 className={styles.title}>Project Technologies</h3>
+						<h4 className={styles.title}>Project Technologies</h4>
 						<div className={styles.line}></div>
 						<div className={styles.icons}>{skills}</div>
 					</aside>
