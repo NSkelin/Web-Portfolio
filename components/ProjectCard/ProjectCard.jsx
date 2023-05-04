@@ -14,12 +14,12 @@ function ProjectCard({title, description, src, alt, width, height, source, live,
 	) : null;
 	const view = live ? (
 		<Link className={styles.navItem} href={live}>
-			View<span class="material-symbols-outlined">open_in_new</span>
+			View<span className="material-symbols-outlined">open_in_new</span>
 		</Link>
 	) : null;
 	const demo = example ? (
 		<Link className={styles.navItem} href={example}>
-			Demo<span class="material-symbols-outlined">open_in_new</span>
+			Demo<span className="material-symbols-outlined">open_in_new</span>
 		</Link>
 	) : null;
 
