@@ -26,4 +26,15 @@ module.exports = {
 
 		return config;
 	},
+
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "cdn.svgporn.com",
+				port: "",
+				pathname: "/logos/**",
+			},
+		],
+	},
 };
