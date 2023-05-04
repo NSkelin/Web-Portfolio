@@ -23,7 +23,11 @@ function ProjectCard({title, description, src, alt, width, height, source, live,
 		</Link>
 	) : null;
 
-	const skills = skillIcons.map(() => {});
+	const skills = skillIcons.map((source, index) => (
+		<li key={index}>
+			<Image src={source} width={48} height={48} alt={"skill image"} />
+		</li>
+	));
 
 	return (
 		<article className={styles.projectCard}>
@@ -39,7 +43,7 @@ function ProjectCard({title, description, src, alt, width, height, source, live,
 					<aside className={styles.aside}>
 						<h4 className={styles.title}>Project Technologies</h4>
 						<div className={styles.line}></div>
-						<div className={styles.icons}>{skills}</div>
+						<ul className={styles.icons}>{skills}</ul>
 					</aside>
 				</div>
 				<div className={styles.imageWrapper}>
