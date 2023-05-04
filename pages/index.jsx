@@ -8,6 +8,7 @@ import pfp from "../public/profile_picture.png";
 
 import Landing from "../components/Landing/";
 import Projects from "../components/Projects/";
+import About from "../components/About/";
 
 export default function Index() {
 	return (
@@ -20,7 +21,8 @@ export default function Index() {
 
 			<main className={styles.main}>
 				<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites & stuff"}></Landing>
-				<Projects></Projects>
+				<Projects />
+				<About />
 
 				<CardHolder title="Skills" cards={skillCarouselData.cards} style={{direction: "left", color: "#2274a5"}} />
 
