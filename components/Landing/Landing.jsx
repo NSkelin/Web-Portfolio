@@ -5,13 +5,11 @@ import Image from "next/image";
 
 function Landing({imageSrc, title, subtitle}) {
 	return (
-		<div className={styles.landing}>
+		<header className={styles.landing}>
 			<div className={styles.main}>
 				<div className={styles.dialogue}>
 					<h1>{title}</h1>
-					<div className={styles.subtitle}>
-						<h2>{subtitle}</h2>
-					</div>
+					<p className={styles.subtitle}>{subtitle}</p>
 				</div>
 				<Image width={300} height={300} src={imageSrc} alt="Picture of the author" className={styles.pfp} />
 			</div>
@@ -19,7 +17,7 @@ function Landing({imageSrc, title, subtitle}) {
 			<button className={styles.button}>
 				Take a look! <span className="material-symbols-outlined">arrow_downward</span>
 			</button>
-		</div>
+		</header>
 	);
 }
 
