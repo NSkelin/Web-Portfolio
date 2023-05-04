@@ -12,7 +12,7 @@ You can then tell which stats you’re currently lacking so you know what to pri
 function Projects() {
 	return (
 		<>
-			<div className={styles.projects}>
+			<section className={styles.projects}>
 				<AccentTitle title={"Projects"} />
 				<div className={styles.carousel}>
 					<ProjectCard
@@ -27,7 +27,7 @@ function Projects() {
 						height={534}
 					></ProjectCard>
 				</div>
-			</div>
+			</section>
 		</>
 	);
 }
