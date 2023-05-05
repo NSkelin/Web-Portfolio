@@ -1,6 +1,7 @@
-import {Icon} from "@iconify/react";
-import styles from "../styles/hyperLink.module.css";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
+import styles from "./HyperLink.module.css";
+import {Icon} from "@iconify/react";
 
 function HyperLink({text = "link", icon: {source, height = 35, color = "white", width = 35}, href}) {
 	return (
@@ -23,5 +24,9 @@ HyperLink.propTypes = {
 		color: PropTypes.string,
 	}),
 };
+
+HyperLink.defaultProps = {};
+
+HyperLink.propTypes = {};
 
 export default HyperLink;
