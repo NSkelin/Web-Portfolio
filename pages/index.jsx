@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/index.module.css";
 import {contactLinks} from "../data";
-import Link from "next/link";
 import pfp from "../public/profile_picture.png";
 
 import Landing from "../components/Landing/";
