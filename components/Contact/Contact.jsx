@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Contact.module.css";
 import HyperLink from "../hyperLink";
-import ContactForm from "../contactForm.jsx";
+import ContactForm from "../ContactForm/";
 
 function Contact({links}) {
 	const linkElement = links.map(({text, icon, href}, index) => {

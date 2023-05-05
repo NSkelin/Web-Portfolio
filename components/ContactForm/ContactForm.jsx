@@ -1,5 +1,6 @@
-import styles from "../styles/contactForm.module.css";
-import {useState} from "react";
+import React, {useState} from "react";
+import PropTypes from "prop-types";
+import styles from "./ContactForm.module.css";
 
 function ContactForm() {
 	const [email, setEmail] = useState("");
@@ -16,8 +17,8 @@ function ContactForm() {
 		if (verifyInput() === false) return;
 
 		let body = {
-			"email": email,
-			"message": userMessage,
+			email: email,
+			message: userMessage,
 		};
 
 		let res = await fetch("/api/contact", {
@@ -80,10 +81,16 @@ function ContactForm() {
 				onChange={(e) => setUserMessage(e.target.value)}
 			></textarea>
 			<p className={styles.errorMessage}>{messageError}</p>
-			<button className={styles.button}type="submit">Submit</button>
+			<button className={styles.button} type="submit">
+				Submit
+			</button>
 			<p className={summaryError === true ? styles.errorMessage : styles.successMessage}>{summaryMessage}</p>
 		</form>
 	);
 }
+
+ContactForm.defaultProps = {};
+
+ContactForm.propTypes = {};
 
 export default ContactForm;
