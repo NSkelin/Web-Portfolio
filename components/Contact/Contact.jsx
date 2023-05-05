@@ -1,9 +1,10 @@
-import styles from "../styles/contactMe.module.css";
-import HyperLink from "./hyperLink";
+import React from "react";
 import PropTypes from "prop-types";
-import ContactForm from "./contactForm.jsx";
+import styles from "./Contact.module.css";
+import HyperLink from "../hyperLink";
+import ContactForm from "../contactForm.jsx";
 
-function ContactMe({links}) {
+function Contact({links}) {
 	const linkElement = links.map(({text, icon, href}, index) => {
 		return <HyperLink key={index} text={text} icon={icon} href={href} />;
 	});
@@ -20,7 +21,9 @@ function ContactMe({links}) {
 	);
 }
 
-ContactMe.propTypes = {
+Contact.defaultProps = {};
+
+Contact.propTypes = {
 	links: PropTypes.arrayOf(
 		PropTypes.shape({
 			text: PropTypes.string,
@@ -30,4 +33,4 @@ ContactMe.propTypes = {
 	).isRequired,
 };
 
-export default ContactMe;
+export default Contact;

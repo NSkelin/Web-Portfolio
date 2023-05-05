@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "../styles/index.module.css";
-import ContactMe from "../components/Contact.jsx";
 import {contactLinks} from "../data";
 import Link from "next/link";
 import pfp from "../public/profile_picture.png";
@@ -8,6 +7,7 @@ import pfp from "../public/profile_picture.png";
 import Landing from "../components/Landing/";
 import Projects from "../components/Projects/";
 import About from "../components/About/";
+import Contact from "../components/Contact/";
 
 export default function Index() {
 	return (
@@ -23,7 +23,7 @@ export default function Index() {
 				<Projects />
 				<About />
 
-				<ContactMe links={contactLinks} />
+				<Contact links={contactLinks} />
 			</main>
 
 			<footer className={styles.footer}>
