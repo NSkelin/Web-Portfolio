@@ -65,26 +65,36 @@ function ContactForm() {
 
 	return (
 		<form className={styles.form} onSubmit={handleSubmit}>
-			<h2>Send a message</h2>
-			<input
-				className={emailIncorrect === true ? styles.inputError : styles.input}
-				placeholder="Your email (so i can respond)."
-				value={email}
-				onChange={(e) => setEmail(e.target.value)}
-			></input>
-			<p className={styles.errorMessage}>{emailError}</p>
-			<textarea
-				className={messageIncorrect === true ? styles.textAreaError : styles.textArea}
-				rows="7"
-				placeholder="Your message goes here."
-				value={userMessage}
-				onChange={(e) => setUserMessage(e.target.value)}
-			></textarea>
-			<p className={styles.errorMessage}>{messageError}</p>
-			<button className={styles.button} type="submit">
-				Submit
-			</button>
-			<p className={summaryError === true ? styles.errorMessage : styles.successMessage}>{summaryMessage}</p>
+			<h2 className={styles.title}>Send a message</h2>
+			<div className={styles.contentWrapper}>
+				<div className={styles.inputWrapper}>
+					<input
+						className={emailIncorrect === true ? styles.inputError : styles.input}
+						placeholder="Your email address"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+					></input>
+					<strong className={styles.errorMessage}>{emailError}</strong>
+				</div>
+				<div className={styles.inputWrapper}>
+					<textarea
+						className={messageIncorrect === true ? styles.textAreaError : styles.textArea}
+						rows="7"
+						placeholder="Your message goes here"
+						value={userMessage}
+						onChange={(e) => setUserMessage(e.target.value)}
+					></textarea>
+					<strong className={styles.errorMessage}>{messageError}</strong>
+				</div>
+				<div className={styles.submission}>
+					<button className={styles.button} type="submit">
+						Submit
+					</button>
+					<strong className={summaryError === true ? styles.errorMessage : styles.successMessage}>
+						{summaryMessage}
+					</strong>
+				</div>
+			</div>
 		</form>
 	);
 }
