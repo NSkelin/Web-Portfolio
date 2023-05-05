@@ -1,5 +1,5 @@
 import styles from "../styles/contactMe.module.css";
-import HyperLink from "../components/hyperLink";
+import HyperLink from "./hyperLink";
 import PropTypes from "prop-types";
 import ContactForm from "./contactForm.jsx";
 

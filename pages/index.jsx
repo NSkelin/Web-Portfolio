@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/index.module.css";
-import ContactMe from "../components/contactMe.jsx";
+import ContactMe from "../components/Contact.jsx";
 import {contactLinks} from "../data";
 import Link from "next/link";
 import pfp from "../public/profile_picture.png";
@@ -18,8 +18,8 @@ export default function Index() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
+			<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites & stuff"}></Landing>
 			<main className={styles.main}>
-				<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites & stuff"}></Landing>
 				<Projects />
 				<About />
 
