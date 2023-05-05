@@ -22,25 +22,18 @@ export default function Index() {
 			<main className={styles.main}>
 				<Projects />
 				<About />
-
-				<Contact links={contactLinks} />
 			</main>
 
 			<footer className={styles.footer}>
-				<p>
+				<Contact links={contactLinks} />
+				<p className={styles.licensing}>
 					Icons by{" "}
 					<a href="https://icons8.com/">
 						<b>
 							<u>Icons8.com</u>
 						</b>
 					</a>
-					. Click{" "}
-					<Link href={"/license"} passHref>
-						<b>
-							<u>here</u>
-						</b>{" "}
-					</Link>
-					for open source software licensing.
+					.
 				</p>
 			</footer>
 		</div>
