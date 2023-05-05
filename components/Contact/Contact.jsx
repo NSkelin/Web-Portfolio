@@ -10,14 +10,14 @@ function Contact({links}) {
 	});
 
 	return (
-		<div className={styles.footer}>
+		<section className={styles.footer}>
 			<ContactForm />
 
-			<div className={styles.links}>
-				<h2>Social links</h2>
-				{linkElement}
-			</div>
-		</div>
+			<section className={styles.socials}>
+				<h2 className={styles.title}>Social links</h2>
+				<address className={styles.contentWrapper}>{linkElement}</address>
+			</section>
+		</section>
 	);
 }
 
