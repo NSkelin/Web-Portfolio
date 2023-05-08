@@ -17,7 +17,8 @@ export default function Index() {
 				<link rel="icon" href="/favicon.ico?v=2" />
 			</Head>
 
-			<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites & stuff"}></Landing>
+			<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites"}></Landing>
+
 			<main className={styles.main}>
 				<Projects />
 				<About />
