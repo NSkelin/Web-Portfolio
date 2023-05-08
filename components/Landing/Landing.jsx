@@ -7,11 +7,13 @@ function Landing({imageSrc, title, subtitle}) {
 	return (
 		<header className={styles.landing}>
 			<div className={styles.main}>
+				<div className={styles.pfp}>
+					<Image fill={true} src={imageSrc} alt="Picture of the author" />
+				</div>
 				<div className={styles.dialogue}>
 					<h1>{title}</h1>
 					<p className={styles.subtitle}>{subtitle}</p>
 				</div>
-				<Image width={300} height={300} src={imageSrc} alt="Picture of the author" className={styles.pfp} />
 			</div>
 
 			<button className={styles.button}>
