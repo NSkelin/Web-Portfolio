@@ -2,25 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./ProjectCard.module.css";
 import Image from "next/image";
-import Link from "next/link";
 import GithubIcon from "../../public/github-mark-white.svg";
 
 function ProjectCard({title, description, src, alt, width, height, source, live, example, skillIcons}) {
 	const github = source ? (
-		<Link className={styles.navItemGithub} href={source}>
+		<a className={styles.navItemGithub} href={source}>
 			Github
 			<GithubIcon />
-		</Link>
+		</a>
 	) : null;
 	const view = live ? (
-		<Link className={styles.navItem} href={live}>
+		<a className={styles.navItem} href={live}>
 			View<span className="material-symbols-outlined">open_in_new</span>
-		</Link>
+		</a>
 	) : null;
 	const demo = example ? (
-		<Link className={styles.navItem} href={example}>
+		<a className={styles.navItem} href={example}>
 			Demo<span className="material-symbols-outlined">open_in_new</span>
-		</Link>
+		</a>
 	) : null;
 
 	const skills = skillIcons.map((source, index) => (
