@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./ProjectCard.module.css";
 import Image from "next/image";
 import GithubIcon from "../../public/github-mark-white.svg";
+import ResponsiveNav from "../ResponsiveNav/";
 
 function ProjectCard({title, description, src, alt, width, height, source, live, example, skillIcons}) {
 	const github = source ? (
@@ -32,9 +33,7 @@ function ProjectCard({title, description, src, alt, width, height, source, live,
 		<article className={styles.projectCard}>
 			<header className={styles.header}>
 				<h3>{title}</h3>
-				<nav className={styles.nav}>
-					{github} {view} {demo}
-				</nav>
+				<ResponsiveNav links={[github, view, demo]} />
 			</header>
 			<div className={styles.content}>
 				<div className={styles.details}>
