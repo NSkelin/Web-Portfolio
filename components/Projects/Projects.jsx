@@ -31,8 +31,6 @@ function Projects() {
 						live={"/"}
 						skillIcons={imageSources}
 						src={testImg}
-						width={782}
-						height={534}
 					></ProjectCard>
 				</div>
 			</section>
