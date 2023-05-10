@@ -5,7 +5,7 @@ import Image from "next/image";
 import GithubIcon from "../../public/github-mark-white.svg";
 import ResponsiveNav from "../ResponsiveNav/";
 
-function ProjectCard({title, description, src, alt, width, height, source, live, example, skillIcons}) {
+function ProjectCard({title, description, src, alt, source, live, example, skillIcons}) {
 	const github = source ? (
 		<a className={styles.navItemGithub} href={source}>
 			Github
@@ -25,7 +25,7 @@ function ProjectCard({title, description, src, alt, width, height, source, live,
 
 	const skills = skillIcons.map((source, index) => (
 		<li key={index}>
-			<Image src={source} width={48} height={48} alt={"skill image"} />
+			<Image src={source} width={28} height={28} alt={"skill image"} />
 		</li>
 	));
 
@@ -36,6 +36,9 @@ function ProjectCard({title, description, src, alt, width, height, source, live,
 				<ResponsiveNav links={[github, view, demo]} />
 			</header>
 			<div className={styles.content}>
+				<div className={styles.imageWrapper}>
+					<Image className={styles.image} src={src} fill={true} alt={alt} />
+				</div>
 				<div className={styles.details}>
 					<p className={styles.descriptionBox}>{description}</p>
 					<aside className={styles.aside}>
@@ -43,9 +46,6 @@ function ProjectCard({title, description, src, alt, width, height, source, live,
 						<div className={styles.line}></div>
 						<ul className={styles.icons}>{skills}</ul>
 					</aside>
-				</div>
-				<div className={styles.imageWrapper}>
-					<Image src={src} width={width} height={height} alt={alt} />
 				</div>
 			</div>
 		</article>
@@ -62,8 +62,6 @@ ProjectCard.propTypes = {
 	description: PropTypes.string,
 	src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 	alt: PropTypes.string,
-	width: PropTypes.number,
-	height: PropTypes.number,
 	source: PropTypes.string,
 	live: PropTypes.string,
 	example: PropTypes.string,
