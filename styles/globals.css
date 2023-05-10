@@ -50,6 +50,9 @@ li {
 li:not(:last-child) { 
     margin-right: 5px;  
 }
+p {
+    margin: 0;
+}
 button {
     display: flex;
     gap: 5px;
