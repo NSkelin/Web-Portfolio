@@ -9,12 +9,20 @@ function About({selfDescription, interests, src, alt, width, height}) {
 	return (
 		<section className={styles.about}>
 			<div className={styles.topRow}>
-				<Image className={styles.pfp} src={src} width={width} height={height} alt={alt} />
-				<div className={styles.description}>
+				<div className={styles.aboutTitleMobile}>
 					<AccentTitle title={"About me"} />
-					<p>{selfDescription}</p>
+					<Image className={styles.pfp} src={src} width={width} height={height} alt={alt} />
+					<p className={styles.selfDescription}>{selfDescription}</p>
+				</div>
+				<div className={styles.aboutTitleDesktop}>
+					<Image className={styles.pfp} src={src} width={width} height={height} alt={alt} />
+					<div className={styles.description}>
+						<AccentTitle title={"About me"} />
+						<p>{selfDescription}</p>
+					</div>
 				</div>
 			</div>
+
 			<div className={styles.bottomRow}>
 				<section className={styles.skills}>
 					<h3 className={styles.title}>Skills</h3>

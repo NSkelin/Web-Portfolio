@@ -1,53 +1,51 @@
 .about {
     display: flex;
     flex-direction: column;
-    padding: 150px 300px;
+    margin: 150px 16px;
     gap: 40px;
 }
 .topRow {
     display: flex;
-    gap: 35px;
-    
-    width: 1300px;
-    height: 366px;
-    
+    flex-direction: column;
+    gap: 20px;
+    min-height: 366px;
+    background: #4A5676;
+    padding: 20px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-.pfp {
-    display: flex;
-    padding: 0px;
-
-    width: 330px;
-    height: 366px;
-
     border-radius: 10px;
+    max-width: 1320px;
 }
-.description {
+.aboutTitleMobile { 
     display: flex;
     flex-direction: column;
-    padding: 50px;
-    gap: 50px;
-
-    width: 950px;
-    height: 366px;
-
-    background: #4A5676;
+    align-items: center;
+    gap: 20px;
+}
+.aboutTitleDesktop {
+    display: none;
+}
+.selfDescription {
+    margin-top: 20px;
+}
+.pfp {
+    width: 160px;
+    height: 200px;
     border-radius: 10px;
 }
 .bottomRow {
     display: flex;
+    flex-direction: column;
     gap: 35px;
 
-    width: 1300px;
-    height: 365px;
+    max-width: 1320px;
+    min-height: 366px;
 }
 .skills {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    width: 970px;
-    height: 365px;
+    flex: 3;
 
     background: #4B4B4B;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -73,8 +71,7 @@
     display: flex;
     flex-direction: column;
 
-    width: 312px;
-    height: 365px;
+    flex: 1;
 
     background: #4B4B4B;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -86,4 +83,47 @@
     flex-direction: column;
     padding: 30px 40px;
     gap: 10px;
+}
+
+/* tablet */
+@media only screen and (min-width: 426px) and (max-width: 960px) {
+    .aboutTitleMobile {
+        display: block;
+        position: relative;
+    }
+    .pfp {
+        float: left;
+        margin-top: 20px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* desktop */
+@media only screen and (min-width: 961px) {
+    .pfp {
+        width: 322px;
+        height: 366px;
+        float: none;
+        flex: none;
+    }
+    .aboutTitleDesktop {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+    .aboutTitleMobile {
+        display: none;
+    }
+    .description {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .topRow {
+        padding: 40px;
+    }
+    .bottomRow {
+        flex-direction: row;
+    }
 }
