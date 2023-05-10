@@ -5,8 +5,11 @@ import styles from "./AccentTitle.module.css";
 function AccentTitle({title, headingLevel}) {
 	const HTag = `h${headingLevel < 1 || headingLevel > 6 ? 1 : headingLevel}`;
 	return (
-		<div className={styles.titleWrapper}>
-			<HTag className={styles.title}>{title}</HTag>
+		<div className={styles.container}>
+			<div className={styles.titleWrapper}>
+				<span className={styles.spacer}></span>
+				<HTag className={styles.title}>{title}</HTag>
+			</div>
 			<div className={styles.accentLine} />
 		</div>
 	);
