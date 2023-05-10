@@ -1,14 +1,15 @@
 .form {
     display: flex;
     flex-direction: column;
-    width: 721px;
+    max-width: 721px;
     background: #4B4B4B;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     overflow: hidden;
+    width: 100%;
 }
 .title {
-    padding: 25px 50px;
+    padding: 25px 25px;
     gap: 10px;
 
     background: #373737;
@@ -18,8 +19,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 50px;
-    gap: 50px;
+    padding: 20px;
+    gap: 5px;
 }
 .input,
 .textArea,
@@ -29,7 +30,6 @@
     border-radius: 5px;
     border: 0;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 20px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -76,8 +76,9 @@
 }
 /*desktop*/
 @media only screen and (min-width: 961px) {
-    .form {
-        /* padding: 30px; */
+    .contentWrapper {
+        padding: 50px;
+        gap: 50px;
     }
 }
 /*tablet & desktop*/
