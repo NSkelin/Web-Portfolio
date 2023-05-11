@@ -58,7 +58,6 @@
     background: #4B4B4B;
     flex: 1;
     margin: 0;
-    overflow-y: auto;
 }
 .aside {
     display: flex;

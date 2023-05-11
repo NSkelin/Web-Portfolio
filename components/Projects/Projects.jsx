@@ -3,6 +3,9 @@ import styles from "./Projects.module.css";
 import ProjectCard from "../ProjectCard/ProjectCard.jsx";
 import testImg from "../../public/background_code.png";
 import AccentTitle from "../AccentTitle/AccentTitle";
+import {register} from "swiper/element/bundle";
+
+register();
 
 const tempDesc = `
 D2Statmap is a third party webapp for the videogame Destiny 2. In the game you can collect armor, each with their own unique stats.
@@ -19,10 +22,18 @@ const imageSources = [
 
 function Projects() {
 	return (
-		<>
-			<section className={styles.projects}>
-				<AccentTitle title={"Projects"} />
-				<div className={styles.carousel}>
+		<section className={styles.projects}>
+			<AccentTitle title={"Projects"} />
+			<div className={styles.spacer}></div>
+			<swiper-container
+				slides-per-view="1"
+				navigation="true"
+				pagination="true"
+				space-between="80"
+				long-swipes={false}
+				loop="true"
+			>
+				<swiper-slide>
 					<ProjectCard
 						title={"D2StatMap"}
 						description={tempDesc}
@@ -31,10 +42,35 @@ function Projects() {
 						live={"/"}
 						skillIcons={imageSources}
 						src={testImg}
-					></ProjectCard>
-				</div>
-			</section>
-		</>
+						alt={"example image"}
+					/>
+				</swiper-slide>
+				<swiper-slide>
+					<ProjectCard
+						title={"D2StatMap"}
+						description={tempDesc}
+						source={"/"}
+						example={"/"}
+						live={"/"}
+						skillIcons={imageSources}
+						src={testImg}
+						alt={"example image"}
+					/>
+				</swiper-slide>
+				<swiper-slide>
+					<ProjectCard
+						title={"D2StatMap"}
+						description={tempDesc}
+						source={"/"}
+						example={"/"}
+						live={"/"}
+						skillIcons={imageSources}
+						src={testImg}
+						alt={"example image"}
+					/>
+				</swiper-slide>
+			</swiper-container>
+		</section>
 	);
 }
 

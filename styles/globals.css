@@ -95,6 +95,14 @@ a {
     box-sizing: border-box;
 }
 
+swiper-container {
+    padding: 40px 0px;
+}
+
+swiper-container, swiper-slide {
+    width: 100%;
+}
+
 /* tablet */
 @media only screen and (min-width: 426px) and (max-width: 960px) {
     button {
@@ -133,5 +141,8 @@ a {
         font-size: 1.9rem;
         padding: 20px 30px;
         border-radius: 10px;
+    }
+    swiper-container {
+        padding: 40px 60px;
     }
 }

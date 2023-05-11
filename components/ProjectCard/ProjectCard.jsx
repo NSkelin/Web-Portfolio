@@ -4,6 +4,9 @@ import styles from "./ProjectCard.module.css";
 import Image from "next/image";
 import GithubIcon from "../../public/github-mark-white.svg";
 import ResponsiveNav from "../ResponsiveNav/";
+import {register} from "swiper/element/bundle";
+
+register();
 
 function ProjectCard({title, description, src, alt, source, live, example, skillIcons}) {
 	const github = source ? (
@@ -40,7 +43,19 @@ function ProjectCard({title, description, src, alt, source, live, example, skill
 					<Image className={styles.image} src={src} fill={true} alt={alt} />
 				</div>
 				<div className={styles.details}>
-					<p className={styles.descriptionBox}>{description}</p>
+					<swiper-container
+						class={styles.descriptionBox}
+						scrollbar="true"
+						direction="vertical"
+						slides-per-view="auto"
+						free-mode="true"
+						mousewheel="true"
+						touch-release-on-edges="true"
+					>
+						<swiper-slide>
+							<p>{description}</p>
+						</swiper-slide>
+					</swiper-container>
 					<aside className={styles.aside}>
 						<h4 className={styles.title}>Project Technologies</h4>
 						<div className={styles.line}></div>
