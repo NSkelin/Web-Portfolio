@@ -32,7 +32,6 @@ module.exports = {
 			{
 				protocol: "https",
 				hostname: "cdn.svgporn.com",
-				port: "",
 				pathname: "/logos/**",
 			},
 		],
