@@ -108,7 +108,7 @@
         flex: 2;
     }
     .descriptionBox {
-        padding: 30px 40px;
+        padding: 30px 20px;
         scrollbar-width: thin;
     }
     .descriptionBox::-webkit-scrollbar {
@@ -119,7 +119,7 @@
         background: rgb(129, 129, 129);
     }
     .aside {
-        padding: 25px 40px;
+        padding: 25px 20px;
     }
     .imageWrapper {
         order: 2;
