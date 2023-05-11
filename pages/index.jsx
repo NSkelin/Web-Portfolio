@@ -1,3 +1,4 @@
+import React, {useRef} from "react";
 import Head from "next/head";
 import styles from "../styles/index.module.css";
 import {contactLinks} from "../data";
@@ -9,6 +10,7 @@ import About from "../components/About/";
 import Contact from "../components/Contact/";
 
 export default function Index() {
+	const myRef = useRef(null);
 	return (
 		<div className={styles.page}>
 			<Head>
@@ -17,10 +19,10 @@ export default function Index() {
 				<link rel="icon" href="/favicon.ico?v=2" />
 			</Head>
 
-			<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites"}></Landing>
+			<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites"} centerToRef={myRef}></Landing>
 
 			<main className={styles.main}>
-				<Projects />
+				<Projects ref={myRef} />
 				<About />
 			</main>
 

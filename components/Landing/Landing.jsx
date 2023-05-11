@@ -3,7 +3,11 @@ import PropTypes from "prop-types";
 import styles from "./Landing.module.css";
 import Image from "next/image";
 
-function Landing({imageSrc, title, subtitle}) {
+function Landing({imageSrc, title, subtitle, centerToRef}) {
+	function scrollTo() {
+		if (centerToRef.current === null) return;
+		centerToRef.current.scrollIntoView({behavior: "smooth", block: "center"});
+	}
 	return (
 		<header className={styles.landing}>
 			<div className={styles.main}>
@@ -16,19 +20,22 @@ function Landing({imageSrc, title, subtitle}) {
 				</div>
 			</div>
 
-			<button className={styles.button}>
+			<button className={styles.button} onClick={scrollTo}>
 				Take a look! <span className="material-symbols-outlined">arrow_downward</span>
 			</button>
 		</header>
 	);
 }
 
-Landing.defaultProps = {};
+Landing.defaultProps = {
+	centerToRef: null,
+};
 
 Landing.propTypes = {
 	imageSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 	title: PropTypes.string,
 	subtitle: PropTypes.string,
+	centerToRef: PropTypes.object,
 };
 
 export default Landing;

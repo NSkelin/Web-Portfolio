@@ -1,4 +1,4 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import styles from "./Projects.module.css";
 import ProjectCard from "../ProjectCard/ProjectCard.jsx";
 import testImg from "../../public/background_code.png";
@@ -20,9 +20,9 @@ const imageSources = [
 	"https://cdn.svgporn.com/logos/css-3.svg",
 ];
 
-function Projects() {
+const Projects = forwardRef(function Projects(props, ref) {
 	return (
-		<section className={styles.projects}>
+		<section ref={ref} className={styles.projects}>
 			<AccentTitle title={"Projects"} />
 			<div className={styles.spacer}></div>
 			<swiper-container
@@ -72,7 +72,7 @@ function Projects() {
 			</swiper-container>
 		</section>
 	);
-}
+});
 
 Projects.defaultProps = {};
 
