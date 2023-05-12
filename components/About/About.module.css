@@ -25,7 +25,7 @@
 .aboutTitleDesktop {
     display: none;
 }
-.selfDescription {
+.description {
     margin-top: 20px;
 }
 .pfp {
@@ -51,9 +51,26 @@
     border-radius: 10px;
     overflow: hidden;
 }
+.skillRows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
 .skillRow {
     display: flex;
-    gap: 5px;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+.skillIconGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.skillIcon {
+    height: 24px;
 }
 .title {
     display: flex;
@@ -77,11 +94,24 @@
     border-radius: 10px;
     overflow: hidden;
 }
+.interestContent {
+    padding: 30px 20px;
+}
 .list {
     display: flex;
     flex-direction: column;
-    padding: 30px 40px;
+    padding-left: 20px;
     gap: 10px;
+}
+
+/* tablet & desktop */
+@media only screen and (min-width: 426px) {
+    .skillIcon {
+        height: 48px;
+    }
+    .skillRow {
+        gap: 25px;
+    }
 }
 
 /* tablet */
@@ -96,6 +126,11 @@
         margin-right: 10px;
         margin-bottom: 10px;
     }
+    .interests {
+        align-items: center;
+        justify-content: center;
+    }
+
 }
 
 /* desktop */
