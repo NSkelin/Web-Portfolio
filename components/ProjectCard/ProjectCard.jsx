@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./ProjectCard.module.css";
 import Image from "next/image";
-import GithubIcon from "../../public/github-mark-white.svg";
+import {GithubMark} from "../../public/icons";
 import ResponsiveNav from "../ResponsiveNav/";
 import {register} from "swiper/element/bundle";
 
@@ -12,7 +12,7 @@ function ProjectCard({title, description, src, alt, source, live, example, skill
 	const github = source ? (
 		<a className={styles.navItemGithub} href={source}>
 			Github
-			<GithubIcon />
+			<GithubMark />
 		</a>
 	) : null;
 	const view = live ? (
