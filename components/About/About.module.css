@@ -1,8 +1,10 @@
 .about {
     display: flex;
     flex-direction: column;
-    margin: 150px 16px;
+    padding: 150px 16px;
     gap: 40px;
+    width: 100%;
+    max-width: 1320px;
 }
 .topRow {
     display: flex;
@@ -13,7 +15,6 @@
     padding: 20px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 10px;
-    max-width: 1320px;
 }
 .aboutTitleMobile { 
     display: flex;
@@ -36,8 +37,6 @@
     display: flex;
     flex-direction: column;
     gap: 35px;
-
-    max-width: 1320px;
     min-height: 366px;
 }
 .skills {
