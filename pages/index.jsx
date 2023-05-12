@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 import Head from "next/head";
 import styles from "../pageStyles/index.module.css";
-import {contactData} from "../componentData";
+import {contactData, aboutData} from "../componentData";
 import pfp from "../public/profile_picture.png";
 
 import Landing from "../components/Landing/";
@@ -23,7 +23,12 @@ export default function Index() {
 
 			<main className={styles.main}>
 				<Projects ref={myRef} />
-				<About />
+				<About
+					description={aboutData.description}
+					interests={aboutData.interests}
+					skillIconSources={aboutData.skills}
+					image={aboutData.image}
+				/>
 			</main>
 
 			<footer className={styles.footer}>
