@@ -7,3 +7,5 @@ export {default as Next} from "./next.svg";
 export {default as Node} from "./node.svg";
 export {default as MySQL} from "./mysql.svg";
 export {default as JavaScript} from "./javascript.svg";
+export {default as NodeMark} from "./node-mark.svg";
+export {default as MySQLMark} from "./mysql-mark.svg";
