@@ -1,8 +1,7 @@
 import React, {useRef} from "react";
 import Head from "next/head";
 import styles from "../pageStyles/index.module.css";
-import {contactData, aboutData, projectsData} from "../componentData";
-import pfp from "../public/profile_picture.png";
+import {contactData, aboutData, projectsData, landingData} from "../componentData";
 
 import Landing from "../components/Landing/";
 import Projects from "../components/Projects/";
@@ -19,7 +18,12 @@ export default function Index() {
 				<link rel="icon" href="/favicon.ico?v=2" />
 			</Head>
 
-			<Landing imageSrc={pfp} title={"Hey, im Nick!"} subtitle={"I develop websites"} centerToRef={myRef}></Landing>
+			<Landing
+				imageSrc={landingData.image}
+				title={landingData.title}
+				subtitle={landingData.subtitle}
+				centerToRef={myRef}
+			></Landing>
 
 			<main className={styles.main}>
 				<Projects ref={myRef} cards={projectsData} />
