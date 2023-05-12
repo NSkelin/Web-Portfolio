@@ -1,3 +1,3 @@
-export {default as projectsData} from "./projects";
-export {default as aboutData} from "./about";
-export {default as contactData} from "./contact";
+export {default as projectsData} from "./projectsData";
+export {default as aboutData} from "./aboutData";
+export {default as contactData} from "./contactData";
