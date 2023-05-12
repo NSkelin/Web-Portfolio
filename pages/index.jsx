@@ -28,15 +28,7 @@ export default function Index() {
 
 			<footer className={styles.footer}>
 				<Contact links={contactLinks} />
-				<p className={styles.licensing}>
-					Icons by{" "}
-					<a href="https://icons8.com/">
-						<b>
-							<u>Icons8.com</u>
-						</b>
-					</a>
-					.
-				</p>
+				<p className={styles.licensing}></p>
 			</footer>
 		</div>
 	);

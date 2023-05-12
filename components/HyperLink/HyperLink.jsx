@@ -1,18 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./HyperLink.module.css";
-import {Icon} from "@iconify/react";
+import Image from "next/image";
 
-function HyperLink({text = "link", icon: {source, height = 35, color = "white", width = 35}, href}) {
+function HyperLink({text = "link", src, alt, height, width, href}) {
 	return (
 		<div className={styles.container}>
 			<a className={styles.link} href={href}>
-				{source && <Icon icon={source} width={width} height={height} color={color} />}
+				<Image src={src} alt={alt} height={height} width={width} />
 				<span className={styles.text}>{text}</span>
 			</a>
 		</div>
 	);
 }
+
+HyperLink.defaultProps = {
+	height: 24,
+	width: 24,
+};
 
 HyperLink.propTypes = {
 	text: PropTypes.string,
@@ -24,9 +29,5 @@ HyperLink.propTypes = {
 		color: PropTypes.string,
 	}),
 };
-
-HyperLink.defaultProps = {};
-
-HyperLink.propTypes = {};
 
 export default HyperLink;

@@ -5,8 +5,8 @@ import HyperLink from "../hyperLink/";
 import ContactForm from "../ContactForm/";
 
 function Contact({links}) {
-	const linkElement = links.map(({text, icon, href}, index) => {
-		return <HyperLink key={index} text={text} icon={icon} href={href} />;
+	const linkElement = links.map(({text, src, alt, width, height, href}, index) => {
+		return <HyperLink key={index} text={text} src={src} alt={alt} width={width} height={height} href={href} />;
 	});
 
 	return (

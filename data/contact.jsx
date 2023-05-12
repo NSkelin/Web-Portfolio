@@ -1,12 +1,16 @@
 const contactData = [
 	{
 		text: "Github",
-		icon: {source: "akar-icons:github-fill", width: 40, height: 40, color: "white"},
+		src: "https://cdn.svgporn.com/logos/github-icon.svg",
+		width: 40,
+		height: 40,
 		href: "https://github.com/NSkelin",
 	},
 	{
 		text: "LinkedIn",
-		icon: {source: "akar-icons:linkedin-box-fill", width: 40, height: 40, color: "#0077b5"},
+		src: "https://cdn.svgporn.com/logos/linkedin-icon.svg",
+		width: 40,
+		height: 40,
 		href: "https://www.linkedin.com/in/nicholas-skelin-401014173/",
 	},
 ];
