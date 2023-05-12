@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import Head from "next/head";
-import styles from "../styles/index.module.css";
+import styles from "../pageStyles/index.module.css";
 import {contactData} from "../componentData";
 import pfp from "../public/profile_picture.png";
 
