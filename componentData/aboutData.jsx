@@ -1,24 +1,41 @@
+import {HTML5, CSS3, JavaScript, React, Next, Git, NodeMark, MySQLMark} from "../public/icons";
+import pfp from "../public/profile_picture.png";
+
 const skillData = {
-	cards: [
-		{
-			cardType: "skill",
-			title: "Front-end Development",
-			imageSource: {source: "bx:code-block", width: 75, height: 75, color: "#ba55d3"},
-			array: ["HTML5", "CSS3", "ReactJS", "JavaScript"],
-		},
-		{
-			cardType: "skill",
-			title: "Back-end Development",
-			imageSource: {source: "akar-icons:gear", width: 75, height: 75, color: "#ba55d3"},
-			array: ["NodeJS", "NextJS", "Python", "Electron"],
-		},
-		{
-			cardType: "skill",
-			title: "Database & Hosting",
-			imageSource: {source: "bx:coin-stack", width: 75, height: 75, color: "#ba55d3"},
-			array: ["MySQL", "MongoDB", "FireBase", "Amazon Web Services"],
-		},
+	description:
+		"Hi, I'm Nick, a creative and passionate full stack web developer who graduated from BCIT with a diploma in Computer Science. \
+	With one year of experience under my belt, I'm excited to continue developing my skills and building innovative websites that meet user needs.\
+	Aside from my professional experience, I develop and maintain several side projects to showcase my abilities. These include responsive web-apps\
+	and third-party extensions for certain platforms; all designed by me. I'm particularly skilled in JavaScript and the web framework React.\
+	Feel free to visit my portfolio and check these projects out. When I'm not busy with website development, I like to stay up-to-date with the\
+	latest tech and explore new technologies. In my free time I enjoy playing with my rabbits and exploring new video games. My favourite genres\
+	include sandbox, story, and base building.	As a full stack web developer, I'm dedicated to delivering high-quality products that meet business\
+	objectives while providing an enjoyable user experience. I have a keen eye for UI and am skilled in CSS, which allows me to create visually\
+	stunning websites that are both functional and aesthetically pleasing. And with my communication skills I can work collaboratively with other\
+	developers and stakeholders. I'm always eager to connect with other web developers and learn from experienced professionals in the field, so\
+	please don't hesitate to reach out to me if you're interested in connecting or discussing potential opportunities.",
+	image: {
+		src: pfp,
+		alt: "Picture of the author",
+		height: "",
+		width: "",
+	},
+
+	skills: [
+		[
+			{Icon: HTML5, text: "HTML 5"},
+			{Icon: CSS3, text: "CSS3"},
+			{Icon: JavaScript, text: "JavaScript"},
+		],
+		[
+			{Icon: NodeMark, text: "Node.js"},
+			{Icon: React, text: "React"},
+			{Icon: Next, text: "Next"},
+			{Icon: MySQLMark, text: "MySql"},
+			{Icon: Git, text: "Git"},
+		],
 	],
+	interests: ["Rabbits", "PC building", "Video games", ["Sand Box", "Story", "Base building"]],
 };
 
 export default skillData;
