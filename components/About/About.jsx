@@ -47,6 +47,11 @@ function createSkillIcons(skills) {
 function About({description, interests, skillIconSources, image: {src, width, height, alt}}) {
 	const interestList = createInterestList(interests);
 	const skillIcons = createSkillRows(skillIconSources);
+	const text = description.map((paragraph, index) => (
+		<p className={styles.p} key={index}>
+			{paragraph}
+		</p>
+	));
 
 	return (
 		<section className={styles.about}>
@@ -54,13 +59,13 @@ function About({description, interests, skillIconSources, image: {src, width, he
 				<div className={styles.aboutTitleMobile}>
 					<AccentTitle title={"About me"} />
 					<Image className={styles.pfp} src={src} width={width} height={height} alt={alt} />
-					<p className={styles.description}>{description}</p>
+					<div className={styles.description}>{text}</div>
 				</div>
 				<div className={styles.aboutTitleDesktop}>
 					<Image className={styles.pfp} src={src} width={width} height={height} alt={alt} />
 					<div className={styles.description}>
 						<AccentTitle title={"About me"} />
-						<p>{description}</p>
+						{text}
 					</div>
 				</div>
 			</div>
