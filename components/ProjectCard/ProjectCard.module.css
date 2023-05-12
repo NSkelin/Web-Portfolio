@@ -81,6 +81,16 @@
     object-fit: contain;
     padding: 10px;
 }
+.p {
+    margin: 16px 0;
+}
+.icons {
+    display: flex;
+}
+.icon {
+    height: 28px;
+    width: 28px;
+}
 
 /* tablet */
 @media only screen and (min-width: 426px) and (max-width: 960px) {

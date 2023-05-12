@@ -26,10 +26,16 @@ function ProjectCard({title, description, src, alt, source, live, example, skill
 		</a>
 	) : null;
 
-	const skills = skillIcons.map((source, index) => (
-		<li key={index}>
-			<Image src={source} width={28} height={28} alt={"skill image"} />
+	const skills = skillIcons.map((Icon, index) => (
+		<li className={styles.icon} key={index}>
+			<Icon />
 		</li>
+	));
+
+	const text = description.map((paragraph, index) => (
+		<p className={styles.p} key={index}>
+			{paragraph}
+		</p>
 	));
 
 	return (
@@ -52,9 +58,7 @@ function ProjectCard({title, description, src, alt, source, live, example, skill
 						mousewheel="true"
 						touch-release-on-edges="true"
 					>
-						<swiper-slide>
-							<p>{description}</p>
-						</swiper-slide>
+						<swiper-slide>{text}</swiper-slide>
 					</swiper-container>
 					<aside className={styles.aside}>
 						<h4 className={styles.title}>Project Technologies</h4>
