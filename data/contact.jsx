@@ -11,7 +11,7 @@ const contactData = [
 		src: "https://cdn.svgporn.com/logos/linkedin-icon.svg",
 		width: 40,
 		height: 40,
-		href: "https://www.linkedin.com/in/nicholas-skelin-401014173/",
+		href: "https://www.linkedin.com/in/nickskelin/",
 	},
 ];
 
