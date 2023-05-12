@@ -1,3 +1,3 @@
-export {default as projectsCarouselData} from "./projects";
-export {default as skillCarouselData} from "./skills";
-export {default as contactLinks} from "./contact";
+export {default as projectsData} from "./projects";
+export {default as aboutData} from "./about";
+export {default as contactData} from "./contact";

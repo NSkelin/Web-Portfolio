@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 import Head from "next/head";
 import styles from "../styles/index.module.css";
-import {contactLinks} from "../data";
+import {contactData} from "../componentData";
 import pfp from "../public/profile_picture.png";
 
 import Landing from "../components/Landing/";
@@ -27,7 +27,7 @@ export default function Index() {
 			</main>
 
 			<footer className={styles.footer}>
-				<Contact links={contactLinks} />
+				<Contact links={contactData} />
 				<p className={styles.licensing}></p>
 			</footer>
 		</div>
