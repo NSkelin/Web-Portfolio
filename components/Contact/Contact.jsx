@@ -5,8 +5,8 @@ import HyperLink from "../HyperLink/";
 import ContactForm from "../ContactForm/";
 
 function Contact({links}) {
-	const linkElement = links.map(({text, src, alt, width, height, href}, index) => {
-		return <HyperLink key={index} text={text} src={src} alt={alt} width={width} height={height} href={href} />;
+	const linkElement = links.map(({Icon, text, href}, index) => {
+		return <HyperLink key={index} text={text} Icon={Icon} href={href} />;
 	});
 
 	return (
@@ -27,7 +27,7 @@ Contact.propTypes = {
 	links: PropTypes.arrayOf(
 		PropTypes.shape({
 			text: PropTypes.string,
-			icon: PropTypes.object,
+			Icon: PropTypes.object,
 			href: PropTypes.string,
 		})
 	).isRequired,
