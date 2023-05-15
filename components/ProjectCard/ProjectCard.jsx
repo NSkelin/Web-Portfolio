@@ -50,7 +50,9 @@ function ProjectCard({title, description, src, alt, source, live, example, skill
 				</div>
 				<div className={styles.details}>
 					<swiper-container
-						class={styles.descriptionBox}
+						class={
+							"swiper-initialized swiper-vertical swiper-free-mode swiper-backface-hidden " + styles.descriptionBox
+						}
 						scrollbar="true"
 						direction="vertical"
 						slides-per-view="auto"

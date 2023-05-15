@@ -27,6 +27,7 @@ const Projects = forwardRef(function Projects({cards}, ref) {
 			<AccentTitle title={"Projects"} />
 			<div className={styles.spacer}></div>
 			<swiper-container
+				class="swiper-initialized swiper-horizontal swiper-backface-hidden"
 				slides-per-view="1"
 				navigation="true"
 				pagination="true"
