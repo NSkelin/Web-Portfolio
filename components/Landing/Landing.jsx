@@ -10,6 +10,16 @@ function Landing({imageSrc, title, subtitle, centerToRef}) {
 	}
 	return (
 		<header className={styles.landing}>
+			<video
+				style={{position: "absolute", width: "100%", height: "100%", objectFit: "cover"}}
+				autoplay="true"
+				loop
+				muted
+				defaultPlaybackRate={0.5}
+			>
+				<source src="stars.mp4" type="video/mp4"></source>
+			</video>
+
 			<div className={styles.main}>
 				<div className={styles.pfp}>
 					<Image fill={true} src={imageSrc} alt="Picture of the author" />
