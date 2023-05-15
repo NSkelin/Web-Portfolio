@@ -87,13 +87,13 @@ function About({description, interests, skillIconSources, image: {src, width, he
 }
 
 About.defaultProps = {
-	description: "About yourself...",
+	description: ["About yourself..."],
 	interests: ["interest 1", "interest 2", "interest 3", "..."],
 	skillIconSources: [],
 };
 
 About.propTypes = {
-	description: PropTypes.string,
+	description: PropTypes.arrayOf(PropTypes.string),
 	interests: PropTypes.array,
 	skillIconSources: PropTypes.array,
 };

@@ -26,8 +26,8 @@ Contact.defaultProps = {};
 Contact.propTypes = {
 	links: PropTypes.arrayOf(
 		PropTypes.shape({
+			Icon: PropTypes.func,
 			text: PropTypes.string,
-			Icon: PropTypes.object,
 			href: PropTypes.string,
 		})
 	).isRequired,
