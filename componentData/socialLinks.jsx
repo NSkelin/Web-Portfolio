@@ -1,6 +1,6 @@
 import {GithubMark, LinkedIn} from "../public/icons";
 
-const contactData = [
+const socialLinks = [
 	{
 		Icon: GithubMark,
 		text: "Github",
@@ -13,4 +13,4 @@ const contactData = [
 	},
 ];
 
-export default contactData;
+export default socialLinks;

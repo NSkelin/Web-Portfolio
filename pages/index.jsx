@@ -1,7 +1,7 @@
 import React, {useRef} from "react";
 import Head from "next/head";
 import styles from "../pageStyles/index.module.css";
-import {contactData, aboutData, projectsData, landingData} from "../componentData";
+import {socialLinks, aboutData, projectCards, landingData} from "../componentData";
 
 import Landing from "../components/Landing/";
 import Projects from "../components/Projects/";
@@ -26,7 +26,7 @@ export default function Index() {
 			></Landing>
 
 			<main className={styles.main}>
-				<Projects ref={myRef} cards={projectsData} />
+				<Projects ref={myRef} cards={projectCards} />
 				<About
 					description={aboutData.description}
 					interests={aboutData.interests}
@@ -36,7 +36,7 @@ export default function Index() {
 			</main>
 
 			<footer className={styles.footer}>
-				<Contact links={contactData} />
+				<Contact links={socialLinks} />
 				<p className={styles.licensing}></p>
 			</footer>
 		</div>

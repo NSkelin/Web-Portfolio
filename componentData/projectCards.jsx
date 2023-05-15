@@ -1,7 +1,7 @@
 import {React, Next, JavaScript, HTML5, CSS3} from "../public/icons";
 import testImg from "../public/background_code.png";
 
-const ProjectsData = [
+const ProjectCards = [
 	{
 		title: "D2StatMap",
 		description: [
@@ -43,4 +43,4 @@ const ProjectsData = [
 	},
 ];
 
-export default ProjectsData;
+export default ProjectCards;
