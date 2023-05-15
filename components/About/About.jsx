@@ -4,17 +4,17 @@ import styles from "./About.module.css";
 import AccentTitle from "../AccentTitle/AccentTitle";
 import Image from "next/image";
 
-function createInterestList(interests, indentLevel = 0) {
+function createInterestList(interests) {
 	const interestList = interests.map((interest, index) => {
 		if (Array.isArray(interest)) {
 			return (
-				<ul className={styles.list} key={indentLevel + 1}>
+				<ul className={styles.list} key={index}>
 					{" "}
-					{createInterestList(interest, indentLevel + 1)}{" "}
+					{createInterestList(interest)}{" "}
 				</ul>
 			);
 		} else {
-			return <li key={indentLevel + index}>{interest}</li>;
+			return <li key={index}>{interest}</li>;
 		}
 	});
 
