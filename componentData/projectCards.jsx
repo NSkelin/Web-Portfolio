@@ -33,8 +33,6 @@ const ProjectCards = [
 		description: [
 			"Spotbot is a Discord bot that integrates with the Discord API & and the Amazon Web Services API. It allows you and anyone else with access to\
 			the bot to automatically start EC2 instances in AWS with a simple command through Discord.",
-			"The usecase this was made in mind with is to allow yourself and any of your friends to easily start a pre-configured multiplayer game server\
-			with a single command. Mainly so I dont have to start a server everytime someone asks, while also using my PC and therefore limiting the resources it has for my use.",
 		],
 		techIcons: [JavaScript, AWS, Discord],
 		image: spotBot1,
