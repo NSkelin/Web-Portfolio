@@ -8,3 +8,8 @@ export {default as LinkedIn} from "./linkedin.svg";
 export {default as JavaScript} from "./javascript.svg";
 export {default as NodeMark} from "./node-mark.svg";
 export {default as MySQLMark} from "./mysql-mark.svg";
+export {default as AWS} from "./aws.svg";
+export {default as Discord} from "./discord-mark-blue.svg";
+export {default as Express} from "./express.svg";
+export {default as Jest} from "./jest.svg";
+export {default as MongoDB} from "./mongodb.svg";
