@@ -1,7 +1,8 @@
 .about {
     display: flex;
     flex-direction: column;
-    padding: 150px 16px;
+    margin: 150px 0;
+    padding: 0 16px;
     gap: 40px;
     width: 100%;
     max-width: 1320px;
