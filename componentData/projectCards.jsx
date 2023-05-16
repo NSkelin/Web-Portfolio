@@ -2,6 +2,7 @@ import {React, Next, JavaScript, HTML5, CSS3, AWS, Discord, NodeMark, MongoDB, J
 import d2StatMap1 from "../public/d2statmap/D2StatMap-1.png";
 import spotBot1 from "../public/spotbot/spotbot-1.png";
 import cartCompanion1 from "../public/CartCompanion.png";
+import portfolio1 from "../public/portfolio/portfolio1.png";
 
 const ProjectCards = [
 	{
@@ -24,7 +25,7 @@ const ProjectCards = [
 			"My personal favourite feature is the project cards your currently looking at.",
 		],
 		techIcons: [React, Next, JavaScript, HTML5, CSS3],
-		image: "",
+		image: portfolio1,
 		githubURL: "https://github.com/NSkelin/Web-Portfolio",
 		liveURL: "https://www.nickskelin.ca",
 	},
