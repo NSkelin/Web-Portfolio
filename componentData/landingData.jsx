@@ -1,4 +1,4 @@
-import pfp from "../public/profile_picture.png";
+import pfp from "../public/pfp1.jpg";
 
 const landingData = {
 	image: pfp,

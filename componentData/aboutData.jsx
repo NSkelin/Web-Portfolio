@@ -1,5 +1,5 @@
 import {HTML5, CSS3, JavaScript, React, Next, Git, NodeMark, MySQLMark} from "../public/icons";
-import pfp from "../public/profile_picture.png";
+import pfp from "../public/pfp2.jpg";
 
 const skillData = {
 	description: [
