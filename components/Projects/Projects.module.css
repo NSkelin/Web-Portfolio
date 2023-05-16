@@ -1,0 +1,23 @@
+.projects {
+    margin: 150px 0px;
+    padding: 0 16px;
+    width: 100%;
+}
+.spacer {
+    height: 10px;
+}
+
+/* tablet */
+@media only screen and (min-width: 426px) and (max-width: 960px) {
+    .projects {
+        margin: 150px 16px;
+        max-width: 700px;
+    }
+}
+/* desktop */
+@media only screen and (min-width: 961px) {
+    .projects {
+        margin: 150px 16px;
+        max-width: 1194px;
+    }
+}

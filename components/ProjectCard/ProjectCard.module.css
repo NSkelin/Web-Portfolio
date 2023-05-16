@@ -1,0 +1,139 @@
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    max-width: 1194px;
+    max-height: 600px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 3px 8px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #373737;
+    align-items: center;
+    padding: 20px 25px;
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.35);
+    z-index: 2;
+}
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.navItemGithub, .navItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.navItem {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 24;
+}
+.navItemGithub {
+    gap: 5px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: #414141;
+
+    overflow: hidden;
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    flex: 1;
+    overflow: hidden;
+}
+.descriptionBox {
+    padding: 25px 15px;
+    background: #4B4B4B;
+    flex: 1;
+    margin: 0;
+}
+.aside {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+    gap: 15px;
+}
+.line {
+    border: 1px solid #FFFFFF;
+}
+.imageWrapper {
+    position: relative;
+    height: 130px;
+    flex: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image {
+    object-fit: contain;
+    padding: 10px;
+}
+.p {
+    margin: 16px 0;
+}
+.icons {
+    display: flex;
+}
+.icon {
+    height: 28px;
+    width: 28px;
+}
+
+/* tablet */
+@media only screen and (min-width: 426px) and (max-width: 960px) {
+    .projectCard {
+        max-height: 800px;
+    }
+    .imageWrapper {
+        height: 260px;
+    }
+}
+/* desktop */
+@media only screen and (min-width: 961px) {
+    .projectCard {
+        height: 633px;
+    }
+    .header {
+        padding: 25px 50px;
+    }
+    .content {
+        flex-direction: row;
+    }
+    .details {
+        order: 1;
+        flex: 2;
+    }
+    .descriptionBox {
+        padding: 30px 20px;
+        scrollbar-width: thin;
+    }
+    .descriptionBox::-webkit-scrollbar {
+        width: 8px;
+        background-color: rgb(56, 56, 56); 
+    }
+    .descriptionBox::-webkit-scrollbar-thumb {
+        background: rgb(129, 129, 129);
+    }
+    .aside {
+        padding: 25px 20px;
+    }
+    .imageWrapper {
+        order: 2;
+        box-shadow: inset 5px 0px 3px -3px rgba(0, 0, 0, 0.2);
+        flex: 5;
+        height: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+.container {
+    padding: 3px;
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+}
+
+.text {
+    padding-left: 10px;
+}
+.icon {
+    height: 24px;
+}
