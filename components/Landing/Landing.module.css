@@ -46,6 +46,9 @@
     height: 230px;
     width: 230px;
     padding: 5px;
+    border-radius: 500px;
+    overflow: hidden;
+    outline: 3px solid #7E7E7E;
 }
 .button {
     z-index: 1;

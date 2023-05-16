@@ -32,6 +32,9 @@
     width: 160px;
     height: 200px;
     border-radius: 10px;
+    outline: 3px solid #7E7E7E;
+    object-fit: contain;
+    overflow: hidden;
 }
 .bottomRow {
     display: flex;
