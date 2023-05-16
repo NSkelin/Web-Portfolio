@@ -30,8 +30,8 @@
     margin-top: 20px;
 }
 .pfp {
-    width: 160px;
-    height: 200px;
+    width: 248px;
+    height: 331px;
     border-radius: 10px;
     outline: 3px solid #7E7E7E;
     object-fit: contain;
@@ -143,8 +143,8 @@
 /* desktop */
 @media only screen and (min-width: 961px) {
     .pfp {
-        width: 322px;
-        height: 366px;
+        width: 318px;
+        height: 421px;
         float: none;
         flex: none;
     }
