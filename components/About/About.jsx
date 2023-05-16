@@ -44,7 +44,7 @@ function createSkillIcons(skills) {
 	return <>{skillIcons}</>;
 }
 
-function About({description, interests, skillIconSources, image: {src, width, height, alt}}) {
+function About({description, interests, skillIconSources, image: {src, alt}}) {
 	const interestList = createInterestList(interests);
 	const skillIcons = createSkillRows(skillIconSources);
 	const text = description.map((paragraph, index) => (
@@ -58,11 +58,11 @@ function About({description, interests, skillIconSources, image: {src, width, he
 			<div className={styles.topRow}>
 				<div className={styles.aboutTitleMobile}>
 					<AccentTitle title={"About me"} />
-					<Image className={styles.pfp} src={src} width={width} height={height} alt={alt} />
+					<Image className={styles.pfp} src={src} alt={alt} />
 					<div className={styles.description}>{text}</div>
 				</div>
 				<div className={styles.aboutTitleDesktop}>
-					<Image className={styles.pfp} src={src} width={width} height={height} alt={alt} />
+					<Image className={styles.pfp} src={src} alt={alt} />
 					<div className={styles.description}>
 						<AccentTitle title={"About me"} />
 						{text}

@@ -18,8 +18,6 @@ const skillData = {
 	image: {
 		src: pfp,
 		alt: "Picture of the author",
-		height: "",
-		width: "",
 	},
 
 	skills: [
