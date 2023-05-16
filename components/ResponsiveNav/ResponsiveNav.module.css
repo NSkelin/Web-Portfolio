@@ -1,0 +1,41 @@
+.nav {
+    position: relative;
+}
+.navList {
+    position: absolute;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+.navItem {
+    padding: 15px 20px;
+    width: 100%;
+}
+.navItem:active {
+    background-color: var(--secondary);
+}
+.hamburgerButton {
+    padding: 10px;
+}
+.hamburgerButton::before {
+    border: 0;
+    background: var(--buttonBg);
+}
+
+/* tablet */
+@media only screen and (min-width: 426px) and (max-width: 960px) {
+
+}
+/* desktop */
+@media only screen and (min-width: 961px) {
+    .hamburgerButton {
+        display: none;
+    }
+    .navList {
+        position: relative;
+        display: flex !important;
+        flex-direction: row;
+        background-color: var(--tertiary);
+    }
+}

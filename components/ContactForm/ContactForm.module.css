@@ -1,0 +1,94 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 721px;
+    background: #4B4B4B;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+}
+.title {
+    padding: 25px 25px;
+    gap: 10px;
+
+    background: #373737;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 5px;
+}
+.input,
+.textArea,
+.inputError,
+.textAreaError {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    box-sizing: border-box;
+}
+.textArea, .textAreaError {
+    resize: none;
+}
+.inputWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.submission {
+    display: flex;
+    -ms-flex-align: center;
+    gap: 5px;
+    width: 100%;
+}
+
+/* Error / success specific styling */
+
+.inputError,
+.textAreaError {
+    outline: 2px solid red;
+}
+.errorMessage,
+.successMessage {
+    margin: 0;
+    padding: 0;
+    min-height: 30px;
+}
+.errorMessage {
+    color: red;
+}
+.successMessage {
+    color: lightgreen;
+}
+
+/*tablet*/
+@media only screen and (min-width: 430px) and (max-width: 960px) {
+    .form {
+        /* padding: 15px; */
+    }
+}
+/*desktop*/
+@media only screen and (min-width: 961px) {
+    .contentWrapper {
+        padding: 50px;
+        gap: 50px;
+    }
+}
+/*tablet & desktop*/
+@media only screen and (min-width: 430px) {
+    /* .form {
+        flex: 2;
+    }
+    .input,
+    .textArea,
+    .button {
+        font-size: 24px;
+    } */
+}
