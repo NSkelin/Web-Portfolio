@@ -37,7 +37,6 @@ export default function Index() {
 
 			<footer className={styles.footer}>
 				<Contact links={socialLinks} />
-				<p className={styles.licensing}></p>
 			</footer>
 		</div>
 	);
