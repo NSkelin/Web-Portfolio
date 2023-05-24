@@ -1,7 +1,7 @@
 # Web-Portfolio
 This is my portfolio, take a look to see some of my projects and learn about me.
 
-[View it live](https://nick.skelin.ca).
+[View it live](https://www.nickskelin.ca).
 
 # Table of contents
 ![image](https://user-images.githubusercontent.com/31994545/235538164-e8b64496-e511-4e93-be35-aa3eda61e7b7.png)
