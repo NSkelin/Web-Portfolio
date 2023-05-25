@@ -1,0 +1,19 @@
+name: Stable Auto Pull
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  pull-latest-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Pull latest changes from default branch
+        run: |
+          git checkout stable
+          git merge --ff-only origin/${{ github.base_ref }}
