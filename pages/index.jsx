@@ -7,6 +7,7 @@ import Landing from "../components/Landing/";
 import Projects from "../components/Projects/";
 import About from "../components/About/";
 import Contact from "../components/Contact/";
+import AccentTitle from "../components/AccentTitle/";
 
 export default function Index() {
 	const myRef = useRef(null);
@@ -36,8 +37,8 @@ export default function Index() {
 			</main>
 
 			<footer className={styles.footer}>
+				<AccentTitle title={"Get in Touch"} />
 				<Contact links={socialLinks} />
-				<p className={styles.licensing}></p>
 			</footer>
 		</div>
 	);

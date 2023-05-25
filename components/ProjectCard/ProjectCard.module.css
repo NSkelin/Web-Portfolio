@@ -88,6 +88,8 @@
     display: flex;
 }
 .icon {
+    display: flex;
+    align-items: center;
     height: 28px;
     width: 28px;
 }

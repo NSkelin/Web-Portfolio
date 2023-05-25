@@ -10,7 +10,7 @@ function Landing({imageSrc, title, subtitle, centerToRef}) {
 	}
 	return (
 		<header className={styles.landing}>
-			<video style={{position: "absolute", width: "100%", height: "100%", objectFit: "cover"}} autoPlay loop muted>
+			<video className={styles.video} autoPlay loop muted>
 				<source src="stars.mp4" type="video/mp4"></source>
 			</video>
 
