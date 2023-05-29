@@ -31,7 +31,7 @@ export default function Index() {
 				<About
 					description={aboutData.description}
 					interests={aboutData.interests}
-					skillIconSources={aboutData.skills}
+					skillIconSources={aboutData.skillIconSources}
 					image={aboutData.image}
 				/>
 			</main>
