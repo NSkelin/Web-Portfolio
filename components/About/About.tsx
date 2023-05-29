@@ -1,10 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./About.module.css";
 import AccentTitle from "../AccentTitle/AccentTitle";
 import Image from "next/image";
+import type {Interest, Skill, AboutProps} from "./";
 
-function createInterestList(interests) {
+function createInterestList(interests: Interest[]) {
 	const interestList = interests.map((interest, index) => {
 		if (Array.isArray(interest)) {
 			return (
@@ -21,18 +21,18 @@ function createInterestList(interests) {
 	return <>{interestList}</>;
 }
 
-function createSkillRows(skills) {
-	const skillRows = skills.map((arr, index) => {
+function createSkillRows(skillRowsData: Skill[][]) {
+	const skillRowsArr = skillRowsData.map((arr, index) => {
 		return (
 			<ul key={index} className={styles.skillRow}>
 				{createSkillIcons(arr)}
 			</ul>
 		);
 	});
-	return <>{skillRows}</>;
+	return <>{skillRowsArr}</>;
 }
 
-function createSkillIcons(skills) {
+function createSkillIcons(skills: Skill[]) {
 	const skillIcons = skills.map(({Icon, text}, index) => {
 		return (
 			<li key={index} className={styles.skillIconGroup}>
@@ -44,7 +44,7 @@ function createSkillIcons(skills) {
 	return <>{skillIcons}</>;
 }
 
-function About({description, interests, skillIconSources, image: {src, alt}}) {
+function About({description, interests, skillIconSources, image: {src, alt}}: AboutProps) {
 	const interestList = createInterestList(interests);
 	const skillIcons = createSkillRows(skillIconSources);
 	const text = description.map((paragraph, index) => (
@@ -85,17 +85,5 @@ function About({description, interests, skillIconSources, image: {src, alt}}) {
 		</section>
 	);
 }
-
-About.defaultProps = {
-	description: ["About yourself..."],
-	interests: ["interest 1", "interest 2", "interest 3", "..."],
-	skillIconSources: [],
-};
-
-About.propTypes = {
-	description: PropTypes.arrayOf(PropTypes.string),
-	interests: PropTypes.array,
-	skillIconSources: PropTypes.array,
-};
 
 export default About;
