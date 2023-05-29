@@ -2,7 +2,11 @@ import React from "react";
 import styles from "./About.module.css";
 import AccentTitle from "../AccentTitle/AccentTitle";
 import Image from "next/image";
-import type {Interest, Skill, AboutProps} from "./";
+import {ImageProps} from "next/image";
+
+type Interest = string | Array<Interest>;
+type Skill = {Icon: any; text: string};
+export type AboutProps = {description: string[]; interests: Interest[]; skillIconSources: Skill[][]; image: ImageProps};
 
 function createInterestList(interests: Interest[]) {
 	const interestList = interests.map((interest, index) => {
