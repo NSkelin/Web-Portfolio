@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./About.module.css";
+import styles from "./About.module.scss";
 import AccentTitle from "../AccentTitle/AccentTitle";
 import Image from "next/image";
 import {ImageProps} from "next/image";
