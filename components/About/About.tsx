@@ -5,7 +5,13 @@ import {ImageProps} from "next/image";
 
 type Interest = string | Array<Interest>;
 type Skill = {Icon: any; text: string};
-export type AboutProps = {description: string[]; interests: Interest[]; skillIconSources: Skill[][]; image: ImageProps};
+export type AboutProps = {
+	description: string[];
+	interests: Interest[];
+	skillIconSources: Skill[][];
+	image: ImageProps;
+	centerToRef?: React.MutableRefObject<null | HTMLElement>;
+};
 
 function createInterestList(interests: Interest[]) {
 	const interestList = interests.map((interest, index) => {
@@ -42,10 +48,16 @@ function createSkillIcons(skills: Skill[]) {
 	return <>{skillIcons}</>;
 }
 
-function About({description, interests, skillIconSources, image: {src, alt}}: AboutProps) {
+function About({description, interests, skillIconSources, image: {src, alt}, centerToRef}: AboutProps) {
 	const interestList = createInterestList(interests);
 	const skillIcons = createSkillRows(skillIconSources);
 	const descriptionText = description.map((paragraph, index) => <p key={index}>{paragraph}</p>);
+
+	function scrollTo() {
+		if (centerToRef === undefined) return;
+		if (centerToRef.current === null) return;
+		centerToRef.current.scrollIntoView({behavior: "smooth", block: "center"});
+	}
 
 	return (
 		<section className={styles.about}>
@@ -56,6 +68,9 @@ function About({description, interests, skillIconSources, image: {src, alt}}: Ab
 				<h2>{"About"}</h2>
 				<div className={styles.divider}></div>
 				{descriptionText}
+				<div className={styles.buttonWrapper}>
+					<button onClick={scrollTo}>Contact</button>
+				</div>
 			</section>
 
 			<aside className={styles.interests}>
