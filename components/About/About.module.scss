@@ -1,165 +1,183 @@
 .about {
-    display: flex;
-    flex-direction: column;
-    margin: 150px 0;
-    padding: 0 16px;
-    gap: 40px;
-    width: 100%;
-    max-width: 1320px;
+	display: flex;
+	flex-direction: column;
+	margin: 150px 0;
+	padding: 0 16px;
+	width: 100%;
+	max-width: 1128px;
+	@media only screen and (min-width: 905px) {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 25px;
+	}
 }
-.topRow {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    min-height: 366px;
-    background: #4A5676;
-    padding: 20px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 10px;
-}
-.aboutTitleMobile { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-.aboutTitleDesktop {
-    display: none;
-}
-.description {
-    margin-top: 20px;
-}
-.pfp {
-    width: 248px;
-    height: 331px;
-    border-radius: 10px;
-    outline: 3px solid #7E7E7E;
-    object-fit: contain;
-    overflow: hidden;
-}
-.bottomRow {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    min-height: 366px;
-}
-.skills {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    flex: 3;
-
-    background: #4B4B4B;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    overflow: hidden;
-}
-.skillRows {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-}
-.skillRow {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin: 20px 0;
-}
-.skillIconGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-.skillIcon {
-    height: 24px;
-}
-.title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-    height: 98px;
-
-    background-color: #373737;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+.personal {
+	display: flex;
+	flex-direction: column;
+	background-color: #4a5676;
+	padding: 30px 20px 0 20px;
+	border-radius: 10px 10px 0 0;
+	.imageWrapper {
+		display: flex;
+		justify-content: center;
+		.pfp {
+			width: 172px;
+			height: 215px;
+			border-radius: 10px;
+		}
+	}
+	h2 {
+		order: -2;
+	}
+	.divider {
+		order: -1;
+		margin: 20px 0;
+	}
+	p {
+		margin: 20px 0 0 0;
+	}
+	@media only screen and (min-width: 601px) {
+		display: block;
+		padding: 40px;
+		padding-bottom: 0;
+		.imageWrapper {
+			padding: 0 10px 5px 0;
+			float: left;
+		}
+		.divider {
+			margin: 10px 0;
+			display: flex;
+		}
+	}
+	@media only screen and (min-width: 905px) {
+		padding: 40px;
+		border-radius: 10px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		.imageWrapper {
+			padding: 0 30px 15px 0;
+			.pfp {
+				width: 232px;
+				height: 290px;
+			}
+		}
+	}
 }
 .interests {
-    display: flex;
-    flex-direction: column;
-
-    flex: 1;
-
-    background: #4B4B4B;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    overflow: hidden;
+	background-color: #4a5676;
+	padding: 20px 20px 30px 20px;
+	border-radius: 0 0 10px 10px;
+	margin-bottom: 20px;
+	.divider {
+		margin-bottom: 20px;
+	}
+	li {
+		list-style-type: none;
+	}
+	@media only screen and (max-width: 904px) {
+		li:not(li:first-child)::before {
+			content: ", ";
+		}
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0;
+			& > ul::before {
+				padding-left: 5px;
+				content: "(";
+			}
+			& > ul::after {
+				content: ")";
+			}
+			&:not(ul > ul)::after {
+				content: ".";
+			}
+		}
+	}
+	@media only screen and (min-width: 601px) {
+		padding-top: 25px;
+		padding-bottom: 20px;
+		.divider {
+			margin-bottom: 10px;
+		}
+	}
+	@media only screen and (min-width: 905px) {
+		padding: 0;
+		border-radius: 10px;
+		order: 1;
+		margin: 0 0 0 10px;
+		width: 264px;
+		overflow: hidden;
+		background-color: #4b4b4b;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		.divider {
+			display: none;
+		}
+		h3 {
+			display: flex;
+			justify-content: center;
+			padding: 20px 0 15px 0;
+			width: 100%;
+			background-color: #373737;
+		}
+		ul {
+			padding-left: 0;
+			& > ul {
+				padding-left: 10px;
+			}
+		}
+		li {
+			margin-top: 2px;
+		}
+	}
 }
-.interestContent {
-    padding: 30px 20px;
+.divider {
+	border-top: white 1px solid;
 }
-.list {
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    gap: 10px;
+.skills {
+	display: flex;
+	flex-direction: column;
+	background-color: #4b4b4b;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	overflow: hidden;
+	gap: 15px;
+	padding-bottom: 15px;
+	.title {
+		display: flex;
+		justify-content: center;
+		padding: 20px 0 15px 0;
+		width: 100%;
+		background-color: #373737;
+	}
+	.row {
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+	}
+	ul {
+		padding: 0;
+	}
+	@media only screen and (min-width: 905px) {
+		flex: 1;
+	}
 }
-.p {
-    margin: 16px 0;
-}
-
-/* tablet & desktop */
-@media only screen and (min-width: 426px) {
-    .skillIcon {
-        height: 48px;
-    }
-    .skillRow {
-        gap: 25px;
-    }
-}
-
-/* tablet */
-@media only screen and (min-width: 426px) and (max-width: 960px) {
-    .aboutTitleMobile {
-        display: block;
-        position: relative;
-    }
-    .pfp {
-        float: left;
-        margin-top: 20px;
-        margin-right: 10px;
-        margin-bottom: 10px;
-    }
-    .interests {
-        align-items: center;
-        justify-content: center;
-    }
-
-}
-
-/* desktop */
-@media only screen and (min-width: 961px) {
-    .pfp {
-        width: 318px;
-        height: 421px;
-        float: none;
-        flex: none;
-    }
-    .aboutTitleDesktop {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-    }
-    .aboutTitleMobile {
-        display: none;
-    }
-    .topRow {
-        padding: 40px;
-    }
-    .bottomRow {
-        flex-direction: row;
-    }
+.skillIconGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+	p {
+		margin: 0;
+	}
+	.icon {
+		height: 36px;
+	}
+	@media only screen and (min-width: 905px) {
+		.icon {
+			height: 48px;
+		}
+	}
 }
