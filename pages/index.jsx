@@ -10,7 +10,8 @@ import Contact from "../components/Contact/";
 import AccentTitle from "../components/AccentTitle/";
 
 export default function Index() {
-	const myRef = useRef(null);
+	const projectsRef = useRef(null);
+	const footerRef = useRef(null);
 	return (
 		<div className={styles.page}>
 			<Head>
@@ -23,20 +24,21 @@ export default function Index() {
 				imageSrc={landingData.image}
 				title={landingData.title}
 				subtitle={landingData.subtitle}
-				centerToRef={myRef}
+				centerToRef={projectsRef}
 			></Landing>
 
 			<main className={styles.main}>
-				<Projects ref={myRef} cards={projectCards} />
+				<Projects ref={projectsRef} cards={projectCards} />
 				<About
 					description={aboutData.description}
 					interests={aboutData.interests}
 					skillIconSources={aboutData.skillIconSources}
 					image={aboutData.image}
+					centerToRef={footerRef}
 				/>
 			</main>
 
-			<footer className={styles.footer}>
+			<footer ref={footerRef} className={styles.footer}>
 				<AccentTitle title={"Get in Touch"} />
 				<Contact links={socialLinks} />
 			</footer>
