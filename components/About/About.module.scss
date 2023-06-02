@@ -36,6 +36,12 @@
 	p {
 		margin: 20px 0 0 0;
 	}
+	.buttonWrapper {
+		display: flex;
+		justify-content: flex-end;
+		padding-right: 20px;
+		margin: 20px 0;
+	}
 	@media only screen and (min-width: 601px) {
 		display: block;
 		padding: 40px;
@@ -47,6 +53,9 @@
 		.divider {
 			margin: 10px 0;
 			display: flex;
+		}
+		.buttonWrapper {
+			margin: 25px 0;
 		}
 	}
 	@media only screen and (min-width: 905px) {
@@ -60,11 +69,14 @@
 				height: 290px;
 			}
 		}
+		.buttonWrapper {
+			margin-bottom: 0px;
+		}
 	}
 }
 .interests {
 	background-color: #4a5676;
-	padding: 20px 20px 30px 20px;
+	padding: 0px 20px 30px 20px;
 	border-radius: 0 0 10px 10px;
 	margin-bottom: 20px;
 	.divider {
@@ -94,7 +106,6 @@
 		}
 	}
 	@media only screen and (min-width: 601px) {
-		padding-top: 25px;
 		padding-bottom: 20px;
 		.divider {
 			margin-bottom: 10px;
