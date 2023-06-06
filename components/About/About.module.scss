@@ -21,6 +21,7 @@
 	.imageWrapper {
 		display: flex;
 		justify-content: center;
+		margin-bottom: 15px;
 		.pfp {
 			width: 172px;
 			height: 215px;
@@ -42,13 +43,14 @@
 		justify-content: flex-end;
 		padding-right: 20px;
 		margin: 20px 0;
+		gap: 15px;
 	}
 	@media only screen and (min-width: 601px) {
+		padding: 40px 40px 0 40px;
 		display: block;
-		padding: 40px;
-		padding-bottom: 0;
 		.imageWrapper {
-			padding: 0 10px 5px 0;
+			padding: 0 30px 5px 0;
+			margin-bottom: 0;
 			float: left;
 		}
 		.divider {
@@ -62,8 +64,11 @@
 	@media only screen and (min-width: 905px) {
 		padding: 40px;
 		border-radius: 10px;
+		gap: 25px;
 		.imageWrapper {
-			padding: 0 30px 15px 0;
+			padding: 0 30px 5px 0;
+			margin-bottom: 0;
+			float: left;
 			.pfp {
 				width: 232px;
 				height: 290px;
