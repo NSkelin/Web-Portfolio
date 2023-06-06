@@ -18,16 +18,6 @@
 	padding: 30px 20px 0 20px;
 	border-radius: 10px 10px 0 0;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	.imageWrapper {
-		display: flex;
-		justify-content: center;
-		margin-bottom: 15px;
-		.pfp {
-			width: 172px;
-			height: 215px;
-			border-radius: 10px;
-		}
-	}
 	h2 {
 		order: -2;
 	}
@@ -35,45 +25,55 @@
 		order: -1;
 		margin: 20px 0;
 	}
-	.buttonWrapper {
-		display: flex;
-		justify-content: flex-end;
-		padding-right: 20px;
-		margin: 20px 0;
-		gap: 15px;
-	}
 	@media only screen and (min-width: 601px) {
 		padding: 40px 40px 0 40px;
 		display: block;
-		.imageWrapper {
-			padding: 0 30px 5px 0;
-			margin-bottom: 0;
-			float: left;
-		}
 		.divider {
 			margin: 10px 0;
 			display: flex;
-		}
-		.buttonWrapper {
-			margin: 25px 0;
 		}
 	}
 	@media only screen and (min-width: 905px) {
 		padding: 40px;
 		border-radius: 10px;
 		gap: 25px;
-		.imageWrapper {
-			padding: 0 30px 5px 0;
-			margin-bottom: 0;
-			float: left;
-			.pfp {
-				width: 232px;
-				height: 290px;
-			}
+	}
+}
+.imageWrapper {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 15px;
+	.pfp {
+		width: 172px;
+		height: 215px;
+		border-radius: 10px;
+	}
+	@media only screen and (min-width: 601px) {
+		padding: 0 30px 5px 0;
+		margin-bottom: 0;
+		float: left;
+	}
+	@media only screen and (min-width: 905px) {
+		padding: 0 30px 5px 0;
+		margin-bottom: 0;
+		float: left;
+		.pfp {
+			width: 232px;
+			height: 290px;
 		}
-		.buttonWrapper {
-			margin: 10px 0 0 0;
-		}
+	}
+}
+.buttonWrapper {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 20px;
+	margin: 20px 0;
+	gap: 15px;
+	@media only screen and (min-width: 601px) {
+		margin: 25px 0;
+	}
+	@media only screen and (min-width: 905px) {
+		margin: 10px 0 0 0;
 	}
 }
 .expanded,
