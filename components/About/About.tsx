@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./About.module.scss";
 import Image from "next/image";
 import {ImageProps} from "next/image";
@@ -49,6 +49,8 @@ function createSkillIcons(skills: Skill[]) {
 }
 
 function About({description, interests, skillIconSources, image: {src, alt}, centerToRef}: AboutProps) {
+	const [collapsed, setCollapsed] = useState(true);
+
 	const interestList = createInterestList(interests);
 	const skillIcons = createSkillRows(skillIconSources);
 	const descriptionText = description.map((paragraph, index) => <p key={index}>{paragraph}</p>);
@@ -69,6 +71,7 @@ function About({description, interests, skillIconSources, image: {src, alt}, cen
 				<div className={styles.divider}></div>
 				{descriptionText}
 				<div className={styles.buttonWrapper}>
+					<button onClick={() => setCollapsed(!collapsed)}>{collapsed ? "Show more" : "Show less"}</button>
 					<button onClick={scrollTo}>Contact</button>
 				</div>
 			</section>
