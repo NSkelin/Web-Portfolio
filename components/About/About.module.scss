@@ -35,9 +35,6 @@
 		order: -1;
 		margin: 20px 0;
 	}
-	p {
-		margin: 20px 0 0 0;
-	}
 	.buttonWrapper {
 		display: flex;
 		justify-content: flex-end;
@@ -75,8 +72,41 @@
 			}
 		}
 		.buttonWrapper {
+			margin: 10px 0 0 0;
+		}
+	}
+}
+.expanded,
+.collapsed {
+	p {
+		margin: 5px 0;
+		&:last-child {
 			margin-bottom: 0px;
 		}
+		&:first-of-type {
+			margin-top: 0px;
+		}
+	}
+	@media only screen and (min-width: 601px) {
+		p {
+			margin: 15px 0;
+		}
+	}
+}
+.expanded {
+	@media only screen and (min-width: 905px) {
+		overflow: hidden;
+	}
+}
+.collapsed {
+	box-shadow: inset 0px -10px 10px -10px rgba(255, 255, 255, 1);
+	overflow: hidden;
+	height: 100px;
+	@media only screen and (min-width: 601px) {
+		height: 150px;
+	}
+	@media only screen and (min-width: 905px) {
+		height: 220px;
 	}
 }
 .interests {

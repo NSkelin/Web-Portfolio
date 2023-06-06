@@ -69,7 +69,7 @@ function About({description, interests, skillIconSources, image: {src, alt}, cen
 				</div>
 				<h2>{"About"}</h2>
 				<div className={styles.divider}></div>
-				{descriptionText}
+				<div className={collapsed ? styles.collapsed : styles.expanded}>{descriptionText}</div>
 				<div className={styles.buttonWrapper}>
 					<button onClick={() => setCollapsed(!collapsed)}>{collapsed ? "Show more" : "Show less"}</button>
 					<button onClick={scrollTo}>Contact</button>
