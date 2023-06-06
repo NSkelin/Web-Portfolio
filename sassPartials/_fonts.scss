@@ -1,0 +1,54 @@
+@use "sass:math";
+
+@function calcRem($px) {
+	@return math.div($px, 16px) * 1rem;
+}
+
+@mixin font-mobile() {
+	font-size: calcRem(12px);
+	line-height: calcRem(16px);
+	h2 {
+		font-size: calcRem(24px);
+		line-height: calcRem(32px);
+	}
+	h3 {
+		font-size: calcRem(14px);
+		line-height: calcRem(20px);
+	}
+	button {
+		font-size: calcRem(14px);
+		line-height: calcRem(20px);
+	}
+}
+@mixin font-tablet() {
+	font-size: calcRem(14px);
+	line-height: calcRem(20px);
+	h2 {
+		font-size: calcRem(28px);
+		line-height: calcRem(36px);
+	}
+	h3 {
+		font-size: calcRem(16px);
+		line-height: calcRem(24px);
+	}
+	button {
+		font-size: calcRem(14px);
+		line-height: calcRem(20px);
+	}
+}
+@mixin font-desktop() {
+	font-size: calcRem(16px);
+	line-height: calcRem(24px);
+	h2 {
+		font-size: calcRem(32px);
+		line-height: calcRem(40px);
+	}
+	h3 {
+		font-size: calcRem(22px);
+		line-height: calcRem(28px);
+	}
+	button {
+		font-size: calcRem(14px);
+		line-height: calcRem(20px);
+	}
+}
