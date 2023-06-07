@@ -1,6 +1,7 @@
 import Image, {ImageProps} from "next/image";
 import React, {useState} from "react";
 import styles from "./About.module.scss";
+import Button from "../Button/Button";
 
 type Interest = string | Array<Interest>;
 type Skill = {Icon: any; text: string};
@@ -70,8 +71,12 @@ function About({description, interests, skillIconSources, image: {src, alt}, cen
 				<div className={styles.divider}></div>
 				<div className={collapsed ? styles.collapsed : styles.expanded}>{descriptionText}</div>
 				<div className={styles.buttonWrapper}>
-					<button onClick={() => setCollapsed(!collapsed)}>{collapsed ? "Show more" : "Show less"}</button>
-					<button onClick={scrollTo}>Contact</button>
+					<Button style="outlined" onClick={() => setCollapsed(!collapsed)}>
+						{collapsed ? "Show more" : "Show less"}
+					</Button>
+					<Button style="filled" onClick={scrollTo}>
+						Contact
+					</Button>
 				</div>
 			</section>
 
