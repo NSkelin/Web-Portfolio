@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styles from "./Landing.module.css";
 import Image from "next/image";
+import Button from "../Button/Button";
 
 function Landing({imageSrc, title, subtitle, centerToRef}) {
 	function scrollTo() {
@@ -24,9 +25,9 @@ function Landing({imageSrc, title, subtitle, centerToRef}) {
 				</div>
 			</div>
 
-			<button className={styles.button} onClick={scrollTo}>
+			<Button style={"fab"} onClick={scrollTo}>
 				Take a look! <span className="material-symbols-outlined">arrow_downward</span>
-			</button>
+			</Button>
 		</header>
 	);
 }
