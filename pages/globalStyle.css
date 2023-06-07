@@ -53,41 +53,6 @@ li:not(:last-child) {
 p {
     margin: 0;
 }
-button {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    color: var(--buttonColor);
-    font-size: 1.5rem;
-    font-family: Aleo, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-        Helvetica Neue, sans-serif;
-    border: none;
-    background: var(--buttonBg);
-    padding: 10px 15px;
-    position: relative;
-    border-radius: 10px;
-}
-button:hover {
-    background: var(--buttonBgHover);
-    cursor: pointer;
-}
-button:active {
-    background: var(--buttonBgActive);
-}
-button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 10px;
-    border: 3px solid transparent;
-    
-    background: var(--buttonBorder);
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-}
 a {
     color: inherit;
     text-decoration: none;
