@@ -27,6 +27,7 @@
 }
 .fab {
 	background: var(--buttonBg);
+	padding: 20px 30px;
 	&:hover {
 		background: var(--buttonBgHover);
 	}
