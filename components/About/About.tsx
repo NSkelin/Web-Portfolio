@@ -1,7 +1,6 @@
+import Image, {ImageProps} from "next/image";
 import React, {useState} from "react";
 import styles from "./About.module.scss";
-import Image from "next/image";
-import {ImageProps} from "next/image";
 
 type Interest = string | Array<Interest>;
 type Skill = {Icon: any; text: string};
