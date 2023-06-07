@@ -2,6 +2,7 @@ import Image, {ImageProps} from "next/image";
 import React, {useState} from "react";
 import styles from "./About.module.scss";
 import Button from "../Button/Button";
+import CollapsibleArea from "../CollapsibleArea/CollapsibleArea";
 
 type Interest = string | Array<Interest>;
 type Skill = {Icon: any; text: string};
@@ -69,10 +70,7 @@ function About({description, interests, skillIconSources, image: {src, alt}, cen
 				</div>
 				<h2>{"About"}</h2>
 				<div className={styles.divider}></div>
-				<div className={collapsed ? styles.collapsed : styles.expanded}>
-					<div className={styles.foreground}></div>
-					{descriptionText}
-				</div>
+				<CollapsibleArea collapsed={collapsed}>{descriptionText}</CollapsibleArea>
 				<div className={styles.buttonWrapper}>
 					<Button style="outlined" onClick={() => setCollapsed(!collapsed)}>
 						{collapsed ? "Show more" : "Show less"}
