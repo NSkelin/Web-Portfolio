@@ -69,45 +69,8 @@ swiper-slide {
 	width: 100%;
 }
 
-/* tablet */
-@media only screen and (min-width: 426px) and (max-width: 960px) {
-	button {
-		font-size: 1.9rem;
-		padding: 20px 30px;
-		border-radius: 10px;
-	}
-	h1 {
-		font-size: 3rem;
-	}
-	h2 {
-		font-size: 2.7rem;
-	}
-	h3 {
-		font-size: 2.4rem;
-	}
-	h4 {
-		font-size: 1.95rem;
-	}
-}
 /* desktop */
 @media only screen and (min-width: 961px) {
-	h1 {
-		font-size: calc(1rem * 57 / 16);
-	}
-	h2 {
-		font-size: calc(1rem * 54 / 16);
-	}
-	h3 {
-		font-size: calc(1rem * 37 / 16);
-	}
-	h4 {
-		font-size: calc(1rem * 24 / 16);
-	}
-	button {
-		font-size: 1.9rem;
-		padding: 20px 30px;
-		border-radius: 10px;
-	}
 	swiper-container {
 		padding: 40px 60px;
 	}
