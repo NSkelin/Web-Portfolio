@@ -1,12 +1,14 @@
 .stateLayer,
 .fab,
 .filled,
-.outlined {
+.outlined,
+.iconButton {
 	border-radius: 10px;
 }
 .fab,
 .filled,
-.outlined {
+.outlined,
+.iconButton {
 	display: flex;
 	align-items: center;
 	gap: 8px;
@@ -60,6 +62,9 @@
 	.stateLayer:active {
 		background-color: rgba(255, 255, 255, 0.12);
 	}
+	.icon {
+		padding: 10px;
+	}
 }
 .outlined {
 	border: 1px solid #90909a;
@@ -69,5 +74,17 @@
 	}
 	.stateLayer:active {
 		background-color: rgba(103, 80, 164, 0.12);
+	}
+}
+.iconButton {
+	padding: 10px;
+
+	background: #b8c4ff;
+	color: #002584;
+	.stateLayer:hover {
+		background-color: rgba(255, 255, 255, 0.08);
+	}
+	.stateLayer:active {
+		background-color: rgba(255, 255, 255, 0.12);
 	}
 }
