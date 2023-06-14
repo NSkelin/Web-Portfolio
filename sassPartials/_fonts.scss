@@ -39,10 +39,6 @@
 		font-size: calcRem(16px);
 		line-height: calcRem(24px);
 	}
-	button {
-		font-size: calcRem(14px);
-		line-height: calcRem(20px);
-	}
 }
 @mixin font-desktop() {
 	font-size: calcRem(16px);
@@ -58,9 +54,5 @@
 	h3 {
 		font-size: calcRem(22px);
 		line-height: calcRem(28px);
-	}
-	button {
-		font-size: calcRem(14px);
-		line-height: calcRem(20px);
 	}
 }
