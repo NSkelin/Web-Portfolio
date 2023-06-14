@@ -1,5 +1,9 @@
 .expanded,
 .collapsed {
+	position: relative;
+	overflow: hidden;
+	transition: height 1s;
+	clip-path: inset(0px);
 	p {
 		margin: 5px 0;
 		&:last-child {
@@ -16,16 +20,23 @@
 	}
 }
 .expanded {
-	@media only screen and (min-width: 905px) {
-		overflow: hidden;
+	@media only screen and (min-width: 601px) and (max-width: 904px) {
+		overflow: visible;
+	}
+	.foreground {
+		transition-property: opacity;
+		transition-delay: 0.5s;
+		transition-duration: 0.5s;
+		opacity: 0;
 	}
 }
 .collapsed {
-	position: relative;
-	overflow: hidden;
 	height: 125px;
 	@media only screen and (min-width: 601px) {
 		height: calc(215px - 36px - 20px); // heights: pfp, h2(about), divider
+	}
+	@media only screen and (min-width: 601px) and (max-width: 904px) {
+		overflow: visible;
 	}
 	@media only screen and (min-width: 905px) {
 		height: calc(290px - 40px - 20px - 52px); // heights: pfp, h2(about), divider, button wrapper
