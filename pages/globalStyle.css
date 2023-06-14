@@ -45,13 +45,6 @@ ul {
 }
 li {
     list-style-type: none;
-    display: inline;
-}
-li:not(:last-child) { 
-    margin-right: 5px;  
-}
-p {
-    margin: 0;
 }
 a {
     color: inherit;
