@@ -28,6 +28,8 @@
 .fab {
 	background: var(--buttonBg);
 	padding: 20px 30px;
+	font-size: 1.9rem;
+	line-height: 2.25rem;
 	&:hover {
 		background: var(--buttonBgHover);
 	}
