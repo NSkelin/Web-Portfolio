@@ -2,11 +2,26 @@ import React, {MouseEventHandler, ReactNode} from "react";
 import styles from "./Button.module.scss";
 
 type ButtonProps = {
+	/**
+	 * React children prop - lowercase "c".
+	 */
 	children?: ReactNode;
+	/**
+	 * Control which style the button will use.
+	 */
 	style: ButtonStyles;
+	/**
+	 * A function to handle the button onClick event firing
+	 */
 	onClick: MouseEventHandler<HTMLButtonElement>;
 };
+
 type ButtonStyles = "fab" | "filled" | "outlined" | "iconButton";
+
+/**
+ * A custom button loosely following googles material design docs.
+ * Its the default HTML button element with an included "state layer" div for styling purposes.
+ */
 function Button({children, style, onClick}: ButtonProps) {
 	return (
 		<button onClick={onClick} className={styles[style]}>
