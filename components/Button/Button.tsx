@@ -6,7 +6,7 @@ type ButtonProps = {
 	style: ButtonStyles;
 	onClick: MouseEventHandler<HTMLButtonElement>;
 };
-type ButtonStyles = "fab" | "filled" | "outlined";
+type ButtonStyles = "fab" | "filled" | "outlined" | "iconButton";
 function Button({children, style, onClick}: ButtonProps) {
 	return (
 		<button onClick={onClick} className={styles[style]}>
