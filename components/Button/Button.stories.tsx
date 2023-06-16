@@ -1,5 +1,4 @@
 import {Meta, StoryObj} from "@storybook/react";
-import "../../pages/globalStyle.scss";
 import Button from "./Button";
 
 const meta: Meta<typeof Button> = {
