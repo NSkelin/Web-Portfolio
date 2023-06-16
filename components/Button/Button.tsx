@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 
 type ButtonProps = {
 	/**
-	 * React children prop - lowercase "c".
+	 * The children to be rendered inside the button, such as text and icons. React children prop - lowercase "c".
 	 */
 	children?: ReactNode;
 	/**
