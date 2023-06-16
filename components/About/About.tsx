@@ -4,16 +4,34 @@ import styles from "./About.module.scss";
 import Button from "../Button/Button";
 import CollapsibleArea from "../CollapsibleArea/CollapsibleArea";
 
-type Interest = string | Array<Interest>;
-type Skill = {Icon: any; text: string};
+export type Interest = string | Array<Interest>;
+export type Skill = {Icon: any; text: string};
 export type AboutProps = {
+	/**
+	 * A description of the author; "About me". Converts each string into its own paragraph. Ex: \<p>string\</p>.
+	 */
 	description: string[];
+	/**
+	 * A recursive array of strings or array of strings. Each nested array of strings will be indented relative to its nest level.
+	 */
 	interests: Interest[];
+	/**
+	 * Populates the skills section with an icon and text. Takes an array of an array of skills where the first array is the row,
+	 * and the second array is the skills that go in that row.
+	 */
 	skillIconSources: Skill[][];
+	/**
+	 * An object that takes the "src" and "alt" props for a Nextjs Image component.
+	 */
 	image: ImageProps;
+	/**
+	 * A React "useRef" hook object with a DOM node reference. When the "contact" button is clicked, the browser will center itself on this node.
+	 */
 	centerToRef?: React.MutableRefObject<null | HTMLElement>;
 };
-
+/**
+ * converts an array of interests into a JSX unorder list. Each nested interest array is added as a ul instead of li.
+ */
 function createInterestList(interests: Interest[]) {
 	const interestList = interests.map((interest, index) => {
 		if (Array.isArray(interest)) {
@@ -25,7 +43,9 @@ function createInterestList(interests: Interest[]) {
 
 	return <>{interestList}</>;
 }
-
+/**
+ * Converts the skill[][] into rows of skills.
+ */
 function createSkillRows(skillRowsData: Skill[][]) {
 	const skillRowsArr = skillRowsData.map((arr, index) => {
 		return (
@@ -36,7 +56,9 @@ function createSkillRows(skillRowsData: Skill[][]) {
 	});
 	return <>{skillRowsArr}</>;
 }
-
+/**
+ * Turns the skill array into JSX list items.
+ */
 function createSkillIcons(skills: Skill[]) {
 	const skillIcons = skills.map(({Icon, text}, index) => {
 		return (
@@ -48,7 +70,9 @@ function createSkillIcons(skills: Skill[]) {
 	});
 	return <>{skillIcons}</>;
 }
-
+/**
+ * Fully fledged About section where you can write a description of yourself, show an image, your skills, and your interests.
+ */
 function About({description, interests, skillIconSources, image: {src, alt}, centerToRef}: AboutProps) {
 	const [collapsed, setCollapsed] = useState(true);
 
@@ -56,6 +80,9 @@ function About({description, interests, skillIconSources, image: {src, alt}, cen
 	const skillIcons = createSkillRows(skillIconSources);
 	const descriptionText = description.map((paragraph, index) => <p key={index}>{paragraph}</p>);
 
+	/**
+	 * Centers the browsers view around the "centerToRef" prop.
+	 */
 	function scrollTo() {
 		if (centerToRef?.current == null) return;
 		centerToRef.current.scrollIntoView({behavior: "smooth", block: "center"});
