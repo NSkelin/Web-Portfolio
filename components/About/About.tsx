@@ -57,8 +57,7 @@ function About({description, interests, skillIconSources, image: {src, alt}, cen
 	const descriptionText = description.map((paragraph, index) => <p key={index}>{paragraph}</p>);
 
 	function scrollTo() {
-		if (centerToRef === undefined) return;
-		if (centerToRef.current === null) return;
+		if (centerToRef?.current == null) return;
 		centerToRef.current.scrollIntoView({behavior: "smooth", block: "center"});
 	}
 
