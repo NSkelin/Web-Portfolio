@@ -58,11 +58,6 @@
     overflow: hidden;
     outline: 3px solid #7E7E7E;
 }
-.button {
-    z-index: 1;
-    margin: 20px 0;
-}
-
 
 /* tablet */
 @media only screen and (min-width: 426px) and (max-width: 960px) {

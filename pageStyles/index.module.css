@@ -13,22 +13,6 @@
     align-items: center;
     width: 100%;
 }
-
-.about {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #184467;
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-/*-----------------*/
-.aboutText {
-    font-size: 18px;
-}
-/*-----------------*/
 .footer {
     width: 100%;
     background-color: #3D4055;
@@ -37,27 +21,16 @@
     align-items: center;
     padding: 150px 0 150px 0;
 }
-
 @media only screen and (min-width: 430px) and (max-width: 960px) {
-    .aboutText {
-        font-size: 24px;
-    }
     .footerText {
         width: 50%;
     }
 }
-
 @media only screen and (min-width: 961px) {
     .container {
         width: 100%;
     }
     .footerText {
         width: 33%;
-    }
-    .aboutText {
-        font-size: 36px;
-    }
-    .about {
-        padding: 0 60px 0 60px;
     }
 }
