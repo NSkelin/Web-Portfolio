@@ -1,7 +1,8 @@
 import {HTML5, CSS3, JavaScript, React, Next, Git, NodeMark, MySQLMark} from "../public/icons";
 import pfp from "../public/pfp2.jpg";
+import type {AboutProps} from "../components/About/About";
 
-const skillData = {
+const skillData: AboutProps = {
 	description: [
 		"Hi, I'm Nick, a creative and passionate full stack web developer who graduated from BCIT with a diploma in Computer Science. \
 	With one year of experience under my belt, I'm excited to continue developing my skills and building innovative websites that meet user needs.",
@@ -20,7 +21,7 @@ const skillData = {
 		alt: "Picture of the author",
 	},
 
-	skills: [
+	skillIconSources: [
 		[
 			{Icon: HTML5, text: "HTML 5"},
 			{Icon: CSS3, text: "CSS3"},

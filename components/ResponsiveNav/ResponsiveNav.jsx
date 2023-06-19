@@ -1,6 +1,7 @@
 import React, {useState, useRef, useEffect} from "react";
 import PropTypes from "prop-types";
 import styles from "./ResponsiveNav.module.css";
+import Button from "../Button/Button";
 
 function ResponsiveNav({links}) {
 	const [menuIcon, setMenuIcon] = useState("menu");
@@ -41,10 +42,12 @@ function ResponsiveNav({links}) {
 	return (
 		<>
 			<nav className={styles.nav} ref={navRef}>
-				<button className={styles.hamburgerButton} onClick={toggleMenu}>
-					<span className="material-symbols-outlined">{menuIcon}</span>
-				</button>
-				<ul id="test" className={styles.navList} style={{display: navDisplay}}>
+				<div className={styles.hamburgerButton}>
+					<Button style="iconButton" onClick={toggleMenu}>
+						<span className="material-symbols-outlined">{menuIcon}</span>
+					</Button>
+				</div>
+				<ul className={styles.navList} style={{display: navDisplay}}>
 					{list}
 				</ul>
 			</nav>

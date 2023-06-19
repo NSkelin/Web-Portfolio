@@ -35,3 +35,6 @@ yarn-error.log*
 
 # ide plugin
 .fttemplates
+
+# other
+stories

@@ -6,10 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
     "next": "^13.0.2",
     "nodemailer": "^6.8.0",
     "prop-types": "^15.8.1",
@@ -18,9 +19,22 @@
     "swiper": "^9.3.1"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.0.20",
+    "@storybook/addon-interactions": "^7.0.20",
+    "@storybook/addon-links": "^7.0.20",
+    "@storybook/blocks": "^7.0.20",
+    "@storybook/nextjs": "^7.0.20",
+    "@storybook/react": "^7.0.20",
+    "@storybook/testing-library": "^0.1.0",
     "@svgr/webpack": "^8.0.1",
+    "@types/node": "^20.2.4",
+    "@types/react": "^18.2.7",
     "eslint": "^8.27.0",
     "eslint-config-next": "^13.0.2",
-    "prettier": "^2.4.1"
+    "eslint-plugin-storybook": "^0.6.12",
+    "prettier": "^2.4.1",
+    "sass": "^1.62.1",
+    "storybook": "^7.0.20",
+    "typescript": "^5.0.4"
   }
 }
