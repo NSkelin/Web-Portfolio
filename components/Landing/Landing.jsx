@@ -17,7 +17,7 @@ function Landing({imageSrc, title, subtitle, centerToRef}) {
 
 			<div className={styles.main}>
 				<div className={styles.pfp}>
-					<Image fill={true} src={imageSrc} alt="Picture of the author" />
+					<Image fill={true} src={imageSrc} alt="Picture of the author" priority={true} />
 				</div>
 				<div className={styles.dialogue}>
 					<h1>{title}</h1>
