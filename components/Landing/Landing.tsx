@@ -1,12 +1,17 @@
+import Image, {ImageProps} from "next/image";
 import React from "react";
-import PropTypes from "prop-types";
-import styles from "./Landing.module.scss";
-import Image from "next/image";
 import Button from "../Button/Button";
+import styles from "./Landing.module.scss";
 
-function Landing({imageSrc, title, subtitle, centerToRef}) {
+export type LandingProps = {
+	imageSrc: ImageProps["src"];
+	title: string;
+	subtitle: string;
+	centerToRef?: React.MutableRefObject<null | HTMLElement>;
+};
+function Landing({imageSrc, title, subtitle, centerToRef}: LandingProps) {
 	function scrollTo() {
-		if (centerToRef.current === null) return;
+		if (centerToRef?.current == null) return;
 		centerToRef.current.scrollIntoView({behavior: "smooth", block: "center"});
 	}
 	return (
@@ -31,16 +36,5 @@ function Landing({imageSrc, title, subtitle, centerToRef}) {
 		</header>
 	);
 }
-
-Landing.defaultProps = {
-	centerToRef: null,
-};
-
-Landing.propTypes = {
-	imageSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-	title: PropTypes.string,
-	subtitle: PropTypes.string,
-	centerToRef: PropTypes.object,
-};
 
 export default Landing;
