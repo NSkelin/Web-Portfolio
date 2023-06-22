@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./Landing.module.css";
+import styles from "./Landing.module.scss";
 import Image from "next/image";
 import Button from "../Button/Button";
 
