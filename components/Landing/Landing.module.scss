@@ -8,25 +8,50 @@
 	padding: 0px 16px;
 	width: 100%;
 	min-height: 100vh;
+	@media only screen and (min-width: 905px) {
+		padding: 70px 32px;
+	}
 }
-
 .video {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
-
 .main {
 	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	width: 100%;
 	gap: 10px;
+	@media only screen and (min-width: 600px) and (max-width: 904px) {
+		gap: 30px;
+	}
+	@media only screen and (min-width: 905px) {
+		flex-direction: row;
+		justify-content: center;
+		gap: 50px;
+	}
 }
-
+.pfp {
+	position: relative;
+	height: 230px;
+	width: 230px;
+	padding: 5px;
+	border-radius: 500px;
+	overflow: hidden;
+	outline: 3px solid #7e7e7e;
+	@media only screen and (min-width: 600px) and (max-width: 904px) {
+		height: 300px;
+		width: 300px;
+	}
+	@media only screen and (min-width: 905px) {
+		order: 2;
+		height: 300px;
+		width: 300px;
+	}
+}
 .dialogue {
 	display: flex;
 	flex-direction: column;
@@ -41,63 +66,26 @@
 	border: 3px solid #7e7e7e;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
-}
-
-.subtitle {
-	padding-left: 10px;
-	font-size: 1.5rem;
-	margin: 0;
-}
-
-.pfp {
-	position: relative;
-	height: 230px;
-	width: 230px;
-	padding: 5px;
-	border-radius: 500px;
-	overflow: hidden;
-	outline: 3px solid #7e7e7e;
-}
-
-/* tablet */
-@media only screen and (min-width: 600px) and (max-width: 904px) {
-	.main {
-		gap: 30px;
+	.subtitle {
+		padding-left: 10px;
+		font-size: 1.5rem;
+		margin: 0;
 	}
-	.dialogue {
+
+	@media only screen and (min-width: 600px) and (max-width: 904px) {
 		padding: 35px 50px;
 		gap: 25px;
 		max-width: 683px;
 	}
-	.pfp {
-		height: 300px;
-		width: 300px;
-	}
-}
-/* desktop */
-@media only screen and (min-width: 905px) {
-	.landing {
-		padding: 70px 32px;
-	}
-	.main {
-		flex-direction: row;
-		justify-content: center;
-		gap: 50px;
-	}
-	.pfp {
-		order: 2;
-		height: 300px;
-		width: 300px;
-	}
-	.dialogue {
+	@media only screen and (min-width: 905px) {
 		padding: 35px 50px;
 		gap: 25px;
 		max-width: 683px;
 		order: 1;
 		flex: 1;
-	}
-	.subtitle {
-		padding-left: 15px;
-		font-size: 2.1rem;
+		.subtitle {
+			padding-left: 15px;
+			font-size: 2.1rem;
+		}
 	}
 }
