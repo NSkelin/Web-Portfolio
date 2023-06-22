@@ -4,9 +4,21 @@ import Button from "../Button/Button";
 import styles from "./Landing.module.scss";
 
 export type LandingProps = {
+	/**
+	 * The source for the profile picture.
+	 */
 	imageSrc: ImageProps["src"];
+	/**
+	 * The title / main hook.
+	 */
 	title: string;
+	/**
+	 * The subtitle to go with the title.
+	 */
 	subtitle: string;
+	/**
+	 * A React "useRef" hook object with a DOM node reference. When the button is clicked, the browser will center itself on this node.
+	 */
 	centerToRef?: React.MutableRefObject<null | HTMLElement>;
 };
 function Landing({imageSrc, title, subtitle, centerToRef}: LandingProps) {
