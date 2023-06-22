@@ -2,6 +2,7 @@ import Image, {ImageProps} from "next/image";
 import React from "react";
 import Button from "../Button/Button";
 import styles from "./Landing.module.scss";
+import {ArrowDownward} from "../../public/icons";
 
 export type LandingProps = {
 	/**
@@ -43,7 +44,8 @@ function Landing({imageSrc, title, subtitle, centerToRef}: LandingProps) {
 			</div>
 
 			<Button style={"fab"} onClick={scrollTo}>
-				Take a look! <span className="material-symbols-outlined">arrow_downward</span>
+				Take a look!
+				<ArrowDownward className={styles.materialSymbol} />
 			</Button>
 		</header>
 	);
