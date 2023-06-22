@@ -60,7 +60,7 @@
 }
 
 /* tablet */
-@media only screen and (min-width: 426px) and (max-width: 960px) {
+@media only screen and (min-width: 600px) and (max-width: 904px) {
 	.main {
 		gap: 30px;
 	}
@@ -75,7 +75,7 @@
 	}
 }
 /* desktop */
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 905px) {
 	.landing {
 		padding: 70px 32px;
 	}
