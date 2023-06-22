@@ -28,7 +28,7 @@ function Landing({imageSrc, title, subtitle, centerToRef}: LandingProps) {
 	}
 	return (
 		<header className={styles.landing}>
-			<video className={styles.video} autoPlay loop muted>
+			<video className={styles.video} poster="stars preview.jpg" autoPlay loop muted>
 				<source src="stars.mp4" type="video/mp4"></source>
 			</video>
 
