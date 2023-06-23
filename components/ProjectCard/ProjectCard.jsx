@@ -5,6 +5,7 @@ import Image from "next/image";
 import {GithubMark} from "../../public/icons";
 import ResponsiveNav from "../ResponsiveNav/";
 import {register} from "swiper/element/bundle";
+import {OpenInNew} from "../../public/icons";
 
 register();
 
@@ -17,12 +18,14 @@ function ProjectCard({title, description, src, alt, source, live, example, skill
 	) : null;
 	const view = live ? (
 		<a className={styles.navItem} href={live}>
-			View<span className="material-symbols-outlined">open_in_new</span>
+			View
+			<OpenInNew className={styles.materialSymbol} />
 		</a>
 	) : null;
 	const demo = example ? (
 		<a className={styles.navItem} href={example}>
-			Demo<span className="material-symbols-outlined">open_in_new</span>
+			Demo
+			<OpenInNew className={styles.materialSymbol} />
 		</a>
 	) : null;
 

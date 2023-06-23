@@ -13,3 +13,7 @@ export {default as Discord} from "./discord-mark-blue.svg";
 export {default as Express} from "./express.svg";
 export {default as Jest} from "./jest.svg";
 export {default as MongoDB} from "./mongodb.svg";
+export {default as ArrowDownward} from "./arrow_downward.svg";
+export {default as MenuOpen} from "./menu_open.svg";
+export {default as Menu} from "./menu.svg";
+export {default as OpenInNew} from "./open_in_new.svg";
