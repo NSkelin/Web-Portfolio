@@ -8,5 +8,13 @@
 		"arrow-spacing": ["error", {"before": true, "after": true}],
 		"no-trailing-spaces": ["error", {"skipBlankLines": false, "ignoreComments": false}],
 		"space-before-blocks": ["error", "always"]
-	}
+	},
+	"overrides": [
+		{
+			"files": ["*.ts", "*.tsx"],
+			"rules": {
+				"no-undef": "off"
+			}
+		}
+	]
 }
