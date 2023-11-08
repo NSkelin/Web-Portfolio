@@ -1,6 +1,12 @@
 import {Analytics} from "@vercel/analytics/react";
+import {Metadata} from "next";
 import {Aleo} from "next/font/google";
 import "./globalStyle.scss";
+
+export const metadata: Metadata = {
+	title: "Nicks Portfolio",
+	description: "My portfolio made and designed by me - Nick Skelin",
+};
 
 const aleo = Aleo({
 	subsets: ["latin"],
