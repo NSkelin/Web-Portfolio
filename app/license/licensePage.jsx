@@ -1,8 +1,6 @@
-import Head from "next/head";
-export default function License() {
+export default function LicensePage() {
 	return (
 		<div className="container">
-			<Head></Head>
 			<main>licensing goes here</main>
 			<footer></footer>
 		</div>
