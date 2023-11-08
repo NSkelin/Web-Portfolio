@@ -30,17 +30,14 @@ async function SendMessage(email, message) {
 	}
 }
 
-export default async function handler(req, res) {
-	if (req.method === "POST") {
-		if (req.body === null) {
-			res.status(400).send("Body cannot be null");
-		} else {
-			let body = JSON.parse(req.body);
-			let status = await SendMessage(body.email, body.message);
-			res.status(status).send();
-		}
+export async function POST(req) {
+	const body = await req.json();
+	if (req.body === null) {
+		return new Response("Body cannot be null", {
+			status: 400,
+		});
 	} else {
-		res.setHeader("Allow", "POST");
-		res.status(405).send();
+		let status = await SendMessage(body.email, body.message);
+		return new Response("", {status: status});
 	}
 }
