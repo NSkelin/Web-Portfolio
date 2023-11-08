@@ -1,9 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./AccentTitle.module.css";
 
-function AccentTitle({title, headingLevel}) {
-	const HTag = `h${headingLevel < 1 || headingLevel > 6 ? 1 : headingLevel}`;
+interface AccentTitleProps {
+	title: string;
+	headingLevel: number;
+}
+function AccentTitle({title = "Title", headingLevel = 2}: AccentTitleProps) {
+	const HTag = `h${headingLevel < 1 || headingLevel > 6 ? 1 : headingLevel}` as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 	return (
 		<div className={styles.container}>
 			<div className={styles.titleWrapper}>
@@ -14,15 +17,5 @@ function AccentTitle({title, headingLevel}) {
 		</div>
 	);
 }
-
-AccentTitle.defaultProps = {
-	title: "Title",
-	headingLevel: 2,
-};
-
-AccentTitle.propTypes = {
-	title: PropTypes.string,
-	headingLevel: PropTypes.number,
-};
 
 export default AccentTitle;
