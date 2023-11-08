@@ -1,5 +1,8 @@
-import LicensePage from "./licensePage";
-
 export default async function Page() {
-	return <LicensePage />;
+	return (
+		<div className="container">
+			<main>licensing goes here</main>
+			<footer></footer>
+		</div>
+	);
 }
