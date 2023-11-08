@@ -1,25 +1,19 @@
+"use client";
 import React, {useRef} from "react";
-import Head from "next/head";
+import {aboutData, landingData, projectCards, socialLinks} from "../componentData";
 import styles from "../pageStyles/index.module.css";
-import {socialLinks, aboutData, projectCards, landingData} from "../componentData";
 
-import Landing from "../components/Landing/";
-import Projects from "../components/Projects/";
-import About from "../components/About/";
-import Contact from "../components/Contact/";
-import AccentTitle from "../components/AccentTitle/";
+import About from "../components/About";
+import AccentTitle from "../components/AccentTitle";
+import Contact from "../components/Contact";
+import Landing from "../components/Landing";
+import Projects from "../components/Projects";
 
-export default function Index() {
+export default function MainPage() {
 	const projectsRef = useRef(null);
 	const footerRef = useRef(null);
 	return (
 		<div className={styles.page}>
-			<Head>
-				<title>Nicks Portfolio</title>
-				<meta name="description" content="My portfolio made and designed by me - Nick Skelin" />
-				<link rel="icon" href="/favicon.ico?v=2" />
-			</Head>
-
 			<Landing
 				imageSrc={landingData.image}
 				title={landingData.title}
