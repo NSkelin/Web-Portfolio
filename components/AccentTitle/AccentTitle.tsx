@@ -6,13 +6,13 @@ interface AccentTitleProps {
 	 *
 	 * Defaults to: Title
 	 */
-	title: string;
+	title?: string;
 	/**
 	 * The title is wrapped with a header (<h>) tag. This chooses the level for it.
 	 *
 	 * Defaults to: 2.
 	 */
-	headingLevel: number;
+	headingLevel?: number;
 }
 /**
  * Renders a title with a horizontal bar underneath for sectioning different types of content.
