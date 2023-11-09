@@ -59,18 +59,16 @@ function ResponsiveNav({links}: ResponsiveNavProps) {
 		menuIcon === "menu" ? <Menu className={styles.materialSymbol} /> : <MenuOpen className={styles.materialSymbol} />;
 
 	return (
-		<>
-			<nav className={styles.nav} ref={navRef}>
-				<div className={styles.hamburgerButton}>
-					<Button style="iconButton" onClick={toggleMenu}>
-						{icon}
-					</Button>
-				</div>
-				<ul className={styles.navList} style={{display: navDisplay}}>
-					{list}
-				</ul>
-			</nav>
-		</>
+		<nav className={styles.nav} ref={navRef}>
+			<div className={styles.hamburgerButton}>
+				<Button style="iconButton" onClick={toggleMenu}>
+					{icon}
+				</Button>
+			</div>
+			<ul className={styles.navList} style={{display: navDisplay}}>
+				{list}
+			</ul>
+		</nav>
 	);
 }
 
