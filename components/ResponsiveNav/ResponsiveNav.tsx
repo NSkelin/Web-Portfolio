@@ -38,7 +38,7 @@ function ResponsiveNav({links}: ResponsiveNavProps) {
 	}, [menuIcon]);
 
 	/**
-	 * Expands the navigation menu.
+	 * Toggles the navigation menu between expanded / collapsed.
 	 */
 	function toggleMenu() {
 		setMenuIcon(menuIcon === "menu" ? "menu_open" : "menu");
