@@ -23,7 +23,7 @@ interface ResponsiveNavProps {
  */
 function ResponsiveNav({links}: ResponsiveNavProps) {
 	const [menuState, setMenuState] = useState<"collapsed" | "expanded">("collapsed");
-	const [navDisplay, setNavDisplay] = useState("none");
+	const [navDisplay, setNavDisplay] = useState<"none" | "flex">("none");
 	const navRef = useRef<HTMLElement>(null);
 
 	// Collapses the navigation menu when the user clicks / taps outside the specified area.
