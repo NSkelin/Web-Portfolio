@@ -3,15 +3,18 @@ import {Menu, MenuOpen} from "../../public/icons";
 import Button from "../Button/Button";
 import styles from "./ResponsiveNav.module.css";
 
-function ResponsiveNav({links}) {
+interface ResponsiveNavProps {
+	links: React.JSX.Element[];
+}
+function ResponsiveNav({links}: ResponsiveNavProps) {
 	const [menuIcon, setMenuIcon] = useState("menu");
 	const [navDisplay, setNavDisplay] = useState("none");
-	const navRef = useRef(null);
+	const navRef = useRef<HTMLElement>(null);
 
 	// changes the menu icon to closed when a click happens outside of the nav element
 	useEffect(() => {
-		function handleClickOutside(event) {
-			if (navRef.current && !navRef.current.contains(event.target)) {
+		function handleClickOutside(event: MouseEvent) {
+			if (navRef.current && !navRef.current.contains(event.target as Node)) {
 				if (menuIcon != "menu") {
 					setMenuIcon("menu");
 					setNavDisplay("none");
@@ -57,13 +60,5 @@ function ResponsiveNav({links}) {
 		</>
 	);
 }
-
-ResponsiveNav.defaultProps = {
-	links: [],
-};
-
-ResponsiveNav.propTypes = {
-	links: PropTypes.array,
-};
 
 export default ResponsiveNav;
