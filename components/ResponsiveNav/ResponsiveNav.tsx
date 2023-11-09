@@ -3,6 +3,14 @@ import {Menu, MenuOpen} from "../../public/icons";
 import Button from "../Button/Button";
 import styles from "./ResponsiveNav.module.css";
 
+/**
+ * Icons for the different states of the navigation menu.
+ */
+const navIcons = {
+	expanded: <MenuOpen className={styles.materialSymbol} />,
+	collapsed: <Menu className={styles.materialSymbol} />,
+};
+
 interface ResponsiveNavProps {
 	/** The elements to display inside the navigation menu. */
 	links: React.JSX.Element[];
@@ -14,7 +22,7 @@ interface ResponsiveNavProps {
  * On large screens (desktop) the navigation is a horizontal bar.
  */
 function ResponsiveNav({links}: ResponsiveNavProps) {
-	const [menuIcon, setMenuIcon] = useState("menu");
+	const [menuState, setMenuState] = useState<"collapsed" | "expanded">("collapsed");
 	const [navDisplay, setNavDisplay] = useState("none");
 	const navRef = useRef<HTMLElement>(null);
 
@@ -23,8 +31,8 @@ function ResponsiveNav({links}: ResponsiveNavProps) {
 		// Close navigation menu.
 		function handleClickOutside(event: MouseEvent) {
 			if (navRef.current && !navRef.current.contains(event.target as Node)) {
-				if (menuIcon != "menu") {
-					setMenuIcon("menu");
+				if (menuState === "expanded") {
+					setMenuState("collapsed");
 					setNavDisplay("none");
 				}
 			}
@@ -35,13 +43,13 @@ function ResponsiveNav({links}: ResponsiveNavProps) {
 			// Unbind the event listener on clean up.
 			document.removeEventListener("mousedown", handleClickOutside);
 		};
-	}, [menuIcon]);
+	}, [menuState]);
 
 	/**
 	 * Toggles the navigation menu between expanded / collapsed.
 	 */
 	function toggleMenu() {
-		setMenuIcon(menuIcon === "menu" ? "menu_open" : "menu");
+		setMenuState(menuState === "collapsed" ? "expanded" : "collapsed");
 		setNavDisplay(navDisplay === "none" ? "flex" : "none");
 	}
 
@@ -54,15 +62,11 @@ function ResponsiveNav({links}: ResponsiveNavProps) {
 		);
 	});
 
-	// Sets the nav button icon based on the navs state (expanded / collapsed).
-	const icon =
-		menuIcon === "menu" ? <Menu className={styles.materialSymbol} /> : <MenuOpen className={styles.materialSymbol} />;
-
 	return (
 		<nav className={styles.nav} ref={navRef}>
 			<div className={styles.hamburgerButton}>
 				<Button style="iconButton" onClick={toggleMenu}>
-					{icon}
+					{navIcons[menuState]}
 				</Button>
 			</div>
 			<ul className={styles.navList} style={{display: navDisplay}}>
