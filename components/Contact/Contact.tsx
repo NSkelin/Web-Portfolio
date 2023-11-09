@@ -5,8 +5,12 @@ import {HyperLinkProps} from "../HyperLink/HyperLink";
 import styles from "./Contact.module.css";
 
 interface ContactProps {
+	/** The links that will be placed under the social links area. */
 	links: HyperLinkProps[];
 }
+/**
+ * Renders a contact section with social links list and a message form that sends a users message to your email.
+ */
 function Contact({links}: ContactProps) {
 	const linkElement = links.map(({Icon, text, href}, index) => {
 		return <HyperLink key={index} text={text} Icon={Icon} href={href} />;
