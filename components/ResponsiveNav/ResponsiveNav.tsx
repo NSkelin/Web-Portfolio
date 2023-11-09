@@ -1,8 +1,7 @@
-import React, {useState, useRef, useEffect} from "react";
-import PropTypes from "prop-types";
-import styles from "./ResponsiveNav.module.css";
-import Button from "../Button/Button";
+import React, {useEffect, useRef, useState} from "react";
 import {Menu, MenuOpen} from "../../public/icons";
+import Button from "../Button/Button";
+import styles from "./ResponsiveNav.module.css";
 
 function ResponsiveNav({links}) {
 	const [menuIcon, setMenuIcon] = useState("menu");
