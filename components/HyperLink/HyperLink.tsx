@@ -1,8 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React, {ComponentProps} from "react";
 import styles from "./HyperLink.module.css";
 
-function HyperLink({text, Icon, href}) {
+export interface HyperLinkProps {
+	text?: string;
+	Icon: React.ComponentType<ComponentProps<"svg">>;
+	href: string;
+}
+function HyperLink({text = "link", Icon, href}: HyperLinkProps) {
 	return (
 		<div className={styles.container}>
 			<a className={styles.link} href={href}>
@@ -12,15 +16,5 @@ function HyperLink({text, Icon, href}) {
 		</div>
 	);
 }
-
-HyperLink.defaultProps = {
-	text: "link",
-};
-
-HyperLink.propTypes = {
-	text: PropTypes.string,
-	href: PropTypes.string.isRequired,
-	icon: PropTypes.object,
-};
 
 export default HyperLink;
