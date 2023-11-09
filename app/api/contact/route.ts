@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-async function SendMessage(email, message) {
+async function SendMessage(email: string, message: string) {
 	let transporter = nodemailer.createTransport({
 		host: "smtp.gmail.com",
 		port: 465,
@@ -30,7 +30,7 @@ async function SendMessage(email, message) {
 	}
 }
 
-export async function POST(req) {
+export async function POST(req: Request) {
 	const body = await req.json();
 	if (req.body === null) {
 		return new Response("Body cannot be null", {
