@@ -1,10 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
-import styles from "./Contact.module.css";
-import HyperLink from "../HyperLink/";
 import ContactForm from "../ContactForm/";
+import HyperLink from "../HyperLink/";
+import {HyperLinkProps} from "../HyperLink/HyperLink";
+import styles from "./Contact.module.css";
 
-function Contact({links}) {
+interface ContactProps {
+	links: HyperLinkProps[];
+}
+function Contact({links}: ContactProps) {
 	const linkElement = links.map(({Icon, text, href}, index) => {
 		return <HyperLink key={index} text={text} Icon={Icon} href={href} />;
 	});
@@ -20,17 +23,5 @@ function Contact({links}) {
 		</section>
 	);
 }
-
-Contact.defaultProps = {};
-
-Contact.propTypes = {
-	links: PropTypes.arrayOf(
-		PropTypes.shape({
-			Icon: PropTypes.func,
-			text: PropTypes.string,
-			href: PropTypes.string,
-		})
-	).isRequired,
-};
 
 export default Contact;
