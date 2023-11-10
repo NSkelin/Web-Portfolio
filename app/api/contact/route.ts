@@ -45,13 +45,26 @@ async function SendMessage(email: string, message: string) {
  * Handles POST requests.
  */
 export async function POST(req: Request) {
-	const body = await req.json();
+	// Ensure a body object was sent.
 	if (req.body === null) {
 		return new Response("Body cannot be null", {
 			status: 400,
 		});
-	} else {
-		let status = await SendMessage(body.email, body.message);
-		return new Response("", {status: status});
 	}
+
+	// Get email and message from body.
+	const {email, message} = await req.json();
+	if (typeof email !== "string") {
+		return new Response("Email must be a string.", {
+			status: 400,
+		});
+	} else if (typeof message !== "string") {
+		return new Response("Message must be a string.", {
+			status: 400,
+		});
+	}
+
+	// Send the email.
+	let status = await SendMessage(email, message);
+	return new Response("", {status: status});
 }
