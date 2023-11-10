@@ -31,14 +31,7 @@ async function SendMessage(email: string, message: string) {
 	};
 
 	// Try to send the email.
-	try {
-		let mailInfo = await transporter.sendMail(mail);
-		console.log(mailInfo);
-		return 200;
-	} catch (err) {
-		console.log(err);
-		return 500;
-	}
+	await transporter.sendMail(mail);
 }
 
 /**
@@ -65,6 +58,10 @@ export async function POST(req: Request) {
 	}
 
 	// Send the email.
-	let status = await SendMessage(email, message);
-	return new Response("", {status: status});
+	try {
+		await SendMessage(email, message);
+		return new Response("", {status: 200});
+	} catch {
+		return new Response("", {status: 500});
+	}
 }
