@@ -98,10 +98,10 @@ function About({description, interests, skillIconSources, image: {src, alt}, cen
 				<div className={styles.divider}></div>
 				<CollapsibleArea collapsed={collapsed}>{descriptionText}</CollapsibleArea>
 				<div className={styles.buttonWrapper}>
-					<Button style="outlined" onClick={() => setCollapsed(!collapsed)}>
+					<Button buttonStyle="outlined" onClick={() => setCollapsed(!collapsed)}>
 						{collapsed ? "Show more" : "Show less"}
 					</Button>
-					<Button style="filled" onClick={scrollTo}>
+					<Button buttonStyle="filled" onClick={scrollTo}>
 						Contact
 					</Button>
 				</div>

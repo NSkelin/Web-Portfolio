@@ -43,7 +43,7 @@ function Landing({imageSrc, title, subtitle, centerToRef}: LandingProps) {
 				</div>
 			</div>
 
-			<Button style={"fab"} onClick={scrollTo}>
+			<Button buttonStyle={"fab"} onClick={scrollTo}>
 				Take a look!
 				<ArrowDownward className={styles.materialSymbol} />
 			</Button>

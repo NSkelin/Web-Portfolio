@@ -21,17 +21,17 @@ type Story = StoryObj<typeof Button>;
 
 export const FAB: Story = {
 	args: {
-		style: "fab",
+		buttonStyle: "fab",
 	},
 };
 export const Filled: Story = {
 	args: {
-		style: "filled",
+		buttonStyle: "filled",
 	},
 };
 export const Outlined: Story = {
 	args: {
-		style: "outlined",
+		buttonStyle: "outlined",
 	},
 	parameters: {
 		backgrounds: {
@@ -42,7 +42,7 @@ export const Outlined: Story = {
 };
 export const IconButton: Story = {
 	args: {
-		style: "iconButton",
+		buttonStyle: "iconButton",
 		children: <span className="material-symbols-outlined">menu</span>,
 	},
 };

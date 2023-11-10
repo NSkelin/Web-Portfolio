@@ -87,7 +87,7 @@ function ContactForm() {
 					<strong className={styles.errorMessage}>{messageError}</strong>
 				</div>
 				<div className={styles.submission}>
-					<Button style="filled" type="submit">
+					<Button buttonStyle="filled" type="submit">
 						Submit
 					</Button>
 					<strong className={summaryError === true ? styles.errorMessage : styles.successMessage}>

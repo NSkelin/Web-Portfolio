@@ -65,7 +65,7 @@ function ResponsiveNav({links}: ResponsiveNavProps) {
 	return (
 		<nav className={styles.nav} ref={navRef}>
 			<div className={styles.hamburgerButton}>
-				<Button style="iconButton" onClick={toggleMenu}>
+				<Button buttonStyle="iconButton" onClick={toggleMenu}>
 					{navIcons[menuState]}
 				</Button>
 			</div>
