@@ -79,7 +79,7 @@ function ContactForm() {
 				<div className={styles.inputWrapper}>
 					<textarea
 						className={messageIncorrect === true ? styles.textAreaError : styles.textArea}
-						rows="7"
+						rows={7}
 						placeholder="Your message goes here"
 						value={userMessage}
 						onChange={(e) => setUserMessage(e.target.value)}
