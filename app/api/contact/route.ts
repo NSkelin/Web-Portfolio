@@ -1,6 +1,16 @@
 import nodemailer from "nodemailer";
 
+/**
+ * Attempts to send an email TO and FROM the email address saved inside the env file. This means the email address will recieve emails from itself.
+ *
+ * The content of the email will be composed of the email address and message sent in.
+ *
+ * @param email The email address of the sender, so you can reply to them.
+ * @param message The message being sent.
+ * @returns 200 | 500 depending on if the message was sent correctly. 200 is success, 500 is failed.
+ */
 async function SendMessage(email: string, message: string) {
+	// Connect to the gmail server.
 	let transporter = nodemailer.createTransport({
 		host: "smtp.gmail.com",
 		port: 465,
@@ -11,8 +21,8 @@ async function SendMessage(email: string, message: string) {
 		},
 	});
 
+	// Construct the email.
 	let emailBody = "From: " + email + "\n" + "Message: " + message;
-
 	let mail = {
 		from: process.env.GMAIL_EMAIL,
 		subject: "Message sent from my portfolio.",
@@ -20,6 +30,7 @@ async function SendMessage(email: string, message: string) {
 		text: emailBody,
 	};
 
+	// Try to send the email.
 	try {
 		let mailInfo = await transporter.sendMail(mail);
 		console.log(mailInfo);
@@ -30,6 +41,9 @@ async function SendMessage(email: string, message: string) {
 	}
 }
 
+/**
+ * Handles POST requests.
+ */
 export async function POST(req: Request) {
 	const body = await req.json();
 	if (req.body === null) {
