@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import styles from "./ContactForm.module.css";
 import Button from "../Button/Button";
+import styles from "./ContactForm.module.css";
 
 function ContactForm() {
 	const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ function ContactForm() {
 	const [summaryMessage, setSummaryMessage] = useState("");
 	const [summaryError, setSummaryError] = useState(false);
 
-	async function handleSubmit(e) {
+	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		if (verifyInput() === false) return;
 
