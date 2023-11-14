@@ -1,6 +1,5 @@
-import Image from "next/image";
-import PropTypes from "prop-types";
-import React from "react";
+import Image, {ImageProps} from "next/image";
+import React, {ComponentProps} from "react";
 import {register} from "swiper/element/bundle";
 import {GithubMark, OpenInNew} from "../../public/icons";
 import ResponsiveNav from "../ResponsiveNav/";
@@ -8,7 +7,26 @@ import styles from "./ProjectCard.module.css";
 
 register();
 
-function ProjectCard({title, description, src, alt, source, live, example, skillIcons}) {
+interface ProjectCardProps {
+	title: string;
+	description: string[];
+	src: ImageProps["src"];
+	alt: ImageProps["alt"];
+	source?: string;
+	live?: string;
+	example?: string;
+	skillIcons: React.ComponentType<ComponentProps<"svg">>[];
+}
+function ProjectCard({
+	title = "Project title",
+	description = ["Project description"],
+	src,
+	alt,
+	source,
+	live,
+	example,
+	skillIcons,
+}: ProjectCardProps) {
 	const github = source ? (
 		<a className={styles.navItemGithub} href={source}>
 			Github
@@ -74,20 +92,5 @@ function ProjectCard({title, description, src, alt, source, live, example, skill
 		</article>
 	);
 }
-
-ProjectCard.defaultProps = {
-	title: "Project title",
-	description: "Project description",
-};
-
-ProjectCard.propTypes = {
-	title: PropTypes.string,
-	description: PropTypes.arrayOf(PropTypes.string),
-	src: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-	alt: PropTypes.string,
-	source: PropTypes.string,
-	live: PropTypes.string,
-	example: PropTypes.string,
-};
 
 export default ProjectCard;
