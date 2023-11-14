@@ -1,11 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styles from "./ProjectCard.module.css";
 import Image from "next/image";
-import {GithubMark} from "../../public/icons";
-import ResponsiveNav from "../ResponsiveNav/";
+import PropTypes from "prop-types";
+import React from "react";
 import {register} from "swiper/element/bundle";
-import {OpenInNew} from "../../public/icons";
+import {GithubMark, OpenInNew} from "../../public/icons";
+import ResponsiveNav from "../ResponsiveNav/";
+import styles from "./ProjectCard.module.css";
 
 register();
 
