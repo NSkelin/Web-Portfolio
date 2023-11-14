@@ -8,15 +8,26 @@ import styles from "./ProjectCard.module.css";
 register();
 
 interface ProjectCardProps {
+	/** The project title. */
 	title: string;
+	/** The description for the project. Each string in the array is consideres a paragraph. So each new item in the array falls under a new <p> tag. */
 	description: string[];
+	/** The source for the project display image. */
 	src: ImageProps["src"];
+	/** The alt property for the project display image. */
 	alt: ImageProps["alt"];
+	/** The URL to the source code. */
 	source?: string;
+	/** The URL to the live site. */
 	live?: string;
+	/** The URL to the demo site. */
 	example?: string;
+	/** Icons for all the technologies related to the project that will be displayed in the footer. */
 	skillIcons: React.ComponentType<ComponentProps<"svg">>[];
 }
+/**
+ * Renders a swipe-able project card with information on the project, links to project resources, and images.
+ */
 function ProjectCard({
 	title = "Project title",
 	description = ["Project description"],
@@ -27,18 +38,22 @@ function ProjectCard({
 	example,
 	skillIcons,
 }: ProjectCardProps) {
+	// Create links to specific sources for the project if they exist.
+	// Link to project github page.
 	const github = source ? (
 		<a className={styles.navItemGithub} href={source}>
 			Github
 			<GithubMark />
 		</a>
 	) : null;
+	// Link to projects live site.
 	const view = live ? (
 		<a className={styles.navItem} href={live}>
 			View
 			<OpenInNew className={styles.materialSymbol} />
 		</a>
 	) : null;
+	// Link to a site containing a demo version of the project.
 	const demo = example ? (
 		<a className={styles.navItem} href={example}>
 			Demo
@@ -46,12 +61,14 @@ function ProjectCard({
 		</a>
 	) : null;
 
+	// Creates the list items that contain icons that represent the technologies used in the project.
 	const skills = skillIcons.map((Icon, index) => (
 		<li className={styles.icon} key={index}>
 			<Icon />
 		</li>
 	));
 
+	// Creates the description text. Separates the string items in the array into new paragraphs.
 	const text = description.map((paragraph, index) => (
 		<p className={styles.p} key={index}>
 			{paragraph}
