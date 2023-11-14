@@ -1,7 +1,7 @@
 import React, {forwardRef} from "react";
 import {register} from "swiper/element/bundle";
 import AccentTitle from "../AccentTitle/AccentTitle";
-import ProjectCard from "../ProjectCard/ProjectCard.jsx";
+import ProjectCard from "../ProjectCard/ProjectCard";
 import styles from "./Projects.module.css";
 
 register();
