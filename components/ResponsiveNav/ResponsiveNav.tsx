@@ -13,7 +13,7 @@ const navIcons = {
 
 interface ResponsiveNavProps {
 	/** The elements to display inside the navigation menu. */
-	links: React.JSX.Element[];
+	links: (React.JSX.Element | null)[];
 }
 /**
  * Renders a navigation menu that changes depending on the screen width.
