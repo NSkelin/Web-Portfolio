@@ -2,6 +2,10 @@ import React, {useState} from "react";
 import Button from "../Button/Button";
 import styles from "./ContactForm.module.css";
 
+/**
+ * Renders a simple contact form that relays their message to a set email.
+ * The form accepts a users email address (for replying to) and their message.
+ */
 function ContactForm() {
 	const [email, setEmail] = useState("");
 	const [userMessage, setUserMessage] = useState("");
@@ -12,20 +16,31 @@ function ContactForm() {
 	const [summaryMessage, setSummaryMessage] = useState("");
 	const [summaryError, setSummaryError] = useState(false);
 
+	/**
+	 * Sends the form to the server for further processing.
+	 * Then updates the forms UI to notify the user of a success or error.
+	 *
+	 * @param e The event sent when the form is being submitted
+	 */
 	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-		e.preventDefault();
+		e.preventDefault(); // Stop form from auto submitting.
+
+		// Ensure form inputs are correct.
 		if (verifyInput() === false) return;
 
-		let body = {
+		// Construct the data obj to send to the server
+		const body = {
 			email: email,
 			message: userMessage,
 		};
 
-		let res = await fetch("/api/contact", {
+		// Call server
+		const res = await fetch("/api/contact", {
 			method: "POST",
 			body: JSON.stringify(body),
 		});
 
+		// Update UI depending on success / error.
 		if (res.status === 500) {
 			setSummaryMessage("Failed to send, please try again later.");
 			setSummaryError(true);
@@ -37,10 +52,16 @@ function ContactForm() {
 		}
 	}
 
+	/**
+	 * Verifies that the users input matches any constraints and updates the corresponding input with an error message if applicable.
+	 * Checks all inputs before returning a result.
+	 *
+	 * @returns True / false if the input is correct / incorrect.
+	 */
 	function verifyInput() {
 		let noError = true;
 
-		// check email input
+		// Check email input.
 		if (email.length === 0) {
 			setEmailIncorrect(true);
 			setEmailError("Email cannot be blank.");
@@ -50,7 +71,7 @@ function ContactForm() {
 			setEmailError("");
 		}
 
-		// check message input
+		// Check message input.
 		if (userMessage.length < 50) {
 			setMessageIncorrect(true);
 			setMessageError("Message must be more than 50 characters.");
