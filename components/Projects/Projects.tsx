@@ -1,12 +1,23 @@
 import React, {forwardRef} from "react";
 import {register} from "swiper/element/bundle";
 import AccentTitle from "../AccentTitle/AccentTitle";
-import ProjectCard from "../ProjectCard/ProjectCard";
+import ProjectCard, {ProjectCardProps} from "../ProjectCard/ProjectCard";
 import styles from "./Projects.module.css";
 
 register();
 
-const Projects = forwardRef(function Projects({cards}, ref) {
+interface ProjectsProps {
+	cards: {
+		title: ProjectCardProps["title"];
+		description: ProjectCardProps["description"];
+		image: ProjectCardProps["src"];
+		techIcons: ProjectCardProps["skillIcons"];
+		githubURL: ProjectCardProps["source"];
+		liveURL: ProjectCardProps["live"];
+		demoURL: ProjectCardProps["example"];
+	}[];
+}
+const Projects = forwardRef<HTMLElement, ProjectsProps>(function Projects({cards}, ref) {
 	const projectCards = cards.map(({title, description, image, techIcons, githubURL, liveURL, demoURL}, index) => (
 		<swiper-slide key={index}>
 			{" "}
@@ -40,9 +51,5 @@ const Projects = forwardRef(function Projects({cards}, ref) {
 		</section>
 	);
 });
-
-Projects.defaultProps = {};
-
-Projects.propTypes = {};
 
 export default Projects;
