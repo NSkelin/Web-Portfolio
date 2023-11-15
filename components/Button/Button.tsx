@@ -1,13 +1,17 @@
 import React from "react";
 import styles from "./Button.module.scss";
 
-/** Pre-made styles that loosely follow googles material design. */
+/**
+ * Pre-made styles that loosely follow googles material design.
+ */
 type ButtonStyles = "fab" | "filled" | "outlined" | "iconButton";
 
 interface ButtonProps
 	extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
 		React.AriaAttributes {
-	/** Control which style the button will use. */
+	/**
+	 * Controls which style the button will use.
+	 */
 	buttonStyle: ButtonStyles;
 }
 

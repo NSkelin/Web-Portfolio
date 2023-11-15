@@ -2,11 +2,17 @@ import React, {ComponentProps} from "react";
 import styles from "./HyperLink.module.css";
 
 export interface HyperLinkProps {
-	/** The text that will be a clickable hyperlink. */
+	/**
+	 * The text that will be a clickable hyperlink.
+	 */
 	text?: string;
-	/** The icon to place next to the hyperlink. */
+	/**
+	 * The icon to place next to the hyperlink.
+	 */
 	Icon: React.ComponentType<ComponentProps<"svg">>;
-	/** The destination clicking the link leads to. */
+	/**
+	 * The destination clicking the link leads to.
+	 */
 	href: string;
 }
 /**

@@ -5,7 +5,9 @@ import {HyperLinkProps} from "../HyperLink/HyperLink";
 import styles from "./Contact.module.css";
 
 interface ContactProps {
-	/** The links that will be placed under the social links area. */
+	/**
+	 * The links that will be placed under the social links area.
+	 */
 	links: HyperLinkProps[];
 }
 /**

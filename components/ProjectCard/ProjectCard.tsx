@@ -7,22 +7,38 @@ import ResponsiveNav from "../ResponsiveNav/";
 import styles from "./ProjectCard.module.css";
 
 export interface ProjectCardProps {
-	/** The project title. */
+	/**
+	 * The project title.
+	 */
 	title: string;
-	/** The description for the project. Each string in the array is consideres a paragraph. So each new item in the array falls under a new <p> tag. */
+	/**
+	 * The description for the project. Each string in the array is consideres a paragraph. So each new item in the array falls under a new <p> tag.
+	 */
 	description: string[];
-	/** The source for the project display image. */
+	/**
+	 * The source for the project display image.
+	 */
 	imageSrc: ImageProps["src"];
-	/** The alt property for the project display image. */
+	/**
+	 * The alt property for the project display image.
+	 */
 	imageAlt: ImageProps["alt"];
-	/** An optional URL that links to the projects source code repository on github. A github URL is expected and the icon will represent GitHub.  */
+	/**
+	 * An optional URL that links to the projects source code repository on github. A github URL is expected and the icon will represent GitHub.
+	 */
 	githubRepoURL?: string;
-	/** An optional URL that links to the live site for the project. */
+	/**
+	 * An optional URL that links to the live site for the project.
+	 */
 	liveSiteURL?: string;
-	/** An optional URL that links the users to a example / demo version of the site.
-	 * This can be used to allow users to view / experience the project without needing to create an account for example.*/
+	/**
+	 * An optional URL that links the users to a example / demo version of the site.
+	 * This can be used to allow users to view / experience the project without needing to create an account for example.
+	 */
 	demoSiteURL?: string;
-	/** Icons for all the technologies related to the project that will be displayed in the footer. */
+	/**
+	 * Icons for all the technologies related to the project that will be displayed in the footer.
+	 */
 	skillIcons: React.ComponentType<ComponentProps<"svg">>[];
 }
 /**

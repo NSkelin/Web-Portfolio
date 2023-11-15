@@ -10,7 +10,9 @@ import ProjectCard, {ProjectCardProps} from "../ProjectCard/ProjectCard";
 import styles from "./Projects.module.css";
 
 interface ProjectsProps {
-	/** A list of the data needed to make each project card. */
+	/**
+	 * A list of the data needed to make each project card.
+	 */
 	cards: ProjectCardProps[];
 }
 /**
