@@ -1,11 +1,10 @@
 import Image, {ImageProps} from "next/image";
 import React, {ComponentProps} from "react";
-import {register} from "swiper/element/bundle";
+import {FreeMode, Mousewheel, Scrollbar} from "swiper/modules";
+import {Swiper, SwiperSlide} from "swiper/react";
 import {GithubMark, OpenInNew} from "../../public/icons";
 import ResponsiveNav from "../ResponsiveNav/";
 import styles from "./ProjectCard.module.css";
-
-register();
 
 interface ProjectCardProps {
 	/** The project title. */
@@ -86,19 +85,20 @@ function ProjectCard({
 					<Image className={styles.image} src={src} fill={true} alt={alt} />
 				</div>
 				<div className={styles.details}>
-					<swiper-container
-						class={
+					<Swiper
+						modules={[Scrollbar, FreeMode, Mousewheel]}
+						className={
 							"swiper-initialized swiper-vertical swiper-free-mode swiper-backface-hidden " + styles.descriptionBox
 						}
-						scrollbar="true"
+						scrollbar={true}
 						direction="vertical"
-						slides-per-view="auto"
-						free-mode="true"
-						mousewheel="true"
-						touch-release-on-edges="true"
+						slidesPerView="auto"
+						freeMode={true}
+						mousewheel={true}
+						touchReleaseOnEdges={true}
 					>
-						<swiper-slide>{text}</swiper-slide>
-					</swiper-container>
+						<SwiperSlide>{text}</SwiperSlide>
+					</Swiper>
 					<aside className={styles.aside}>
 						<h4 className={styles.title}>Project Technologies</h4>
 						<div className={styles.line}></div>
