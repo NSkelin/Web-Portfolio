@@ -10,6 +10,7 @@ import ProjectCard, {ProjectCardProps} from "../ProjectCard/ProjectCard";
 import styles from "./Projects.module.css";
 
 interface ProjectsProps {
+	/** A list of the data needed to make each project card. */
 	cards: {
 		title: ProjectCardProps["title"];
 		description: ProjectCardProps["description"];
@@ -20,7 +21,11 @@ interface ProjectsProps {
 		demoURL: ProjectCardProps["example"];
 	}[];
 }
+/**
+ * Renders a section with a title and carousel of project cards.
+ */
 const Projects = forwardRef<HTMLElement, ProjectsProps>(function Projects({cards}, ref) {
+	// Create the carousel slides.
 	const projectCards = cards.map(({title, description, image, techIcons, githubURL, liveURL, demoURL}, index) => (
 		<SwiperSlide key={index}>
 			{" "}
@@ -36,6 +41,7 @@ const Projects = forwardRef<HTMLElement, ProjectsProps>(function Projects({cards
 			/>
 		</SwiperSlide>
 	));
+
 	return (
 		<section ref={ref} className={styles.projects}>
 			<AccentTitle title={"Projects"} />
