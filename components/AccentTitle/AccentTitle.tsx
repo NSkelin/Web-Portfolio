@@ -2,15 +2,16 @@ import React from "react";
 import styles from "./AccentTitle.module.css";
 
 interface AccentTitleProps {
-	/** The title for this section.
+	/**
+	 * The title for this section.
 	 *
-	 * Defaults to: Title
+	 * Default: "Title"
 	 */
 	title?: string;
 	/**
 	 * The title is wrapped with a header (<h>) tag. This chooses the level for it.
 	 *
-	 * Defaults to: 2.
+	 * Default: 2.
 	 */
 	headingLevel?: number;
 }
