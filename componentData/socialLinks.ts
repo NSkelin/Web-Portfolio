@@ -1,6 +1,7 @@
+import {HyperLinkProps} from "../components/HyperLink/HyperLink";
 import {GithubMark, LinkedIn} from "../public/icons";
 
-const socialLinks = [
+const socialLinks: HyperLinkProps[] = [
 	{
 		Icon: GithubMark,
 		text: "Github",
