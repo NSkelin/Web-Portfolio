@@ -12,15 +12,16 @@ export interface ProjectCardProps {
 	/** The description for the project. Each string in the array is consideres a paragraph. So each new item in the array falls under a new <p> tag. */
 	description: string[];
 	/** The source for the project display image. */
-	src: ImageProps["src"];
+	imageSrc: ImageProps["src"];
 	/** The alt property for the project display image. */
-	alt: ImageProps["alt"];
-	/** The URL to the source code. */
-	source?: string;
-	/** The URL to the live site. */
-	live?: string;
-	/** The URL to the demo site. */
-	example?: string;
+	imageAlt: ImageProps["alt"];
+	/** An optional URL that links to the projects source code repository on github. A github URL is expected and the icon will represent GitHub.  */
+	githubRepoURL?: string;
+	/** An optional URL that links to the live site for the project. */
+	liveSiteURL?: string;
+	/** An optional URL that links the users to a example / demo version of the site.
+	 * This can be used to allow users to view / experience the project without needing to create an account for example.*/
+	demoSiteURL?: string;
 	/** Icons for all the technologies related to the project that will be displayed in the footer. */
 	skillIcons: React.ComponentType<ComponentProps<"svg">>[];
 }
@@ -30,31 +31,31 @@ export interface ProjectCardProps {
 function ProjectCard({
 	title = "Project title",
 	description = ["Project description"],
-	src,
-	alt,
-	source,
-	live,
-	example,
+	imageSrc,
+	imageAlt,
+	githubRepoURL,
+	liveSiteURL,
+	demoSiteURL,
 	skillIcons,
 }: ProjectCardProps) {
 	// Create links to specific sources for the project if they exist.
 	// Link to project github page.
-	const github = source ? (
-		<a className={styles.navItemGithub} href={source}>
+	const github = githubRepoURL ? (
+		<a className={styles.navItemGithub} href={githubRepoURL}>
 			Github
 			<GithubMark />
 		</a>
 	) : null;
 	// Link to projects live site.
-	const view = live ? (
-		<a className={styles.navItem} href={live}>
+	const view = liveSiteURL ? (
+		<a className={styles.navItem} href={liveSiteURL}>
 			View
 			<OpenInNew className={styles.materialSymbol} />
 		</a>
 	) : null;
 	// Link to a site containing a demo version of the project.
-	const demo = example ? (
-		<a className={styles.navItem} href={example}>
+	const demo = demoSiteURL ? (
+		<a className={styles.navItem} href={demoSiteURL}>
 			Demo
 			<OpenInNew className={styles.materialSymbol} />
 		</a>
@@ -82,7 +83,7 @@ function ProjectCard({
 			</header>
 			<div className={styles.content}>
 				<div className={styles.imageWrapper}>
-					<Image className={styles.image} src={src} fill={true} alt={alt} />
+					<Image className={styles.image} src={imageSrc} fill={true} alt={imageAlt} />
 				</div>
 				<div className={styles.details}>
 					<Swiper
