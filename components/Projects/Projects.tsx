@@ -1,10 +1,13 @@
 import React, {forwardRef} from "react";
-import {register} from "swiper/element/bundle";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import {Navigation, Pagination} from "swiper/modules";
+import {Swiper, SwiperSlide} from "swiper/react";
 import AccentTitle from "../AccentTitle/AccentTitle";
 import ProjectCard, {ProjectCardProps} from "../ProjectCard/ProjectCard";
 import styles from "./Projects.module.css";
-
-register();
 
 interface ProjectsProps {
 	cards: {
@@ -19,7 +22,7 @@ interface ProjectsProps {
 }
 const Projects = forwardRef<HTMLElement, ProjectsProps>(function Projects({cards}, ref) {
 	const projectCards = cards.map(({title, description, image, techIcons, githubURL, liveURL, demoURL}, index) => (
-		<swiper-slide key={index}>
+		<SwiperSlide key={index}>
 			{" "}
 			<ProjectCard
 				title={title}
@@ -31,23 +34,24 @@ const Projects = forwardRef<HTMLElement, ProjectsProps>(function Projects({cards
 				src={image}
 				alt={"example image"}
 			/>
-		</swiper-slide>
+		</SwiperSlide>
 	));
 	return (
 		<section ref={ref} className={styles.projects}>
 			<AccentTitle title={"Projects"} />
 			<div className={styles.spacer}></div>
-			<swiper-container
-				class="swiper-initialized swiper-horizontal swiper-backface-hidden"
-				slides-per-view="1"
-				navigation="true"
-				pagination="true"
-				space-between="80"
-				long-swipes={false}
-				loop="true"
+			<Swiper
+				className={styles.swiper}
+				modules={[Navigation, Pagination]}
+				slidesPerView={1}
+				navigation={true}
+				pagination={true}
+				spaceBetween={80}
+				longSwipes={false}
+				loop={true}
 			>
 				{projectCards}
-			</swiper-container>
+			</Swiper>
 		</section>
 	);
 });
