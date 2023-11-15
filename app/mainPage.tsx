@@ -9,7 +9,11 @@ import Contact from "../components/Contact";
 import Landing from "../components/Landing";
 import Projects from "../components/Projects";
 
+/**
+ * Renders the main page of the portfolio. This includes a landing section, a projects section, an about section, and a contact section.
+ */
 export default function MainPage() {
+	// Refs used to scroll that section into view when the user clicks a call to action button such as "view more" or "contact".
 	const projectsRef = useRef(null);
 	const footerRef = useRef(null);
 	return (
