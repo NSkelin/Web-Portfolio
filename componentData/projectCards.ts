@@ -1,10 +1,11 @@
+import {ProjectCardProps} from "../components/ProjectCard/ProjectCard";
 import {AWS, CSS3, Discord, Express, HTML5, JavaScript, Jest, MongoDB, Next, NodeMark, React} from "../public/icons";
 import cartCompanion1 from "../public/projectImages/cartCompanion/CartCompanion-1.png";
 import d2StatMap1 from "../public/projectImages/d2StatMap/D2StatMap-1.png";
 import portfolio1 from "../public/projectImages/portfolio/portfolio-1.png";
 import spotBot1 from "../public/projectImages/spotBot/spotbot-1.png";
 
-const ProjectCards = [
+const ProjectCards: ProjectCardProps[] = [
 	{
 		title: "D2StatMap",
 		description: [
@@ -12,11 +13,16 @@ const ProjectCards = [
 			"After signing in, you’ll be shown a unique heat map for each stat type based off of all your armor. You can then tell which stats you’re currently\
 		lacking so you know what to prioritise in game.",
 		],
-		techIcons: [React, Next, JavaScript, HTML5, CSS3],
-		image: d2StatMap1,
-		githubURL: "https://github.com/NSkelin/d2statmap",
-		liveURL: "https://d2statmap.vercel.app",
-		demoURL: "https://d2statmap.vercel.app/demo",
+		skillIcons: [React, Next, JavaScript, HTML5, CSS3],
+		imageSrc: d2StatMap1,
+		imageAlt:
+			"The main page of the D2StatMap Project that users will interact with. It shows a heatmap for each stat type on armor\
+			(Mobility, Resilience, Recovery, Discipline, Intellect, Strength). It has buttons for filtering the armor by class\
+			(Warlock, Hunter, Titan) and slot type (helmet, legs, Arms, Chest, class item). And options that can be independantly\
+			enabled / disabled.",
+		githubRepoURL: "https://github.com/NSkelin/d2statmap",
+		liveSiteURL: "https://d2statmap.vercel.app",
+		demoSiteURL: "https://d2statmap.vercel.app/demo",
 	},
 	{
 		title: "Portfolio",
@@ -24,10 +30,13 @@ const ProjectCards = [
 			"This portfolio, the one your on, was designed and developed by me! It might seem redundant but I believe it to be a good example of what im capable of.",
 			"My personal favourite feature is the project cards your currently looking at.",
 		],
-		techIcons: [React, Next, JavaScript, HTML5, CSS3],
-		image: portfolio1,
-		githubURL: "https://github.com/NSkelin/Web-Portfolio",
-		liveURL: "https://www.nickskelin.ca",
+		skillIcons: [React, Next, JavaScript, HTML5, CSS3],
+		imageSrc: portfolio1,
+		imageAlt:
+			"The portfolios landing view. It includes a picture of the author, a call to action button to encourage users to continue downward,\
+			And a short introduction.",
+		githubRepoURL: "https://github.com/NSkelin/Web-Portfolio",
+		liveSiteURL: "https://www.nickskelin.ca",
 	},
 	{
 		title: "SpotBot",
@@ -35,9 +44,12 @@ const ProjectCards = [
 			"Spotbot is a Discord bot that integrates with the Discord API & and the Amazon Web Services API. It allows you and anyone else with access to\
 			the bot to automatically start EC2 instances in AWS with a simple command through Discord.",
 		],
-		techIcons: [JavaScript, AWS, Discord],
-		image: spotBot1,
-		githubURL: "https://github.com/NSkelin/spotbot",
+		skillIcons: [JavaScript, AWS, Discord],
+		imageSrc: spotBot1,
+		imageAlt:
+			"An example of a user calling the bots 'help start' command. The bot replies with useful information on how to use the command\
+			such as the full command, its parameters, examples, and a description.",
+		githubRepoURL: "https://github.com/NSkelin/spotbot",
 	},
 	{
 		title: "Cart Companion",
@@ -46,9 +58,12 @@ const ProjectCards = [
 			small groups of six to each create a unique project.",
 			"The goal was to gain experience in a work-like environment over the course of 4 weeks.",
 		],
-		techIcons: [MongoDB, NodeMark, JavaScript, Jest, Express, HTML5, CSS3],
-		image: cartCompanion1,
-		githubURL: "https://github.com/NSkelin/Quicklists",
+		skillIcons: [MongoDB, NodeMark, JavaScript, Jest, Express, HTML5, CSS3],
+		imageSrc: cartCompanion1,
+		imageAlt:
+			"A representation of the projects main logo. The logo is two lists mirrored towards each other with a cart behind\
+			each list mirrored away from each other, with the projects title 'Cart Compainion' in all uppercase underneath.",
+		githubRepoURL: "https://github.com/NSkelin/Quicklists",
 	},
 ];
 
