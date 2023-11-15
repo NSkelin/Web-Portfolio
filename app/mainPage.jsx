@@ -14,22 +14,11 @@ export default function MainPage() {
 	const footerRef = useRef(null);
 	return (
 		<div className={styles.page}>
-			<Landing
-				imageSrc={landingData.image}
-				title={landingData.title}
-				subtitle={landingData.subtitle}
-				centerToRef={projectsRef}
-			></Landing>
+			<Landing {...landingData} centerToRef={projectsRef}></Landing>
 
 			<main className={styles.main}>
 				<Projects ref={projectsRef} cards={projectCards} />
-				<About
-					description={aboutData.description}
-					interests={aboutData.interests}
-					skillIconSources={aboutData.skillIconSources}
-					image={aboutData.image}
-					centerToRef={footerRef}
-				/>
+				<About {...aboutData} centerToRef={footerRef} />
 			</main>
 
 			<footer ref={footerRef} className={styles.footer}>
