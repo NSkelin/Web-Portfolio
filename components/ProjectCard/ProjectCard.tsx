@@ -6,7 +6,7 @@ import {GithubMark, OpenInNew} from "../../public/icons";
 import ResponsiveNav from "../ResponsiveNav/";
 import styles from "./ProjectCard.module.css";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
 	/** The project title. */
 	title: string;
 	/** The description for the project. Each string in the array is consideres a paragraph. So each new item in the array falls under a new <p> tag. */
