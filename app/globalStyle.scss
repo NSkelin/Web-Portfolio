@@ -56,19 +56,3 @@ a {
 * {
 	box-sizing: border-box;
 }
-
-swiper-container {
-	padding: 40px 0px;
-}
-
-swiper-container,
-swiper-slide {
-	width: 100%;
-}
-
-/* desktop */
-@media only screen and (min-width: 961px) {
-	swiper-container {
-		padding: 40px 60px;
-	}
-}
