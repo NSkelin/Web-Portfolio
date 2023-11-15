@@ -15,9 +15,9 @@ interface ButtonProps
  * A custom button loosely following googles material design docs.
  * Its the default HTML button element with an included "state layer" div for styling purposes.
  */
-function Button({children, buttonStyle: style, ...rest}: ButtonProps) {
+function Button({children, buttonStyle, ...rest}: ButtonProps) {
 	return (
-		<button {...rest} className={styles[style]}>
+		<button {...rest} className={styles[buttonStyle]}>
 			{children}
 			<div className={styles.stateLayer}></div>
 		</button>
