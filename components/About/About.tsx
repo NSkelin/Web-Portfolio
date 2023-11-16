@@ -8,16 +8,21 @@ export type Interest = string | Array<Interest>;
 export type Skill = {Icon: any; text: string};
 export type AboutProps = {
 	/**
-	 * A description of the author; "About me". Converts each string into its own paragraph. Ex: \<p>string\</p>.
+	 * A description of the author - i.e "About me".
+	 *
+	 * Each string is treated as its own paragraph, meaning each string will be within its own \<p> tag.
 	 */
 	description: string[];
 	/**
-	 * A recursive array of strings or array of strings. Each nested array of strings will be indented relative to its nest level.
+	 * The interests to display under the interests section. The interests will be displayed as an unordered list with each interest being its own list item.
+	 * If the interest is an array of more interests, those interests will be added to a new unordered list that will display under the last interest with
+	 * 1 more level of indentation.
 	 */
 	interests: Interest[];
 	/**
-	 * Populates the skills section with an icon and text. Takes an array of an array of skills where the first array is the row,
-	 * and the second array is the skills that go in that row.
+	 * Used to populates the skills section with the skills title and their icon.
+	 *
+	 * The outer array is the row that the skill will be placed in with the inner array being the skills inside that row.
 	 */
 	skillIconSources: Skill[][];
 	/**
@@ -25,12 +30,19 @@ export type AboutProps = {
 	 */
 	image: ImageProps;
 	/**
-	 * A React "useRef" hook object with a DOM node reference. When the "contact" button is clicked, the browser will center itself on this node.
+	 * The reference to the element that will be used to center the browsers view around when the "Contact" button is clicked by the user.
+	 *
+	 * This is the result of using React's "useRef" hook. Do NOT pass in the "current" object, instead pass in the full ref.
 	 */
 	centerToRef?: React.MutableRefObject<null | HTMLElement>;
 };
 /**
- * converts an array of interests into a JSX unorder list. Each nested interest array is added as a ul instead of li.
+ * Creates a \<ul> of interests, with each interest being a \<li> within that list.
+ *
+ * If the interest is an array of more interests a new \<ul> will be created, with further interests placed inside the new list.
+ * This new \<ul> will be nested within the previous \<ul> and 1 more level of indentation.
+ *
+ * @returns An unorder list element with each interest as a list item.
  */
 function createInterestList(interests: Interest[]) {
 	const interestList = interests.map((interest, index) => {
@@ -44,7 +56,10 @@ function createInterestList(interests: Interest[]) {
 	return <>{interestList}</>;
 }
 /**
- * Converts the skill[][] into rows of skills.
+ * Creates the unordered lists of skills.
+ *
+ * @param skillRowsData the 2 dimensional array where the first array is the row, and the second array is the skills in that row.
+ * @returns an array of \<ul> elements containing the skills.
  */
 function createSkillRows(skillRowsData: Skill[][]) {
 	const skillRowsArr = skillRowsData.map((arr, index) => {
@@ -57,7 +72,9 @@ function createSkillRows(skillRowsData: Skill[][]) {
 	return <>{skillRowsArr}</>;
 }
 /**
- * Turns the skill array into JSX list items.
+ * Places the skills into a styled \<li> for display.
+ *
+ * @returns a group of \<li> under a \<> tag. Make sure to add these to a list.
  */
 function createSkillIcons(skills: Skill[]) {
 	const skillIcons = skills.map(({Icon, text}, index) => {
@@ -71,9 +88,12 @@ function createSkillIcons(skills: Skill[]) {
 	return <>{skillIcons}</>;
 }
 /**
- * Fully fledged About section where you can write a description of yourself, show an image, your skills, and your interests.
+ * Renders an about section for describing the author.
+ *
+ * Includes an section for an image of the author and their self description, as well as a skills section for showing off their skills,
+ * and an interests section for a little more personalization.
  */
-function About({description, interests, skillIconSources, image: {src, alt}, centerToRef}: AboutProps) {
+function About({description, interests, skillIconSources, imageProps: {src, alt}, centerToRef}: AboutProps) {
 	const [collapsed, setCollapsed] = useState(true);
 
 	const interestList = createInterestList(interests);
@@ -81,7 +101,7 @@ function About({description, interests, skillIconSources, image: {src, alt}, cen
 	const descriptionText = description.map((paragraph, index) => <p key={index}>{paragraph}</p>);
 
 	/**
-	 * Centers the browsers view around the "centerToRef" prop.
+	 * Scrolls the browsers view to center around the referenced element passed in.
 	 */
 	function scrollTo() {
 		if (centerToRef?.current == null) return;
