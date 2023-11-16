@@ -1,6 +1,6 @@
 import {Meta, StoryObj} from "@storybook/react";
-import About from "./About";
 import skillData from "../../componentData/aboutData";
+import About from "./About";
 
 const meta: Meta<typeof About> = {
 	component: About,
@@ -11,7 +11,7 @@ type Story = StoryObj<typeof About>;
 
 export const Default: Story = {
 	args: {
-		image: skillData.image,
+		imageProps: skillData.imageProps,
 		description: skillData.description,
 		interests: skillData.interests,
 		skillIconSources: skillData.skillIconSources,

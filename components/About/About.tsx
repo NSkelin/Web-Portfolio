@@ -28,7 +28,7 @@ export type AboutProps = {
 	/**
 	 * Properties required for the image.
 	 */
-	image: {
+	imageProps: {
 		src: ImageProps["src"];
 		alt: ImageProps["alt"];
 	};

@@ -16,7 +16,7 @@ const skillData: AboutProps = {
 		"I'm always eager to connect with other web developers and learn from experienced professionals in the field, so\
 	please don't hesitate to reach out to me if you're interested in connecting or discussing potential opportunities.",
 	],
-	image: {
+	imageProps: {
 		src: pfp,
 		alt: "Picture of the author",
 	},
