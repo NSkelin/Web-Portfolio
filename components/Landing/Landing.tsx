@@ -32,6 +32,7 @@ function Landing({imageSrc, title, subtitle, centerToRef}: LandingProps) {
 		if (centerToRef?.current == null) return;
 		centerToRef.current.scrollIntoView({behavior: "smooth", block: "center"});
 	}
+
 	return (
 		<header className={styles.landing}>
 			<video className={styles.video} poster="stars preview.jpg" autoPlay loop muted>
