@@ -1,6 +1,6 @@
-import {HTML5, CSS3, JavaScript, React, Next, Git, NodeMark, MySQLMark} from "../public/icons";
-import pfp from "../public/pfp2.jpg";
 import type {AboutProps} from "../components/About/About";
+import {CSS3, Git, HTML5, JavaScript, MySQLMark, Next, NodeMark, React} from "../public/icons";
+import pfp from "../public/pfp2.jpg";
 
 const skillData: AboutProps = {
 	description: [
