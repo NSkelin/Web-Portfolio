@@ -19,7 +19,8 @@
 			{
 				"name": "next"
 			}
-		]
+		],
+		"baseUrl": "."
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/mainPage.jsx"],
 	"exclude": ["node_modules"]
