@@ -5,7 +5,7 @@ import styles from "./ProjectSlideDetails.module.scss";
 
 export interface ProjectSlideDetailsProps {
 	/**
-	 * The description for the project. Each string in the array is consideres a paragraph. So each new item in the array falls under a new <p> tag.
+	 * The description for the project. Each string in the array is consideres a paragraph. So each new item in the array falls under a new \<p> tag.
 	 */
 	description: string[];
 	/**
