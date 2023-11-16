@@ -58,6 +58,7 @@ function createInterestList(interests: Interest[]) {
 
 	return <>{interestList}</>;
 }
+
 /**
  * Creates the unordered lists of skills.
  *
@@ -74,6 +75,7 @@ function createSkillRows(skillRowsData: Skill[][]) {
 	});
 	return <>{skillRowsArr}</>;
 }
+
 /**
  * Places the skills into a styled \<li> for display.
  *
@@ -90,6 +92,7 @@ function createSkillIcons(skills: Skill[]) {
 	});
 	return <>{skillIcons}</>;
 }
+
 /**
  * Renders an about section for describing the author.
  *
