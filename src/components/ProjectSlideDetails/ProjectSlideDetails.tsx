@@ -30,6 +30,7 @@ function ProjectSlideDetails({description, skillIcons}: ProjectSlideDetailsProps
 
 	return (
 		<div className={styles.details}>
+			{/* Uses Swiper to allow overflow while nested inside another Swiper. */}
 			<Swiper
 				modules={[Scrollbar, FreeMode, Mousewheel]}
 				className={"swiper-initialized swiper-vertical swiper-free-mode swiper-backface-hidden " + styles.descriptionBox}
