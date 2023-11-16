@@ -1,3 +1,10 @@
+/**
+ * This file contains the data needed to render the about section / component(s) for the portfolio.
+ *
+ * All the data is in this separate file to make it easier to update the portfolio contents without needing
+ * to fish through tons of components.
+ */
+
 import type {AboutProps} from "../components/About/About";
 import {CSS3, Git, HTML5, JavaScript, MySQLMark, Next, NodeMark, React} from "../public/icons";
 import pfp from "../public/pfp2.jpg";

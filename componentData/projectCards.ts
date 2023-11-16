@@ -1,3 +1,11 @@
+/**
+ * This file contains the data for each project to display under the projects section. Each object will create a new
+ * project slide in the app.
+ *
+ * All the data is in this separate file to make it easier to update the portfolio contents without needing
+ * to fish through tons of components.
+ */
+
 import {ProjectCardProps} from "../components/ProjectCard/ProjectCard";
 import {AWS, CSS3, Discord, Express, HTML5, JavaScript, Jest, MongoDB, Next, NodeMark, React} from "../public/icons";
 import cartCompanion1 from "../public/projectImages/cartCompanion/CartCompanion-1.png";
