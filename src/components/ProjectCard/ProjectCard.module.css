@@ -39,30 +39,7 @@
     flex-direction: column;
     flex: 1;
     background: #414141;
-
     overflow: hidden;
-}
-.details {
-    display: flex;
-    flex-direction: column;
-    padding: 0px 10px;
-    flex: 1;
-    overflow: hidden;
-}
-.descriptionBox {
-    padding: 25px 15px;
-    background: #4B4B4B;
-    flex: 1;
-    margin: 0;
-}
-.aside {
-    display: flex;
-    flex-direction: column;
-    padding: 25px 15px;
-    gap: 15px;
-}
-.line {
-    border: 1px solid #FFFFFF;
 }
 .imageWrapper {
     position: relative;
@@ -76,18 +53,6 @@
 .image {
     object-fit: contain;
     padding: 10px;
-}
-.p {
-    margin: 16px 0;
-}
-.icons {
-    display: flex;
-}
-.icon {
-    display: flex;
-    align-items: center;
-    height: 28px;
-    width: 28px;
 }
 .materialSymbol {
     fill: white;
@@ -114,24 +79,6 @@
     }
     .content {
         flex-direction: row;
-    }
-    .details {
-        order: 1;
-        flex: 2;
-    }
-    .descriptionBox {
-        padding: 30px 20px;
-        scrollbar-width: thin;
-    }
-    .descriptionBox::-webkit-scrollbar {
-        width: 8px;
-        background-color: rgb(56, 56, 56); 
-    }
-    .descriptionBox::-webkit-scrollbar-thumb {
-        background: rgb(129, 129, 129);
-    }
-    .aside {
-        padding: 25px 20px;
     }
     .imageWrapper {
         order: 2;

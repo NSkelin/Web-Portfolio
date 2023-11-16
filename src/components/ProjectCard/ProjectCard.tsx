@@ -1,20 +1,15 @@
 import Image, {ImageProps} from "next/image";
 import {GithubMark, OpenInNew} from "public/icons";
-import React, {ComponentProps} from "react";
-import {FreeMode, Mousewheel, Scrollbar} from "swiper/modules";
-import {Swiper, SwiperSlide} from "swiper/react";
+import React from "react";
+import ProjectSlideDetails, {ProjectSlideDetailsProps} from "../ProjectSlideDetails/ProjectSlideDetails";
 import ResponsiveNav from "../ResponsiveNav/";
 import styles from "./ProjectCard.module.css";
 
-export interface ProjectCardProps {
+export interface ProjectCardProps extends ProjectSlideDetailsProps {
 	/**
 	 * The project title.
 	 */
 	title: string;
-	/**
-	 * The description for the project. Each string in the array is consideres a paragraph. So each new item in the array falls under a new <p> tag.
-	 */
-	description: string[];
 	/**
 	 * The source for the project display image.
 	 */
@@ -36,10 +31,6 @@ export interface ProjectCardProps {
 	 * This can be used to allow users to view / experience the project without needing to create an account for example.
 	 */
 	demoSiteURL?: string;
-	/**
-	 * Icons for all the technologies related to the project that will be displayed in the footer.
-	 */
-	skillIcons: React.ComponentType<ComponentProps<"svg">>[];
 }
 /**
  * Renders a swipe-able project card with information on the project, links to project resources, and images.
@@ -77,20 +68,6 @@ function ProjectCard({
 		</a>
 	) : null;
 
-	// Creates the list items that contain icons that represent the technologies used in the project.
-	const skills = skillIcons.map((Icon, index) => (
-		<li className={styles.icon} key={index}>
-			<Icon />
-		</li>
-	));
-
-	// Creates the description text. Separates the string items in the array into new paragraphs.
-	const text = description.map((paragraph, index) => (
-		<p className={styles.p} key={index}>
-			{paragraph}
-		</p>
-	));
-
 	return (
 		<article className={styles.projectCard}>
 			<header className={styles.header}>
@@ -101,27 +78,7 @@ function ProjectCard({
 				<div className={styles.imageWrapper}>
 					<Image className={styles.image} src={imageSrc} fill={true} alt={imageAlt} />
 				</div>
-				<div className={styles.details}>
-					<Swiper
-						modules={[Scrollbar, FreeMode, Mousewheel]}
-						className={
-							"swiper-initialized swiper-vertical swiper-free-mode swiper-backface-hidden " + styles.descriptionBox
-						}
-						scrollbar={true}
-						direction="vertical"
-						slidesPerView="auto"
-						freeMode={true}
-						mousewheel={true}
-						touchReleaseOnEdges={true}
-					>
-						<SwiperSlide>{text}</SwiperSlide>
-					</Swiper>
-					<aside className={styles.aside}>
-						<h4 className={styles.title}>Project Technologies</h4>
-						<div className={styles.line}></div>
-						<ul className={styles.icons}>{skills}</ul>
-					</aside>
-				</div>
+				<ProjectSlideDetails description={description} skillIcons={skillIcons} />
 			</div>
 		</article>
 	);
