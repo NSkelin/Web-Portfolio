@@ -6,23 +6,28 @@ import {ArrowDownward} from "../../public/icons";
 
 export type LandingProps = {
 	/**
-	 * The source for the profile picture.
+	 * The source for the landing image. Should be an image of the author, or an avatar that represents them.
 	 */
 	imageSrc: ImageProps["src"];
 	/**
-	 * The title / main hook.
+	 * The first thing people will read when coming to the site. It should be very short and include something important such as a main hook, or "who" you are.
 	 */
 	title: string;
 	/**
-	 * The subtitle to go with the title.
+	 * The subtitle directly under the title. It should include some extra information such as "what" you do.
 	 */
 	subtitle: string;
 	/**
-	 * A React "useRef" hook object with a DOM node reference. When the button is clicked, the browser will center itself on this node.
+	 * The reference to the element that will be used to center the browsers view around when the call to action button is clicked by the user.
+	 *
+	 * This is the result of using React's "useRef" hook. Do NOT pass in the "current" object, instead pass in the full ref.
 	 */
 	centerToRef?: React.MutableRefObject<null | HTMLElement>;
 };
 function Landing({imageSrc, title, subtitle, centerToRef}: LandingProps) {
+	/**
+	 * Scrolls the browsers view to center around the referenced element passed in.
+	 */
 	function scrollTo() {
 		if (centerToRef?.current == null) return;
 		centerToRef.current.scrollIntoView({behavior: "smooth", block: "center"});
