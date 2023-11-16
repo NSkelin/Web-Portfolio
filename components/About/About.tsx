@@ -26,9 +26,12 @@ export type AboutProps = {
 	 */
 	skillIconSources: Skill[][];
 	/**
-	 * An object that takes the "src" and "alt" props for a Nextjs Image component.
+	 * Properties required for the image.
 	 */
-	image: ImageProps;
+	image: {
+		src: ImageProps["src"];
+		alt: ImageProps["alt"];
+	};
 	/**
 	 * The reference to the element that will be used to center the browsers view around when the "Contact" button is clicked by the user.
 	 *
