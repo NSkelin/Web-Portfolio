@@ -1,6 +1,6 @@
 import {Meta, StoryObj} from "@storybook/react";
+import pfp from "public/pfp1.jpg";
 import Landing from "./Landing";
-import pfp from "../../public/pfp1.jpg";
 
 const meta: Meta<typeof Landing> = {
 	component: Landing,

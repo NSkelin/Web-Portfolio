@@ -2,8 +2,8 @@ import type {StorybookConfig} from "@storybook/nextjs";
 import type {Configuration, RuleSetRule} from "webpack";
 const config: StorybookConfig = {
 	stories: [
-		"../components/**/*.mdx",
-		"../components/**/*.stories.@(js|jsx|ts|tsx)",
+		"../src/components/**/*.mdx",
+		"../src/components/**/*.stories.@(js|jsx|ts|tsx)",
 		"../stories/**/*.mdx",
 		"../stories/**/*.stories.@(js|jsx|ts|tsx)",
 	],
@@ -41,7 +41,7 @@ const config: StorybookConfig = {
 				issuer: /\.[jt]sx?$/,
 				resourceQuery: {not: /url/}, // exclude if *.svg?url
 				use: ["@svgr/webpack"],
-			}
+			},
 		);
 
 		// Modify the file loader rule to ignore *.svg, since we have it handled now.
