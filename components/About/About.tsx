@@ -4,8 +4,8 @@ import Button from "../Button/Button";
 import CollapsibleArea from "../CollapsibleArea/CollapsibleArea";
 import styles from "./About.module.scss";
 
-export type Interest = string | Interest[];
-export type Skill = {Icon: any; text: string};
+type Interest = string | Interest[];
+type Skill = {Icon: any; text: string};
 export type AboutProps = {
 	/**
 	 * A description of the author - i.e "About me".
