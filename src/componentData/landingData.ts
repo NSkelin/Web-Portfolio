@@ -5,8 +5,8 @@
  * to fish through tons of components.
  */
 
+import pfp from "public/pfp1.jpg";
 import {LandingProps} from "../components/Landing/Landing";
-import pfp from "../public/pfp1.jpg";
 
 const landingData: LandingProps = {
 	imageSrc: pfp,

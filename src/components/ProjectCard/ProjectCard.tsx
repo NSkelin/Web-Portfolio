@@ -1,8 +1,8 @@
 import Image, {ImageProps} from "next/image";
+import {GithubMark, OpenInNew} from "public/icons";
 import React, {ComponentProps} from "react";
 import {FreeMode, Mousewheel, Scrollbar} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-import {GithubMark, OpenInNew} from "../../public/icons";
 import ResponsiveNav from "../ResponsiveNav/";
 import styles from "./ProjectCard.module.css";
 

@@ -5,8 +5,8 @@
  * to fish through tons of components.
  */
 
+import {GithubMark, LinkedIn} from "public/icons";
 import {HyperLinkProps} from "../components/HyperLink/HyperLink";
-import {GithubMark, LinkedIn} from "../public/icons";
 
 const socialLinks: HyperLinkProps[] = [
 	{

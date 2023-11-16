@@ -1,5 +1,5 @@
+import {Menu, MenuOpen} from "public/icons";
 import React, {useEffect, useRef, useState} from "react";
-import {Menu, MenuOpen} from "../../public/icons";
 import Button from "../Button/Button";
 import styles from "./ResponsiveNav.module.css";
 

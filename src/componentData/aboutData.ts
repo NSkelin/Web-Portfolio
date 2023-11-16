@@ -5,9 +5,9 @@
  * to fish through tons of components.
  */
 
+import {CSS3, Git, HTML5, JavaScript, MySQLMark, Next, NodeMark, React} from "public/icons";
+import pfp from "public/pfp2.jpg";
 import type {AboutProps} from "../components/About/About";
-import {CSS3, Git, HTML5, JavaScript, MySQLMark, Next, NodeMark, React} from "../public/icons";
-import pfp from "../public/pfp2.jpg";
 
 const skillData: AboutProps = {
 	description: [

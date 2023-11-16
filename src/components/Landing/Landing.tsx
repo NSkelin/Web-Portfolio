@@ -1,6 +1,6 @@
 import Image, {ImageProps} from "next/image";
+import {ArrowDownward} from "public/icons";
 import React from "react";
-import {ArrowDownward} from "../../public/icons";
 import Button from "../Button/Button";
 import styles from "./Landing.module.scss";
 
