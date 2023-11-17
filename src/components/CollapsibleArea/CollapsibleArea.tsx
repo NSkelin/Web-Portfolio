@@ -10,11 +10,17 @@ export type CollapsibleAreaProps = {
 	 * Controls whether the area should be collapsed or expanded.
 	 */
 	collapsed?: boolean;
+	/**
+	 * Sets the color for the fade effect at the bottom of the collapsible area. The effect is used to blend elements
+	 * that extend past the collapsible area's height when it is collapsed. The three numbers are for RGB, so [R, G, B]
+	 * with each number being 0-255.
+	 */
+	fadeColor: [number, number, number];
 };
 /**
  * A container that will hide any overflowing elements inside when collapsed, or show all elements when expanded. Expansion height is automatically determined by content height.
  */
-function CollapsibleArea({children, collapsed = true}: CollapsibleAreaProps) {
+function CollapsibleArea({children, collapsed = true, fadeColor}: CollapsibleAreaProps) {
 	const div = useRef<HTMLDivElement>(null);
 	const [scrollHeight, setScrollHeight] = useState<string | number>(445);
 
@@ -43,10 +49,13 @@ function CollapsibleArea({children, collapsed = true}: CollapsibleAreaProps) {
 		};
 	}, []);
 
+	// Creates the fade effect at the bottom of the area over to blend elements that go beyond the collapsible area.
+	const foregroundGradient = `linear-gradient(rgba(${fadeColor.join(", ")}, 0), rgba(${fadeColor.join(", ")}, 1))`;
+
 	return (
 		<div style={{height: collapsed ? "" : scrollHeight}} className={collapsed ? styles.collapsed : styles.expanded}>
 			<div ref={div}>{children}</div>
-			<div className={styles.foreground}></div>
+			<div className={styles.foreground} style={{background: foregroundGradient}}></div>
 		</div>
 	);
 }
