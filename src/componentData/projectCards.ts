@@ -21,7 +21,7 @@ const ProjectCards: ProjectCardProps[] = [
 			"After signing in, you’ll be shown a unique heat map for each stat type based off of all your armor. You can then tell which stats you’re currently\
 		lacking so you know what to prioritise in game.",
 		],
-		skillIcons: [React, Next, JavaScript, HTML5, CSS3],
+		technologies: [React, Next, JavaScript, HTML5, CSS3],
 		imageSrc: d2StatMap1,
 		imageAlt:
 			"The main page of the D2StatMap Project that users will interact with. It shows a heatmap for each stat type on armor\
@@ -38,7 +38,7 @@ const ProjectCards: ProjectCardProps[] = [
 			"This portfolio, the one your on, was designed and developed by me! It might seem redundant but I believe it to be a good example of what im capable of.",
 			"My personal favourite feature is the project cards your currently looking at.",
 		],
-		skillIcons: [React, Next, JavaScript, HTML5, CSS3],
+		technologies: [React, Next, JavaScript, HTML5, CSS3],
 		imageSrc: portfolio1,
 		imageAlt:
 			"The portfolios landing view. It includes a picture of the author, a call to action button to encourage users to continue downward,\
@@ -52,7 +52,7 @@ const ProjectCards: ProjectCardProps[] = [
 			"Spotbot is a Discord bot that integrates with the Discord API & and the Amazon Web Services API. It allows you and anyone else with access to\
 			the bot to automatically start EC2 instances in AWS with a simple command through Discord.",
 		],
-		skillIcons: [JavaScript, AWS, Discord],
+		technologies: [JavaScript, AWS, Discord],
 		imageSrc: spotBot1,
 		imageAlt:
 			"An example of a user calling the bots 'help start' command. The bot replies with useful information on how to use the command\
@@ -66,7 +66,7 @@ const ProjectCards: ProjectCardProps[] = [
 			small groups of six to each create a unique project.",
 			"The goal was to gain experience in a work-like environment over the course of 4 weeks.",
 		],
-		skillIcons: [MongoDB, NodeMark, JavaScript, Jest, Express, HTML5, CSS3],
+		technologies: [MongoDB, NodeMark, JavaScript, Jest, Express, HTML5, CSS3],
 		imageSrc: cartCompanion1,
 		imageAlt:
 			"A representation of the projects main logo. The logo is two lists mirrored towards each other with a cart behind\

@@ -11,18 +11,18 @@ export interface ProjectSlideDetailsProps {
 	/**
 	 * Icons for all the technologies related to the project that will be displayed in the footer.
 	 */
-	skillIcons: React.ComponentType<ComponentProps<"svg">>[];
+	technologies: React.ComponentType<ComponentProps<"svg">>[];
 }
-function ProjectSlideDetails({description, skillIcons}: ProjectSlideDetailsProps) {
+function ProjectSlideDetails({description, technologies}: ProjectSlideDetailsProps) {
 	// Creates the description text. Separates the string items in the array into new paragraphs.
-	const text = description.map((paragraph, index) => (
+	const descriptionParagraphs = description.map((paragraph, index) => (
 		<p className={styles.p} key={index}>
 			{paragraph}
 		</p>
 	));
 
 	// Creates the list items that contain icons that represent the technologies used in the project.
-	const skills = skillIcons.map((Icon, index) => (
+	const techIcons = technologies.map((Icon, index) => (
 		<li className={styles.icon} key={index}>
 			<Icon />
 		</li>
@@ -41,13 +41,13 @@ function ProjectSlideDetails({description, skillIcons}: ProjectSlideDetailsProps
 				mousewheel={true}
 				touchReleaseOnEdges={true}
 			>
-				<SwiperSlide>{text}</SwiperSlide>
+				<SwiperSlide>{descriptionParagraphs}</SwiperSlide>
 			</Swiper>
 
 			<aside className={styles.aside}>
 				<h4>Project Technologies</h4>
 				<div className={styles.line}></div>
-				<ul className={styles.icons}>{skills}</ul>
+				<ul className={styles.icons}>{techIcons}</ul>
 			</aside>
 		</div>
 	);

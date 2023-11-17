@@ -12,6 +12,6 @@ type Story = StoryObj<typeof ProjectSlideDetails>;
 export const Default: Story = {
 	args: {
 		description: ["test desc"],
-		skillIcons: [CSS3, Discord, JavaScript, HTML5, Next],
+		technologies: [CSS3, Discord, JavaScript, HTML5, Next],
 	},
 };

@@ -43,7 +43,7 @@ function ProjectCard({
 	githubRepoURL,
 	liveSiteURL,
 	demoSiteURL,
-	skillIcons,
+	technologies,
 }: ProjectCardProps) {
 	// Create links to specific sources for the project if they exist.
 	// Link to project github page.
@@ -78,7 +78,7 @@ function ProjectCard({
 				<div className={styles.imageWrapper}>
 					<Image className={styles.image} src={imageSrc} fill={true} alt={imageAlt} />
 				</div>
-				<ProjectSlideDetails description={description} skillIcons={skillIcons} />
+				<ProjectSlideDetails description={description} technologies={technologies} />
 			</div>
 		</article>
 	);
