@@ -1,6 +1,6 @@
 import React, {forwardRef} from "react";
-import AccentTitle from "../AccentTitle/AccentTitle";
-import ProjectCarousel, {ProjectCarouselProps} from "../ProjectCarousel/ProjectCarousel";
+import AccentTitle from "../AccentTitle";
+import ProjectCarousel, {ProjectCarouselProps} from "../ProjectCarousel";
 import styles from "./ProjectSection.module.scss";
 
 interface ProjectSectionProps extends ProjectCarouselProps {}

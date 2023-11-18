@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import {Navigation, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-import ProjectCard, {ProjectSlideProps} from "../ProjectSlide/ProjectSlide";
+import ProjectCard, {ProjectSlideProps} from "../ProjectSlide";
 import styles from "./ProjectCarousel.module.scss";
 
 export interface ProjectCarouselProps {

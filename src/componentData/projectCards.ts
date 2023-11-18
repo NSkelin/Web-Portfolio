@@ -6,12 +6,12 @@
  * to fish through tons of components.
  */
 
+import {ProjectSlideProps} from "@/components/ProjectSlide";
 import {AWS, CSS3, Discord, Express, HTML5, JavaScript, Jest, MongoDB, Next, NodeMark, React} from "public/icons";
 import cartCompanion1 from "public/projectImages/cartCompanion/CartCompanion-1.png";
 import d2StatMap1 from "public/projectImages/d2StatMap/D2StatMap-1.png";
 import portfolio1 from "public/projectImages/portfolio/portfolio-1.png";
 import spotBot1 from "public/projectImages/spotBot/spotbot-1.png";
-import {ProjectSlideProps} from "../components/ProjectSlide/ProjectSlide";
 
 const ProjectCards: ProjectSlideProps[] = [
 	{

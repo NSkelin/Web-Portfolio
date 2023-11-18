@@ -1,7 +1,7 @@
 import Image, {ImageProps} from "next/image";
 import React, {useState} from "react";
-import Button from "../Button/Button";
-import CollapsibleArea from "../CollapsibleArea/CollapsibleArea";
+import Button from "../Button";
+import CollapsibleArea from "../CollapsibleArea";
 import styles from "./About.module.scss";
 
 type Interest = string | Interest[];

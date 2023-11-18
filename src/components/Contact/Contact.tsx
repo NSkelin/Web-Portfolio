@@ -1,7 +1,6 @@
 import React from "react";
-import ContactForm from "../ContactForm/";
-import HyperLink from "../HyperLink/";
-import {HyperLinkProps} from "../HyperLink/HyperLink";
+import ContactForm from "../ContactForm";
+import HyperLink, {HyperLinkProps} from "../HyperLink";
 import styles from "./Contact.module.css";
 
 interface ContactProps {

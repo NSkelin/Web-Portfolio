@@ -1,7 +1,7 @@
 import Image, {ImageProps} from "next/image";
 import {GithubMark, OpenInNew} from "public/icons";
 import React from "react";
-import ProjectSlideDetails, {ProjectSlideDetailsProps} from "../ProjectSlideDetails/ProjectSlideDetails";
+import ProjectSlideDetails, {ProjectSlideDetailsProps} from "../ProjectSlideDetails";
 import ResponsiveNav from "../ResponsiveNav";
 import styles from "./ProjectSlide.module.scss";
 
