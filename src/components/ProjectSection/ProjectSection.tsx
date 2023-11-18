@@ -3,11 +3,11 @@ import AccentTitle from "../AccentTitle/AccentTitle";
 import ProjectCarousel, {ProjectCarouselProps} from "../ProjectCarousel/ProjectCarousel";
 import styles from "./ProjectSection.module.scss";
 
-interface ProjectsProps extends ProjectCarouselProps {}
+interface ProjectSectionProps extends ProjectCarouselProps {}
 /**
  * Renders a section for showing off projects. It comes with a title and carousel of project cards.
  */
-const Projects = forwardRef<HTMLElement, ProjectsProps>(function Projects({projectData}, ref) {
+const Projects = forwardRef<HTMLElement, ProjectSectionProps>(function Projects({projectData}, ref) {
 	return (
 		<section ref={ref} className={styles.projects}>
 			<AccentTitle title={"Projects"} />
