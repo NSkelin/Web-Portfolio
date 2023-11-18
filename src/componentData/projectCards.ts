@@ -11,9 +11,9 @@ import cartCompanion1 from "public/projectImages/cartCompanion/CartCompanion-1.p
 import d2StatMap1 from "public/projectImages/d2StatMap/D2StatMap-1.png";
 import portfolio1 from "public/projectImages/portfolio/portfolio-1.png";
 import spotBot1 from "public/projectImages/spotBot/spotbot-1.png";
-import {ProjectCardProps} from "../components/ProjectCard/ProjectCard";
+import {ProjectSlideProps} from "../components/ProjectSlide/ProjectSlide";
 
-const ProjectCards: ProjectCardProps[] = [
+const ProjectCards: ProjectSlideProps[] = [
 	{
 		title: "D2StatMap",
 		description: [
