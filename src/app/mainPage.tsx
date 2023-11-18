@@ -7,7 +7,7 @@ import About from "../components/About";
 import AccentTitle from "../components/AccentTitle";
 import Contact from "../components/Contact";
 import Landing from "../components/Landing";
-import Projects from "../components/Projects";
+import Projects from "../components/ProjectSection";
 
 /**
  * Renders the main page of the portfolio. This includes a landing section, a projects section, an about section, and a contact section.
