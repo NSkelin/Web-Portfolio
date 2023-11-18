@@ -6,7 +6,10 @@ import styles from "./ProjectCard.module.scss";
 
 export interface ProjectCardProps extends ProjectCardHeaderProps, ProjectCardDetailsProps, ProjectCardGalleryProps {}
 /**
- * Renders a swipe-able project card with information on the project, links to project resources, and images.
+ * Renders a card with information on a project.
+ *
+ * The card includes the project title, navigation links to project resources, a description of the project,
+ * the technologies used to make the project, and a gallery to show off the project.
  */
 function ProjectCard({
 	title = "Project title",

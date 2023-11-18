@@ -12,6 +12,9 @@ export interface ProjectCardGalleryProps {
 	 */
 	imageAlt: ImageProps["alt"];
 }
+/**
+ * Renders a single image, for use with the ProjectCard component
+ */
 function ProjectCardGallery({imageSrc, imageAlt}: ProjectCardGalleryProps) {
 	return (
 		<div className={styles.imageWrapper}>

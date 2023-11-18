@@ -22,6 +22,10 @@ export interface ProjectCardHeaderProps {
 	 */
 	demoSiteURL?: string;
 }
+/**
+ * Renders the header of a project card, for use with the ProjectCard component.
+ * The header contains the projects title and links to further resources such as the source code and live sites running the project.
+ */
 function ProjectCardHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: ProjectCardHeaderProps) {
 	// Create links to specific sources for the project if they exist.
 	// Link to project github page.

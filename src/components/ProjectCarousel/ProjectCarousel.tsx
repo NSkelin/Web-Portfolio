@@ -9,13 +9,13 @@ import styles from "./ProjectCarousel.module.scss";
 
 export interface ProjectCarouselProps {
 	/**
-	 * An array of objects with each object containing the data needed to render one project slide.
-	 * The more objects sent, the more slides rendered.
+	 * An array of objects with each object containing the data needed to render one project card.
+	 * The more objects sent, the more project card slides rendered.
 	 */
 	projectData: ProjectCardProps[];
 }
 /**
- * Renders a carousel of project slides.
+ * Renders a carousel of project cards, with each slide being one project card.
  */
 function ProjectCarousel({projectData}: ProjectCarouselProps) {
 	// Create the project slides to enter in the carousel.

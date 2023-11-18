@@ -13,6 +13,11 @@ export interface ProjectCardDetailsProps {
 	 */
 	technologies: React.ComponentType<ComponentProps<"svg">>[];
 }
+/**
+ * Renders the detail section containing the information on the project, for use with the ProjectCard component.
+ *
+ * The detail section contains a description of the project and the technologies used to create the project.
+ */
 function ProjectCardDetails({description, technologies}: ProjectCardDetailsProps) {
 	// Creates the description text. Separates the string items in the array into new paragraphs.
 	const descriptionParagraphs = description.map((paragraph, index) => (
