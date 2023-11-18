@@ -2,10 +2,10 @@ import Image, {ImageProps} from "next/image";
 import {GithubMark, OpenInNew} from "public/icons";
 import React from "react";
 import ProjectSlideDetails, {ProjectSlideDetailsProps} from "../ProjectSlideDetails/ProjectSlideDetails";
-import ResponsiveNav from "../ResponsiveNav/";
-import styles from "./ProjectCard.module.scss";
+import ResponsiveNav from "../ResponsiveNav";
+import styles from "./ProjectSlide.module.scss";
 
-export interface ProjectCardProps extends ProjectSlideDetailsProps {
+export interface ProjectSlideProps extends ProjectSlideDetailsProps {
 	/**
 	 * The project title.
 	 */
@@ -44,7 +44,7 @@ function ProjectCard({
 	liveSiteURL,
 	demoSiteURL,
 	technologies,
-}: ProjectCardProps) {
+}: ProjectSlideProps) {
 	// Create links to specific sources for the project if they exist.
 	// Link to project github page.
 	const github = githubRepoURL ? (
