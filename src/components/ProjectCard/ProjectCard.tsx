@@ -3,7 +3,7 @@ import {GithubMark, OpenInNew} from "public/icons";
 import React from "react";
 import ProjectSlideDetails, {ProjectSlideDetailsProps} from "../ProjectSlideDetails/ProjectSlideDetails";
 import ResponsiveNav from "../ResponsiveNav/";
-import styles from "./ProjectCard.module.css";
+import styles from "./ProjectCard.module.scss";
 
 export interface ProjectCardProps extends ProjectSlideDetailsProps {
 	/**
