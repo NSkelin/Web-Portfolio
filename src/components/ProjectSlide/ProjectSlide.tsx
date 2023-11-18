@@ -8,7 +8,7 @@ export interface ProjectSlideProps extends ProjectSlideHeaderProps, ProjectSlide
 /**
  * Renders a swipe-able project card with information on the project, links to project resources, and images.
  */
-function ProjectCard({
+function ProjectSlide({
 	title = "Project title",
 	description = ["Project description"],
 	imageSrc,
@@ -29,4 +29,4 @@ function ProjectCard({
 	);
 }
 
-export default ProjectCard;
+export default ProjectSlide;

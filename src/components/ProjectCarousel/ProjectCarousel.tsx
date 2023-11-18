@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import {Navigation, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-import ProjectCard, {ProjectSlideProps} from "../ProjectSlide";
+import ProjectSlide, {ProjectSlideProps} from "../ProjectSlide";
 import styles from "./ProjectCarousel.module.scss";
 
 export interface ProjectCarouselProps {
@@ -19,7 +19,7 @@ function ProjectCarousel({projectData}: ProjectCarouselProps) {
 	// Create the project slides to enter in the carousel.
 	const projectSlides = projectData.map(({...rest}, index) => (
 		<SwiperSlide key={index}>
-			<ProjectCard {...rest} />
+			<ProjectSlide {...rest} />
 		</SwiperSlide>
 	));
 
