@@ -1,13 +1,13 @@
 import {Meta, StoryObj} from "@storybook/react";
 import {CSS3, Discord, HTML5, JavaScript, Next} from "public/icons";
-import ProjectSlideDetails from "./ProjectSlideDetails";
+import ProjectCardDetails from "./ProjectCardDetails";
 
-const meta: Meta<typeof ProjectSlideDetails> = {
-	component: ProjectSlideDetails,
+const meta: Meta<typeof ProjectCardDetails> = {
+	component: ProjectCardDetails,
 };
 
 export default meta;
-type Story = StoryObj<typeof ProjectSlideDetails>;
+type Story = StoryObj<typeof ProjectCardDetails>;
 
 export const Default: Story = {
 	args: {

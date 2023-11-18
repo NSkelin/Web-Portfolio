@@ -1,9 +1,9 @@
 import React, {ComponentProps} from "react";
 import {FreeMode, Mousewheel, Scrollbar} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
-import styles from "./ProjectSlideDetails.module.scss";
+import styles from "./ProjectCardDetails.module.scss";
 
-export interface ProjectSlideDetailsProps {
+export interface ProjectCardDetailsProps {
 	/**
 	 * The description for the project. Each string in the array is consideres a paragraph. So each new item in the array falls under a new \<p> tag.
 	 */
@@ -13,7 +13,7 @@ export interface ProjectSlideDetailsProps {
 	 */
 	technologies: React.ComponentType<ComponentProps<"svg">>[];
 }
-function ProjectSlideDetails({description, technologies}: ProjectSlideDetailsProps) {
+function ProjectCardDetails({description, technologies}: ProjectCardDetailsProps) {
 	// Creates the description text. Separates the string items in the array into new paragraphs.
 	const descriptionParagraphs = description.map((paragraph, index) => (
 		<p className={styles.p} key={index}>
@@ -53,4 +53,4 @@ function ProjectSlideDetails({description, technologies}: ProjectSlideDetailsPro
 	);
 }
 
-export default ProjectSlideDetails;
+export default ProjectCardDetails;

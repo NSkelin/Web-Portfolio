@@ -1,8 +1,8 @@
 import Image, {ImageProps} from "next/image";
 import React from "react";
-import styles from "./ProjectSlideGallery.module.scss";
+import styles from "./ProjectCardGallery.module.scss";
 
-export interface ProjectSlideGalleryProps {
+export interface ProjectCardGalleryProps {
 	/**
 	 * The source for the project display image.
 	 */
@@ -12,7 +12,7 @@ export interface ProjectSlideGalleryProps {
 	 */
 	imageAlt: ImageProps["alt"];
 }
-function ProjectSlideGallery({imageSrc, imageAlt}: ProjectSlideGalleryProps) {
+function ProjectCardGallery({imageSrc, imageAlt}: ProjectCardGalleryProps) {
 	return (
 		<div className={styles.imageWrapper}>
 			<Image className={styles.image} src={imageSrc} fill={true} alt={imageAlt} />
@@ -20,4 +20,4 @@ function ProjectSlideGallery({imageSrc, imageAlt}: ProjectSlideGalleryProps) {
 	);
 }
 
-export default ProjectSlideGallery;
+export default ProjectCardGallery;

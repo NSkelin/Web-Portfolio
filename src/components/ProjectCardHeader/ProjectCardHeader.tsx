@@ -1,9 +1,9 @@
 import {GithubMark, OpenInNew} from "public/icons";
 import React from "react";
 import ResponsiveNav from "../ResponsiveNav";
-import styles from "./ProjectSlideHeader.module.scss";
+import styles from "./ProjectCardHeader.module.scss";
 
-export interface ProjectSlideHeaderProps {
+export interface ProjectCardHeaderProps {
 	/**
 	 * The project title.
 	 */
@@ -22,7 +22,7 @@ export interface ProjectSlideHeaderProps {
 	 */
 	demoSiteURL?: string;
 }
-function ProjectSlideHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: ProjectSlideHeaderProps) {
+function ProjectCardHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: ProjectCardHeaderProps) {
 	// Create links to specific sources for the project if they exist.
 	// Link to project github page.
 	const github = githubRepoURL ? (
@@ -54,4 +54,4 @@ function ProjectSlideHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: Pr
 	);
 }
 
-export default ProjectSlideHeader;
+export default ProjectCardHeader;
