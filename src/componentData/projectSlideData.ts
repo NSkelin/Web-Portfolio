@@ -13,7 +13,7 @@ import d2StatMap1 from "public/projectImages/d2StatMap/D2StatMap-1.png";
 import portfolio1 from "public/projectImages/portfolio/portfolio-1.png";
 import spotBot1 from "public/projectImages/spotBot/spotbot-1.png";
 
-const ProjectCards: ProjectSlideProps[] = [
+const projectSlideData: ProjectSlideProps[] = [
 	{
 		title: "D2StatMap",
 		description: [
@@ -75,4 +75,4 @@ const ProjectCards: ProjectSlideProps[] = [
 	},
 ];
 
-export default ProjectCards;
+export default projectSlideData;

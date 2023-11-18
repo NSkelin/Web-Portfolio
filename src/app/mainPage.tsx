@@ -1,6 +1,6 @@
 "use client";
 import React, {useRef} from "react";
-import {aboutData, landingData, projectCards, socialLinks} from "../componentData";
+import {aboutData, landingData, projectSlideData, socialLinks} from "../componentData";
 import styles from "../pageStyles/index.module.css";
 
 import About from "../components/About";
@@ -21,7 +21,7 @@ export default function MainPage() {
 			<Landing {...landingData} centerToRef={projectsRef}></Landing>
 
 			<main className={styles.main}>
-				<Projects ref={projectsRef} projectData={projectCards} />
+				<Projects ref={projectsRef} projectData={projectSlideData} />
 				<About {...aboutData} centerToRef={footerRef} />
 			</main>
 
