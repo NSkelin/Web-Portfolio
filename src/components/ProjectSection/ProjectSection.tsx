@@ -5,7 +5,7 @@ import styles from "./ProjectSection.module.scss";
 
 interface ProjectsProps extends ProjectCarouselProps {}
 /**
- * Renders a section with a title and carousel of project cards.
+ * Renders a section for showing off projects. It comes with a title and carousel of project cards.
  */
 const Projects = forwardRef<HTMLElement, ProjectsProps>(function Projects({projectData}, ref) {
 	return (
