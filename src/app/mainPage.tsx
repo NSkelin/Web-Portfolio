@@ -21,7 +21,7 @@ export default function MainPage() {
 			<Landing {...landingData} centerToRef={projectsRef}></Landing>
 
 			<main className={styles.main}>
-				<Projects ref={projectsRef} cards={projectCards} />
+				<Projects ref={projectsRef} projectData={projectCards} />
 				<About {...aboutData} centerToRef={footerRef} />
 			</main>
 
