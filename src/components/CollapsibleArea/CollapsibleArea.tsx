@@ -22,24 +22,22 @@ export type CollapsibleAreaProps = {
  */
 function CollapsibleArea({children, collapsed = true, fadeColor}: CollapsibleAreaProps) {
 	const div = useRef<HTMLDivElement>(null);
-	const [scrollHeight, setScrollHeight] = useState<string | number>(445);
+	const [expandedHeight, setExpandedHeight] = useState<number>(0);
 
-	/**
-	 * Set initial scroll height.
-	 */
+	// For the collapse / expand transitions to work properly a specific height must be set.
+	// On the first load, save the contents scroll height property for use as the expanded areas height.
 	useEffect(() => {
 		if (div.current !== null) {
-			setScrollHeight(div.current.scrollHeight);
+			setExpandedHeight(div.current.scrollHeight);
+			console.log(div.current.scrollHeight);
 		}
 	}, []);
 
-	/**
-	 * Update scroll height when the window resizes.
-	 */
+	// If the browser window gets resized, this updates the expanded areas height to match the new dimensions of the window.
 	useEffect(() => {
 		function handleResize() {
 			if (div.current !== null) {
-				setScrollHeight(div.current.scrollHeight);
+				setExpandedHeight(div.current.scrollHeight);
 			}
 		}
 
@@ -53,7 +51,7 @@ function CollapsibleArea({children, collapsed = true, fadeColor}: CollapsibleAre
 	const foregroundGradient = `linear-gradient(rgba(${fadeColor.join(", ")}, 0), rgba(${fadeColor.join(", ")}, 1))`;
 
 	return (
-		<div style={{height: collapsed ? "" : scrollHeight}} className={collapsed ? styles.collapsed : styles.expanded}>
+		<div style={{height: collapsed ? "" : expandedHeight}} className={collapsed ? styles.collapsed : styles.expanded}>
 			<div ref={div}>{children}</div>
 			<div className={styles.foreground} style={{background: foregroundGradient}}></div>
 		</div>
