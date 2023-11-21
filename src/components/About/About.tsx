@@ -122,7 +122,11 @@ function About({description, interests, skillIconSources, imageProps: {src, alt}
 				</div>
 				<h2>{"About"}</h2>
 				<div className={styles.divider}></div>
-				<CollapsibleArea collapsed={collapsed} fadeColor={[74, 86, 118]}>
+				<CollapsibleArea
+					collapsed={collapsed}
+					fadeColor={[74, 86, 118]}
+					collapsedHeight={{mobile: 125, tablet: 159, desktop: 178}}
+				>
 					{descriptionText}
 				</CollapsibleArea>
 				<div className={styles.buttonWrapper}>
