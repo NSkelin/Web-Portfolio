@@ -12,8 +12,7 @@ const navIcons = {
 };
 
 interface ResponsiveNavProps {
-	/** The elements to display inside the navigation menu. */
-	links: (React.JSX.Element | null)[];
+	children: React.ReactNode;
 }
 /**
  * Renders a navigation menu that changes depending on the screen width.
@@ -21,7 +20,7 @@ interface ResponsiveNavProps {
  * With small screens (phone / tablet) the navigation is a dropdown menu with a hamburger button.
  * On large screens (desktop) the navigation is a horizontal bar.
  */
-function ResponsiveNav({links}: ResponsiveNavProps) {
+function ResponsiveNav({children}: ResponsiveNavProps) {
 	const [menuState, setMenuState] = useState<"collapsed" | "expanded">("collapsed");
 	const [navDisplay, setNavDisplay] = useState<"none" | "flex">("none");
 	const navRef = useRef<HTMLElement>(null);
@@ -53,15 +52,6 @@ function ResponsiveNav({links}: ResponsiveNavProps) {
 		setNavDisplay(navDisplay === "none" ? "flex" : "none");
 	}
 
-	// Create the list of items inside the navigation menu.
-	const list = links.map((link, index) => {
-		return link === null ? null : (
-			<li key={index} className={styles.navItem}>
-				{link}
-			</li>
-		);
-	});
-
 	return (
 		<nav className={styles.nav} ref={navRef}>
 			<div className={styles.hamburgerButton}>
@@ -69,9 +59,9 @@ function ResponsiveNav({links}: ResponsiveNavProps) {
 					{navIcons[menuState]}
 				</Button>
 			</div>
-			<ul className={styles.navList} style={{display: navDisplay}}>
-				{list}
-			</ul>
+			<div className={styles.navList} style={{display: navDisplay}}>
+				{children}
+			</div>
 		</nav>
 	);
 }

@@ -53,7 +53,11 @@ function ProjectCardHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: Pro
 	return (
 		<header className={styles.header}>
 			<h3>{title}</h3>
-			<ResponsiveNav links={[github, view, demo]} />
+			<ResponsiveNav>
+				{github}
+				{view}
+				{demo}
+			</ResponsiveNav>
 		</header>
 	);
 }
