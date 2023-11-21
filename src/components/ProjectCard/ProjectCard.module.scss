@@ -1,20 +1,20 @@
 .projectCard {
 	display: flex;
 	flex-direction: column;
-	max-width: 1194px;
-	max-height: 600px;
-	border-radius: 15px;
+	height: 576px;
+	border-radius: 10px;
 	overflow: hidden;
 	box-shadow: 3px 8px 4px 0px rgba(0, 0, 0, 0.25);
 
-	/* tablet */
-	@media only screen and (min-width: 426px) and (max-width: 960px) {
-		max-height: 800px;
+	// Tablet.
+	@media only screen and (min-width: 600px) and (max-width: 904px) {
+		height: 643px;
 	}
 
-	/* desktop */
-	@media only screen and (min-width: 961px) {
-		height: 633px;
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		max-width: 1194px;
+		height: 680px;
 	}
 }
 .content {
@@ -24,8 +24,8 @@
 	background: #414141;
 	overflow: hidden;
 
-	/* desktop */
-	@media only screen and (min-width: 961px) {
+	// Desktop.
+	@media only screen and (min-width: 905px) {
 		flex-direction: row;
 	}
 }
