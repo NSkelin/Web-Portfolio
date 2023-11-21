@@ -1,38 +1,36 @@
 .nav {
-    position: relative;
+	position: relative;
 }
 .navList {
-    position: absolute;
-    right: 0;
-    flex-direction: column;
-    background-color: var(--primary);
-    border-radius: 10px;
+	position: absolute;
+	right: 0;
+	flex-direction: column;
+	background-color: var(--primary);
+	border-radius: 10px;
+
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		position: relative;
+		display: flex !important;
+		gap: 10px;
+		flex-direction: row;
+		background-color: var(--tertiary);
+	}
 }
 .navItem {
-    padding: 15px 20px;
-    width: 100%;
+	padding: 15px 20px;
+	width: 100%;
 }
 .navItem:active {
-    background-color: var(--secondary);
+	background-color: var(--secondary);
 }
 .materialSymbol {
 	height: 24px;
 	width: 24px;
 }
-
-/* tablet */
-@media only screen and (min-width: 426px) and (max-width: 960px) {
-
-}
-/* desktop */
-@media only screen and (min-width: 961px) {
-    .hamburgerButton {
-        display: none;
-    }
-    .navList {
-        position: relative;
-        display: flex !important;
-        flex-direction: row;
-        background-color: var(--tertiary);
-    }
+.hamburgerButton {
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		display: none;
+	}
 }
