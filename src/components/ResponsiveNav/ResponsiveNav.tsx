@@ -1,7 +1,7 @@
 import {Menu, MenuOpen} from "public/icons";
 import React, {useEffect, useRef, useState} from "react";
 import Button from "../Button";
-import styles from "./ResponsiveNav.module.css";
+import styles from "./ResponsiveNav.module.scss";
 
 /**
  * Icons for the different states of the navigation menu.
