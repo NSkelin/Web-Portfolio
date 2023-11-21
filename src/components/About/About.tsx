@@ -127,7 +127,7 @@ function About({description, interests, skillIconSources, imageProps: {src, alt}
 					fadeColor={[74, 86, 118]}
 					collapsedHeight={{mobile: 125, tablet: 159, desktop: 178}}
 				>
-					{descriptionText}
+					<div className={styles.description}>{descriptionText}</div>
 				</CollapsibleArea>
 				<div className={styles.buttonWrapper}>
 					<Button buttonStyle="outlined" onClick={() => setCollapsed(!collapsed)}>
