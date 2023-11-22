@@ -115,8 +115,10 @@ function CollapsibleArea({
 
 	return (
 		<div style={{height: containerHeight}} className={styleName}>
-			{/* Extra div is required so the scroll height shrinks back down when resizing the window. */}
-			<div ref={div}>{children}</div>
+			{
+				/* Extra div is required so the scroll height shrinks back down when resizing the window. */
+				expandedHeight === "fitContent" ? <div ref={div}>{children}</div> : children
+			}
 			<div className={styles.foreground} style={{background: foregroundGradient}}></div>
 		</div>
 	);
