@@ -21,7 +21,13 @@ const projectCardData: ProjectCardProps[] = [
 			"After signing in, you’ll be shown a unique heat map for each stat type based off of all your armor. You can then tell which stats you’re currently\
 		lacking so you know what to prioritise in game.",
 		],
-		technologies: [React, Next, JavaScript, HTML5, CSS3],
+		technologies: [
+			{name: "React", Icon: React},
+			{name: "NextJS", Icon: Next},
+			{name: "JavaScript", Icon: JavaScript},
+			{name: "HTML5", Icon: HTML5},
+			{name: "CSS3", Icon: CSS3},
+		],
 		imageSrc: d2StatMap1,
 		imageAlt:
 			"The main page of the D2StatMap Project that users will interact with. It shows a heatmap for each stat type on armor\
@@ -38,7 +44,13 @@ const projectCardData: ProjectCardProps[] = [
 			"This portfolio, the one your on, was designed and developed by me! It might seem redundant but I believe it to be a good example of what im capable of.",
 			"My personal favourite feature is the project cards your currently looking at.",
 		],
-		technologies: [React, Next, JavaScript, HTML5, CSS3],
+		technologies: [
+			{name: "React", Icon: React},
+			{name: "NextJS", Icon: Next},
+			{name: "JavaScript", Icon: JavaScript},
+			{name: "HTML5", Icon: HTML5},
+			{name: "CSS3", Icon: CSS3},
+		],
 		imageSrc: portfolio1,
 		imageAlt:
 			"The portfolios landing view. It includes a picture of the author, a call to action button to encourage users to continue downward,\
@@ -52,7 +64,11 @@ const projectCardData: ProjectCardProps[] = [
 			"Spotbot is a Discord bot that integrates with the Discord API & and the Amazon Web Services API. It allows you and anyone else with access to\
 			the bot to automatically start EC2 instances in AWS with a simple command through Discord.",
 		],
-		technologies: [JavaScript, AWS, Discord],
+		technologies: [
+			{name: "JavaScript", Icon: JavaScript},
+			{name: "Amazon Web Services", Icon: AWS},
+			{name: "Discord API", Icon: Discord},
+		],
 		imageSrc: spotBot1,
 		imageAlt:
 			"An example of a user calling the bots 'help start' command. The bot replies with useful information on how to use the command\
@@ -66,7 +82,15 @@ const projectCardData: ProjectCardProps[] = [
 			small groups of six to each create a unique project.",
 			"The goal was to gain experience in a work-like environment over the course of 4 weeks.",
 		],
-		technologies: [MongoDB, NodeMark, JavaScript, Jest, Express, HTML5, CSS3],
+		technologies: [
+			{name: "MongoDB", Icon: MongoDB},
+			{name: "Node.js", Icon: NodeMark},
+			{name: "JavaScript", Icon: JavaScript},
+			{name: "Jest", Icon: Jest},
+			{name: "Express", Icon: Express},
+			{name: "HTML5", Icon: HTML5},
+			{name: "CSS3", Icon: CSS3},
+		],
 		imageSrc: cartCompanion1,
 		imageAlt:
 			"A representation of the projects main logo. The logo is two lists mirrored towards each other with a cart behind\

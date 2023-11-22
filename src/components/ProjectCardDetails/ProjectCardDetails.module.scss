@@ -1,25 +1,32 @@
+@use "src/sassPartials/fonts";
+
 .details {
 	display: flex;
 	flex-direction: column;
-	padding: 0px 10px;
+	padding: 10px 10px 0px 10px;
 	flex: 1;
 	overflow: hidden;
 
 	// Desktop.
 	@media only screen and (min-width: 905px) {
+		padding: 0px 10px;
 		order: 1;
 		flex: 2;
 	}
 }
 .descriptionBox {
-	padding: 25px 15px;
+	padding: 10px;
 	background: #4b4b4b;
 	flex: 1;
 	margin: 0;
 
+	// Tablet & Desktop.
+	@media only screen and (min-width: 600px) {
+		padding: 20px;
+	}
+
 	// Desktop.
 	@media only screen and (min-width: 905px) {
-		padding: 30px 20px;
 		scrollbar-width: thin;
 
 		::-webkit-scrollbar {
@@ -32,28 +39,75 @@
 	}
 }
 .aside {
+	height: 100%;
 	display: flex;
 	flex-direction: column;
-	padding: 25px 15px;
-	gap: 15px;
+	padding: 15px 5px;
+	gap: 10px;
 
-	// Desktop.
-	@media only screen and (min-width: 905px) {
-		padding: 25px 20px;
+	// Tablet & Desktop.
+	@media only screen and (min-width: 600px) {
+		padding: 20px 10px;
 	}
 }
-.p {
-	margin: 16px 0;
+.titleBar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 48px;
 }
 .line {
-	border: 1px solid #ffffff;
+	height: 1px;
+	background-color: #5e5e5f;
+	margin: 0px 16px;
 }
-.icons {
+.collapsedTechList,
+.expandedTechList {
+	margin: 0px 15px;
 	display: flex;
+	gap: 10px;
 }
-.icon {
+.expandedTechList {
+	flex-direction: column;
+	height: 100%;
+	overflow-y: auto;
+}
+.collapsedTechList {
+	overflow: hidden;
+}
+.technology {
+	display: flex;
+	gap: 10px;
+}
+.techIcon {
 	display: flex;
 	align-items: center;
-	height: 28px;
-	width: 28px;
+	height: 24px;
+	width: 24px;
+
+	// Tablet & Desktop.
+	@media only screen and (min-width: 600px) {
+		height: 28px;
+		width: 28px;
+	}
+}
+
+.toggleButton {
+	display: flex;
+	gap: 5px;
+	background: none;
+	border: none;
+	color: #ffffff;
+	width: 60px;
+	align-items: flex-end;
+}
+.toggleButton:hover {
+	cursor: pointer;
+}
+.materialSymbol {
+	fill: white;
+	transition: rotate 0.25s;
+}
+.toggleText {
+	font-size: fonts.calcRem(10px);
 }
