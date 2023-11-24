@@ -1,15 +1,5 @@
-.imageWrapper {
-	position: relative;
-	height: 105px;
-	flex: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	// Tablet.
-	@media only screen and (min-width: 600px) and (max-width: 904px) {
-		height: 165px;
-	}
+.gallery {
+	padding: 10px;
 
 	// Desktop.
 	@media only screen and (min-width: 905px) {
@@ -17,9 +7,61 @@
 		box-shadow: inset 5px 0px 3px -3px rgba(0, 0, 0, 0.2);
 		flex: 5;
 		height: 100%;
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		padding: 0px;
 	}
 }
-.image {
-	object-fit: contain;
+.imageDisplay {
+	min-width: 0;
+	flex: 1;
+
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		padding: 15px;
+		display: flex;
+		align-items: center;
+	}
+}
+.thumbDisplay {
+	height: 137px;
+	min-width: 0;
 	padding: 10px;
+	display: none;
+
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		display: flex;
+		align-items: center;
+	}
+}
+.slider {
+	width: auto;
+	display: flex;
+	justify-content: center;
+}
+.image,
+.thumb {
+	border-radius: 10px;
+}
+.image {
+	height: 105px;
+	width: 140px;
+
+	// Tablet.
+	@media only screen and (min-width: 600px) and (max-width: 904px) {
+		height: 165px;
+		width: 220px;
+	}
+
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		height: 393px;
+		width: 524px;
+	}
+}
+.thumb {
+	height: 102px;
+	width: 136px;
 }

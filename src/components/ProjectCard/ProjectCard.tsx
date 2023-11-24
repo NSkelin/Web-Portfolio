@@ -14,8 +14,7 @@ export interface ProjectCardProps extends ProjectCardHeaderProps, ProjectCardDet
 function ProjectCard({
 	title = "Project title",
 	description = ["Project description"],
-	imageSrc,
-	imageAlt,
+	images,
 	githubRepoURL,
 	liveSiteURL,
 	demoSiteURL,
@@ -25,7 +24,7 @@ function ProjectCard({
 		<article className={styles.projectCard}>
 			<ProjectCardHeader title={title} githubRepoURL={githubRepoURL} liveSiteURL={liveSiteURL} demoSiteURL={demoSiteURL} />
 			<div className={styles.content}>
-				<ProjectCardGallery imageSrc={imageSrc} imageAlt={imageAlt} />
+				<ProjectCardGallery images={images} />
 				<ProjectCardDetails description={description} technologies={technologies} />
 			</div>
 		</article>

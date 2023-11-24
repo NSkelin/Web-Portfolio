@@ -28,12 +28,15 @@ const projectCardData: ProjectCardProps[] = [
 			{name: "HTML5", Icon: HTML5},
 			{name: "CSS3", Icon: CSS3},
 		],
-		imageSrc: d2StatMap1,
-		imageAlt:
-			"The main page of the D2StatMap Project that users will interact with. It shows a heatmap for each stat type on armor\
+		images: [
+			{
+				src: d2StatMap1,
+				alt: "The main page of the D2StatMap Project that users will interact with. It shows a heatmap for each stat type on armor\
 			(Mobility, Resilience, Recovery, Discipline, Intellect, Strength). It has buttons for filtering the armor by class\
 			(Warlock, Hunter, Titan) and slot type (helmet, legs, Arms, Chest, class item). And options that can be independantly\
 			enabled / disabled.",
+			},
+		],
 		githubRepoURL: "https://github.com/NSkelin/d2statmap",
 		liveSiteURL: "https://d2statmap.vercel.app",
 		demoSiteURL: "https://d2statmap.vercel.app/demo",
@@ -51,10 +54,13 @@ const projectCardData: ProjectCardProps[] = [
 			{name: "HTML5", Icon: HTML5},
 			{name: "CSS3", Icon: CSS3},
 		],
-		imageSrc: portfolio1,
-		imageAlt:
-			"The portfolios landing view. It includes a picture of the author, a call to action button to encourage users to continue downward,\
+		images: [
+			{
+				src: portfolio1,
+				alt: "The portfolios landing view. It includes a picture of the author, a call to action button to encourage users to continue downward,\
 			And a short introduction.",
+			},
+		],
 		githubRepoURL: "https://github.com/NSkelin/Web-Portfolio",
 		liveSiteURL: "https://www.nickskelin.ca",
 	},
@@ -69,10 +75,13 @@ const projectCardData: ProjectCardProps[] = [
 			{name: "Amazon Web Services", Icon: AWS},
 			{name: "Discord API", Icon: Discord},
 		],
-		imageSrc: spotBot1,
-		imageAlt:
-			"An example of a user calling the bots 'help start' command. The bot replies with useful information on how to use the command\
+		images: [
+			{
+				src: spotBot1,
+				alt: "An example of a user calling the bots 'help start' command. The bot replies with useful information on how to use the command\
 			such as the full command, its parameters, examples, and a description.",
+			},
+		],
 		githubRepoURL: "https://github.com/NSkelin/spotbot",
 	},
 	{
@@ -91,10 +100,13 @@ const projectCardData: ProjectCardProps[] = [
 			{name: "HTML5", Icon: HTML5},
 			{name: "CSS3", Icon: CSS3},
 		],
-		imageSrc: cartCompanion1,
-		imageAlt:
-			"A representation of the projects main logo. The logo is two lists mirrored towards each other with a cart behind\
+		images: [
+			{
+				src: cartCompanion1,
+				alt: "A representation of the projects main logo. The logo is two lists mirrored towards each other with a cart behind\
 			each list mirrored away from each other, with the projects title 'Cart Compainion' in all uppercase underneath.",
+			},
+		],
 		githubRepoURL: "https://github.com/NSkelin/Quicklists",
 	},
 ];
