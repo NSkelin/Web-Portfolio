@@ -19,9 +19,11 @@
 
 	// Desktop.
 	@media only screen and (min-width: 905px) {
-		padding: 15px;
+		padding: 0px 15px;
 		display: flex;
 		align-items: center;
+		background: #4b4b4b;
+		min-width: 554px;
 	}
 }
 .thumbDisplay {
@@ -29,6 +31,7 @@
 	min-width: 0;
 	padding: 10px;
 	display: none;
+	background: #414141;
 
 	// Desktop.
 	@media only screen and (min-width: 905px) {

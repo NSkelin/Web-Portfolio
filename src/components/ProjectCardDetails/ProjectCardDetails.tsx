@@ -70,7 +70,7 @@ function ProjectCardDetails({description, technologies}: ProjectCardDetailsProps
 
 			<CollapsibleArea
 				collapsed={collapsed}
-				fadeColor={[65, 65, 65]}
+				fadeColor={[55, 55, 55]}
 				expandedHeight="75%"
 				collapsedHeight={{desktop: "137px", tablet: "137px", mobile: "123px"}}
 			>

@@ -20,7 +20,7 @@ export interface ProjectCarouselProps {
 function ProjectCarousel({projectData}: ProjectCarouselProps) {
 	// Create the project slides to enter in the carousel.
 	const projectSlides = projectData.map(({...rest}, index) => (
-		<SwiperSlide key={index}>
+		<SwiperSlide className={styles.slide} key={index}>
 			<ProjectCard {...rest} />
 		</SwiperSlide>
 	));

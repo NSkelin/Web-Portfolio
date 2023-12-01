@@ -1,6 +1,7 @@
 @use "src/sassPartials/fonts";
 
 .details {
+	background-color: #373737;
 	display: flex;
 	flex-direction: column;
 	padding: 10px 10px 0px 10px;
@@ -11,7 +12,8 @@
 	@media only screen and (min-width: 905px) {
 		padding: 0px 10px;
 		order: 1;
-		flex: 2;
+		width: 320px;
+		flex: none;
 	}
 }
 .descriptionBox {
@@ -19,6 +21,16 @@
 	background: #4b4b4b;
 	flex: 1;
 	margin: 0;
+
+	p {
+		margin: 5px 0;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+		&:first-of-type {
+			margin-top: 0px;
+		}
+	}
 
 	// Tablet & Desktop.
 	@media only screen and (min-width: 600px) {

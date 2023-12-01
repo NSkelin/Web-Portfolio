@@ -1,8 +1,7 @@
 .swiper {
 	padding: 40px 0px;
-
-	// Desktop.
-	@media only screen and (min-width: 905px) {
-		padding: 40px 60px;
-	}
+}
+.slide {
+	display: flex;
+	justify-content: center;
 }

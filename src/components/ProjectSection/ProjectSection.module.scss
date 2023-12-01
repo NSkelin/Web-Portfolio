@@ -2,18 +2,6 @@
 	margin: 150px 0px;
 	padding: 0 16px;
 	width: 100%;
-
-	// Tablet.
-	@media only screen and (min-width: 600px) and (max-width: 904px) {
-		margin: 150px 16px;
-		max-width: 700px;
-	}
-
-	// Desktop.
-	@media only screen and (min-width: 905px) {
-		margin: 150px 16px;
-		max-width: 1194px;
-	}
 }
 .spacer {
 	height: 10px;
