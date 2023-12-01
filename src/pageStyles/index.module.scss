@@ -1,36 +1,42 @@
 .page {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    margin: auto;
-    background: linear-gradient(90deg, #42495C 0%, #3F4863 47.4%, #42495C 100%);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	margin: auto;
+	background: linear-gradient(90deg, #42495c 0%, #3f4863 47.4%, #42495c 100%);
 }
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
 }
 .footer {
-    width: 100%;
-    background-color: #3D4055;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 150px 0 150px 0;
+	width: 100%;
+	background-color: #3d4055;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 150px 0 150px 0;
 }
-@media only screen and (min-width: 430px) and (max-width: 960px) {
-    .footerText {
-        width: 50%;
-    }
+.footerText {
+	// Tablet.
+	@media only screen and (min-width: 600px) and (max-width: 904px) {
+		width: 50%;
+	}
 }
-@media only screen and (min-width: 961px) {
-    .container {
-        width: 100%;
-    }
-    .footerText {
-        width: 33%;
-    }
+
+.container {
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		width: 100%;
+	}
+}
+.footerText {
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		width: 33%;
+	}
 }
