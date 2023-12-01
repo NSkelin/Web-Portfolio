@@ -1,7 +1,7 @@
 "use client";
 import React, {useRef} from "react";
 import {aboutData, landingData, projectCardData, socialLinks} from "../componentData";
-import styles from "../pageStyles/index.module.css";
+import styles from "../pageStyles/index.module.scss";
 
 import About from "../components/About";
 import AccentTitle from "../components/AccentTitle";
