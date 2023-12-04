@@ -11,7 +11,7 @@ import {AWS, CSS3, Discord, Express, HTML5, JavaScript, Jest, MongoDB, Next, Nod
 import cartCompanion1 from "public/projectImages/cartCompanion/CartCompanion-1.png";
 import d2StatMap1 from "public/projectImages/d2StatMap/D2StatMap-1.png";
 import portfolio1 from "public/projectImages/portfolio/portfolio-1.png";
-import spotBot1 from "public/projectImages/spotBot/spotbot-1.png";
+import {spotbot1, spotbot2, spotbot3} from "public/projectImages/spotBot";
 
 const projectCardData: ProjectCardProps[] = [
 	{
@@ -77,9 +77,17 @@ const projectCardData: ProjectCardProps[] = [
 		],
 		images: [
 			{
-				src: spotBot1,
+				src: spotbot1,
+				alt: "A logo image of the project which includes a name, the slogan, and a simple diagram explaining the basic functionality.",
+			},
+			{
+				src: spotbot2,
 				alt: "An example of a user calling the bots 'help start' command. The bot replies with useful information on how to use the command\
-			such as the full command, its parameters, examples, and a description.",
+				such as the full command, its parameters, examples, and a description.",
+			},
+			{
+				src: spotbot3,
+				alt: "An example of calling the bots start command to start a server.",
 			},
 		],
 		githubRepoURL: "https://github.com/NSkelin/spotbot",
