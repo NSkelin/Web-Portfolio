@@ -5,7 +5,11 @@ import "swiper/css/thumbs";
 import {Thumbs} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Swiper as SwiperTypes} from "swiper/types";
+import Lightbox, {SlideImage} from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 import styles from "./ProjectCardGallery.module.scss";
+
+import NextJsImage from "../NextJsImage";
 
 export interface ProjectCardGalleryProps {
 	/**
@@ -31,6 +35,7 @@ export interface ProjectCardGalleryProps {
 function ProjectCardGallery({images}: ProjectCardGalleryProps) {
 	// Store thumbs swiper instance.
 	const [thumbsSwiper, setThumbsSwiper] = useState<SwiperTypes | null>(null);
+	const [open, setOpen] = useState(false);
 
 	/**
 	 * Creates the image slide jsx elements from the prop data.
@@ -44,13 +49,14 @@ function ProjectCardGallery({images}: ProjectCardGalleryProps) {
 			imageSlides.push(
 				<SwiperSlide key={i} className={styles.slider}>
 					<Image
+						onClick={() => setOpen(true)}
 						className={styles.image}
 						src={src}
 						alt={alt}
 						sizes="
-					(min-width: 905px) 524px,
-					(min-width: 600px) and (max-width: 904px) 220px,
-					136px"
+						(min-width: 905px) 524px,
+						(min-width: 600px) and (max-width: 904px) 220px,
+						136px"
 					/>
 				</SwiperSlide>,
 			);
@@ -97,6 +103,12 @@ function ProjectCardGallery({images}: ProjectCardGalleryProps) {
 					{thumbSlides}
 				</Swiper>
 			</div>
+			<Lightbox
+				open={open}
+				close={() => setOpen(false)}
+				slides={images.map(({src}) => src as SlideImage)}
+				render={{slide: NextJsImage}}
+			/>
 		</div>
 	);
 }
