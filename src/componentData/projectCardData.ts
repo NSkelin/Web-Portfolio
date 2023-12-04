@@ -8,9 +8,9 @@
 
 import {ProjectCardProps} from "@/components/ProjectCard";
 import {AWS, CSS3, Discord, Express, HTML5, JavaScript, Jest, MongoDB, Next, NodeMark, React} from "public/icons";
-import cartCompanion1 from "public/projectImages/cartCompanion/CartCompanion-1.png";
-import d2StatMap1 from "public/projectImages/d2StatMap/D2StatMap-1.png";
-import portfolio1 from "public/projectImages/portfolio/portfolio-1.png";
+import {cartcompanion1} from "public/projectImages/cartCompanion";
+import {d2statmap1} from "public/projectImages/d2StatMap";
+import {portfolio1} from "public/projectImages/portfolio";
 import {spotbot1, spotbot2, spotbot3} from "public/projectImages/spotBot";
 
 const projectCardData: ProjectCardProps[] = [
@@ -30,7 +30,7 @@ const projectCardData: ProjectCardProps[] = [
 		],
 		images: [
 			{
-				src: d2StatMap1,
+				src: d2statmap1,
 				alt: "The main page of the D2StatMap Project that users will interact with. It shows a heatmap for each stat type on armor\
 			(Mobility, Resilience, Recovery, Discipline, Intellect, Strength). It has buttons for filtering the armor by class\
 			(Warlock, Hunter, Titan) and slot type (helmet, legs, Arms, Chest, class item). And options that can be independantly\
@@ -110,7 +110,7 @@ const projectCardData: ProjectCardProps[] = [
 		],
 		images: [
 			{
-				src: cartCompanion1,
+				src: cartcompanion1,
 				alt: "A representation of the projects main logo. The logo is two lists mirrored towards each other with a cart behind\
 			each list mirrored away from each other, with the projects title 'Cart Compainion' in all uppercase underneath.",
 			},
