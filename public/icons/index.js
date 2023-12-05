@@ -18,3 +18,4 @@ export {default as Next} from "./next.svg";
 export {default as NodeMark} from "./node-mark.svg";
 export {default as OpenInNew} from "./open_in_new.svg";
 export {default as React} from "./react.svg";
+export {default as TypeScript} from "./typescript.svg";
