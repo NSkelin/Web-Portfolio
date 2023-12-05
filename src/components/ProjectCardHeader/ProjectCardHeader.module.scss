@@ -1,3 +1,6 @@
+@use "src/sassPartials/fonts";
+@use "src/components/Button/Button.module.scss" as button;
+
 .header {
 	display: flex;
 	padding: 15px 25px;
@@ -14,22 +17,35 @@
 	@media only screen and (min-width: 905px) {
 		padding: 30px 35px;
 	}
-}
-.navItemGithub,
-.navItem {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-.navItem {
-	text-align: center;
-}
-.navItemGithub {
-	gap: 5px;
+	a {
+		font-size: fonts.calcRem(14px);
+		line-height: fonts.calcRem(20px);
+	}
 }
 .materialSymbol {
 	fill: white;
-	height: 20px;
-	width: 20px;
+	height: 18px;
+	width: 18px;
+}
+.outline,
+.fill {
+	display: flex;
+	gap: 8px;
+	padding: 15px 30px;
+}
+.outline {
+	border-bottom: 1px solid #5a5a5a;
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		@include button.outlined;
+	}
+}
+.fill {
+	// Desktop.
+	@media only screen and (min-width: 905px) {
+		.materialSymbol {
+			fill: #00164d;
+		}
+		@include button.filled;
+	}
 }

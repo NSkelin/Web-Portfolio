@@ -30,23 +30,23 @@ function ProjectCardHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: Pro
 	// Create links to specific sources for the project if they exist.
 	// Link to project github page.
 	const github = githubRepoURL ? (
-		<a className={styles.navItemGithub} href={githubRepoURL}>
+		<a className={styles.outline} href={githubRepoURL}>
+			<GithubMark className={styles.materialSymbol} />
 			Github
-			<GithubMark />
 		</a>
 	) : null;
 	// Link to projects live site.
 	const view = liveSiteURL ? (
-		<a className={styles.navItem} href={liveSiteURL}>
-			View
+		<a className={styles.fill} href={liveSiteURL}>
 			<OpenInNew className={styles.materialSymbol} />
+			Live
 		</a>
 	) : null;
 	// Link to a site containing a demo version of the project.
 	const demo = demoSiteURL ? (
-		<a className={styles.navItem} href={demoSiteURL}>
-			Demo
+		<a className={styles.outline} href={demoSiteURL}>
 			<OpenInNew className={styles.materialSymbol} />
+			Demo
 		</a>
 	) : null;
 
@@ -55,8 +55,8 @@ function ProjectCardHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: Pro
 			<h3>{title}</h3>
 			<ResponsiveNav>
 				{github}
-				{view}
 				{demo}
+				{view}
 			</ResponsiveNav>
 		</header>
 	);
