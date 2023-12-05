@@ -1,14 +1,9 @@
-.stateLayer,
-.fab,
-.filled,
-.outlined,
-.iconButton {
+// All mixins so i can re-use the button styles with other elements such as the <a></a> tags.
+
+@mixin button-radius {
 	border-radius: 10px;
 }
-.fab,
-.filled,
-.outlined,
-.iconButton {
+@mixin buttons {
 	display: flex;
 	align-items: center;
 	gap: 8px;
@@ -20,14 +15,20 @@
 		cursor: pointer;
 	}
 }
-.stateLayer {
+@mixin stateLayer {
+	@include button-radius;
+	@include buttons;
+
 	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
 	height: 100%;
 }
-.fab {
+@mixin fab {
+	@include button-radius;
+	@include buttons;
+
 	background: var(--buttonBg);
 	padding: 20px 30px;
 	font-size: 1.9rem;
@@ -55,7 +56,10 @@
 		mask-composite: exclude;
 	}
 }
-.filled {
+@mixin filled {
+	@include button-radius;
+	@include buttons;
+
 	background: #b8c4ff;
 	color: #00164d;
 	.stateLayer:hover {
@@ -68,7 +72,10 @@
 		padding: 10px;
 	}
 }
-.outlined {
+@mixin outlined {
+	@include button-radius;
+	@include buttons;
+
 	border: 1px solid #90909a;
 	background: transparent;
 	.stateLayer:hover {
@@ -78,7 +85,10 @@
 		background-color: rgba(103, 80, 164, 0.12);
 	}
 }
-.iconButton {
+@mixin iconButton {
+	@include button-radius;
+	@include buttons;
+
 	padding: 10px;
 
 	background: #b8c4ff;
@@ -89,4 +99,20 @@
 	.stateLayer:active {
 		background-color: rgba(255, 255, 255, 0.12);
 	}
+}
+
+.stateLayer {
+	@include stateLayer();
+}
+.fab {
+	@include fab;
+}
+.filled {
+	@include filled;
+}
+.outlined {
+	@include outlined;
+}
+.iconButton {
+	@include iconButton;
 }
