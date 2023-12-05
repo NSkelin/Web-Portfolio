@@ -7,7 +7,7 @@
  */
 
 import {ProjectCardProps} from "@/components/ProjectCard";
-import {AWS, CSS3, Discord, Express, HTML5, JavaScript, Jest, MongoDB, Next, NodeMark, React} from "public/icons";
+import {AWS, CSS3, Discord, Express, HTML5, JavaScript, Jest, MongoDB, Next, NodeMark, React, TypeScript} from "public/icons";
 import {cartcompanion1} from "public/projectImages/cartCompanion";
 import {d2statmap1} from "public/projectImages/d2StatMap";
 import {portfolio1} from "public/projectImages/portfolio";
@@ -51,6 +51,7 @@ const projectCardData: ProjectCardProps[] = [
 			{name: "React", Icon: React},
 			{name: "NextJS", Icon: Next},
 			{name: "JavaScript", Icon: JavaScript},
+			{name: "TypeScript", Icon: TypeScript},
 			{name: "HTML5", Icon: HTML5},
 			{name: "CSS3", Icon: CSS3},
 		],
