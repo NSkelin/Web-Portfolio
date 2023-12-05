@@ -6,7 +6,7 @@
  */
 
 import type {AboutProps} from "@/components/About";
-import {CSS3, Git, HTML5, JavaScript, MySQLMark, Next, NodeMark, React} from "public/icons";
+import {CSS3, Git, HTML5, JavaScript, MySQLMark, Next, NodeMark, React, TypeScript} from "public/icons";
 import pfp from "public/pfp2.jpg";
 
 const skillData: AboutProps = {
@@ -31,8 +31,9 @@ const skillData: AboutProps = {
 	skillIconSources: [
 		[
 			{Icon: HTML5, text: "HTML 5"},
-			{Icon: CSS3, text: "CSS3"},
 			{Icon: JavaScript, text: "JavaScript"},
+			{Icon: CSS3, text: "CSS3"},
+			{Icon: TypeScript, text: "TypeScript"},
 		],
 		[
 			{Icon: NodeMark, text: "Node.js"},
