@@ -31,22 +31,28 @@ function ProjectCardHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: Pro
 	// Link to project github page.
 	const github = githubRepoURL ? (
 		<a className={styles.outline} href={githubRepoURL}>
-			<GithubMark className={styles.materialSymbol} />
-			Github
+			<div className={styles.stateLayer}>
+				<GithubMark className={styles.materialSymbol} />
+				Github
+			</div>
 		</a>
 	) : null;
 	// Link to projects live site.
 	const view = liveSiteURL ? (
 		<a className={styles.fill} href={liveSiteURL}>
-			<OpenInNew className={styles.materialSymbol} />
-			Live
+			<div className={styles.stateLayer}>
+				<OpenInNew className={styles.materialSymbol} />
+				Live
+			</div>
 		</a>
 	) : null;
 	// Link to a site containing a demo version of the project.
 	const demo = demoSiteURL ? (
 		<a className={styles.outline} href={demoSiteURL}>
-			<OpenInNew className={styles.materialSymbol} />
-			Demo
+			<div className={styles.stateLayer}>
+				<OpenInNew className={styles.materialSymbol} />
+				Demo
+			</div>
 		</a>
 	) : null;
 

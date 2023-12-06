@@ -27,25 +27,28 @@
 	height: 18px;
 	width: 18px;
 }
-.outline,
-.fill {
-	display: flex;
-	gap: 8px;
+.stateLayer {
 	padding: 15px 30px;
 }
 .outline {
 	border-bottom: 1px solid #5a5a5a;
+
 	// Desktop.
 	@media only screen and (min-width: 905px) {
 		@include button.outlined;
+
+		padding: 0px;
 	}
 }
 .fill {
 	// Desktop.
 	@media only screen and (min-width: 905px) {
+		@include button.filled;
+
+		padding: 0px;
+
 		.materialSymbol {
 			fill: #00164d;
 		}
-		@include button.filled;
 	}
 }
