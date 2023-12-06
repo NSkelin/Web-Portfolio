@@ -1,7 +1,5 @@
 import {ChevronUp} from "public/icons";
 import React, {ComponentProps, useState} from "react";
-import {FreeMode, Mousewheel, Scrollbar} from "swiper/modules";
-import {Swiper, SwiperSlide} from "swiper/react";
 import CollapsibleArea from "../CollapsibleArea";
 import styles from "./ProjectCardDetails.module.scss";
 
@@ -54,19 +52,7 @@ function ProjectCardDetails({description, technologies}: ProjectCardDetailsProps
 
 	return (
 		<div className={styles.details}>
-			{/* Uses Swiper to allow overflow while nested inside another Swiper. */}
-			<Swiper
-				modules={[Scrollbar, FreeMode, Mousewheel]}
-				className={styles.descriptionBox}
-				scrollbar={true}
-				direction="vertical"
-				slidesPerView="auto"
-				freeMode={true}
-				mousewheel={true}
-				touchReleaseOnEdges={true}
-			>
-				<SwiperSlide>{descriptionParagraphs}</SwiperSlide>
-			</Swiper>
+			<div className={styles.descriptionBox}>{descriptionParagraphs}</div>
 
 			<CollapsibleArea
 				collapsed={collapsed}
