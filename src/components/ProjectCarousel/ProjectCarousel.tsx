@@ -41,6 +41,7 @@ function ProjectCarousel({projectData}: ProjectCarouselProps) {
 			spaceBetween={80}
 			longSwipes={false}
 			loop={true}
+			touchStartPreventDefault={false}
 		>
 			{projectSlides}
 			<div className={styles.navContainer}>
