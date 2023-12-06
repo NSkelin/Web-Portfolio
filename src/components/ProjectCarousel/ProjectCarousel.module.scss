@@ -1,7 +1,36 @@
 .swiper {
 	padding: 40px 0px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
 }
 .slide {
 	display: flex;
 	justify-content: center;
+}
+.navContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	flex: 0;
+
+	.pagination {
+		width: auto;
+	}
+}
+.materialSymbol {
+	fill: white;
+	height: 18px;
+	width: 18px;
+}
+.navPrev {
+	.materialSymbol {
+		rotate: 90deg;
+	}
+}
+.navNext {
+	.materialSymbol {
+		rotate: -90deg;
+	}
 }

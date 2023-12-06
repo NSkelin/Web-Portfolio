@@ -1,9 +1,11 @@
+import {ArrowDownward} from "public/icons";
 import React from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import {Navigation, Pagination} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
+import Button from "../Button";
 import ProjectCard, {ProjectCardProps} from "../ProjectCard";
 import styles from "./ProjectCarousel.module.scss";
 
@@ -30,13 +32,32 @@ function ProjectCarousel({projectData}: ProjectCarouselProps) {
 			className={styles.swiper}
 			modules={[Navigation, Pagination]}
 			slidesPerView={1}
-			navigation={true}
-			pagination={true}
+			navigation={{
+				enabled: true,
+				prevEl: `.${styles.navPrev}`,
+				nextEl: `.${styles.navNext}`,
+			}}
+			pagination={{enabled: true, el: `.${styles.pagination}`}}
 			spaceBetween={80}
 			longSwipes={false}
 			loop={true}
 		>
 			{projectSlides}
+			<div className={styles.navContainer}>
+				<div className={styles.navPrev}>
+					<Button buttonStyle="text">
+						<ArrowDownward className={styles.materialSymbol} />
+						Previous
+					</Button>
+				</div>
+				<div className={styles.pagination} />
+				<div className={styles.navNext}>
+					<Button buttonStyle="text">
+						Next
+						<ArrowDownward className={styles.materialSymbol} />
+					</Button>
+				</div>
+			</div>
 		</Swiper>
 	);
 }
