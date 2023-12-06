@@ -42,6 +42,7 @@ function ProjectCarousel({projectData}: ProjectCarouselProps) {
 			longSwipes={false}
 			loop={true}
 			touchStartPreventDefault={false}
+			breakpoints={{905: {touchStartPreventDefault: true}}}
 		>
 			{projectSlides}
 			<div className={styles.navContainer}>
