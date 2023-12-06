@@ -1,34 +1,36 @@
 // All mixins so i can re-use the button styles with other elements such as the <a></a> tags.
 
-@mixin button-radius {
-	border-radius: 10px;
-}
-@mixin buttons {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	padding: 10px 24px;
+@mixin buttonDefault {
+	display: inline-flex;
 	color: white;
+	border-radius: 10px;
 	border: none;
-	position: relative;
+	padding: 0;
+
 	&:hover {
 		cursor: pointer;
 	}
 }
 @mixin stateLayer {
-	@include button-radius;
-	@include buttons;
+	display: flex;
+	padding: 10px 24px;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	border-radius: 10px;
 
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
+	&:hover {
+		background-color: rgba(103, 80, 164, 0.08);
+	}
+	&:focus,
+	&:active {
+		background-color: rgba(103, 80, 164, 0.12);
+	}
 }
-@mixin fab {
-	@include button-radius;
-	@include buttons;
 
+@mixin fab {
+	@include buttonDefault;
+	position: relative;
 	background: var(--buttonBg);
 	padding: 20px 30px;
 	font-size: 1.9rem;
@@ -57,14 +59,15 @@
 	}
 }
 @mixin filled {
-	@include button-radius;
-	@include buttons;
+	@include buttonDefault;
 
 	background: #b8c4ff;
 	color: #00164d;
+
 	.stateLayer:hover {
 		background-color: rgba(255, 255, 255, 0.08);
 	}
+	.stateLayer:focus,
 	.stateLayer:active {
 		background-color: rgba(255, 255, 255, 0.12);
 	}
@@ -73,34 +76,35 @@
 	}
 }
 @mixin outlined {
-	@include button-radius;
-	@include buttons;
+	@include buttonDefault;
 
 	border: 1px solid #90909a;
 	background: transparent;
-	.stateLayer:hover {
-		background-color: rgba(103, 80, 164, 0.08);
-	}
-	.stateLayer:active {
-		background-color: rgba(103, 80, 164, 0.12);
-	}
 }
 @mixin iconButton {
-	@include button-radius;
-	@include buttons;
-
-	padding: 10px;
+	@include buttonDefault;
 
 	background: #b8c4ff;
 	color: #00164d;
+
+	.stateLayer {
+		padding: 10px;
+	}
 	.stateLayer:hover {
 		background-color: rgba(255, 255, 255, 0.08);
 	}
+	.stateLayer:focus,
 	.stateLayer:active {
 		background-color: rgba(255, 255, 255, 0.12);
 	}
 }
+@mixin text {
+	@include buttonDefault;
 
+	background: transparent;
+}
+
+// Assign mixins to classes
 .stateLayer {
 	@include stateLayer();
 }
@@ -115,4 +119,7 @@
 }
 .iconButton {
 	@include iconButton;
+}
+.text {
+	@include text;
 }

@@ -4,7 +4,7 @@ import styles from "./Button.module.scss";
 /**
  * Pre-made styles that loosely follow googles material design.
  */
-type ButtonStyles = "fab" | "filled" | "outlined" | "iconButton";
+type ButtonStyles = "fab" | "filled" | "outlined" | "iconButton" | "text";
 
 interface ButtonProps
 	extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
@@ -22,8 +22,7 @@ interface ButtonProps
 function Button({children, buttonStyle, ...rest}: ButtonProps) {
 	return (
 		<button {...rest} className={styles[buttonStyle]}>
-			{children}
-			<div className={styles.stateLayer}></div>
+			<div className={styles.stateLayer}>{children}</div>
 		</button>
 	);
 }
