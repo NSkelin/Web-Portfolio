@@ -41,7 +41,16 @@ function Landing({imageSrc, title, subtitle, centerToRef}: LandingProps) {
 
 			<div className={styles.main}>
 				<div className={styles.pfp}>
-					<Image fill={true} src={imageSrc} alt="Picture of the author" priority={true} />
+					<Image
+						fill={true}
+						src={imageSrc}
+						alt="Picture of the author"
+						priority={true}
+						sizes="
+						(min-width: 905px) 300px,
+						(min-width: 600px) and (max-width: 904px) 300px,
+						250px"
+					/>
 				</div>
 				<div className={styles.dialogue}>
 					<h1>{title}</h1>
