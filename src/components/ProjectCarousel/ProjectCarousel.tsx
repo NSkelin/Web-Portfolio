@@ -14,7 +14,7 @@ export interface ProjectCarouselProps {
 	 * An array of objects with each object containing the data needed to render one project card.
 	 * The more objects sent, the more project card slides rendered.
 	 */
-	projectData: ProjectCardProps[];
+	projectData: Omit<ProjectCardProps, "swiperRef">[];
 }
 /**
  * Renders a carousel of project cards, with each slide being one project card.
