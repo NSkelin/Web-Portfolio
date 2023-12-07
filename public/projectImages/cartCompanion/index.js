@@ -1,1 +1,1 @@
-export {default as cartcompanion1} from "./cartcompanion-1.png";
+export {default as cartcompanion1} from "./CartCompanion-1.png";
