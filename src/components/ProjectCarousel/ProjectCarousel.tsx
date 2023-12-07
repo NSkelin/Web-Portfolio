@@ -44,7 +44,6 @@ function ProjectCarousel({projectData}: ProjectCarouselProps) {
 			spaceBetween={80}
 			longSwipes={false}
 			loop={true}
-			touchStartPreventDefault={false}
 			breakpoints={{905: {touchStartPreventDefault: true}}}
 		>
 			{projectSlides}
