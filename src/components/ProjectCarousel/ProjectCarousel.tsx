@@ -1,10 +1,10 @@
 import {ArrowDownward} from "public/icons";
-import React from "react";
+import React, {useRef} from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import {Navigation, Pagination} from "swiper/modules";
-import {Swiper, SwiperSlide} from "swiper/react";
+import {Swiper, SwiperRef, SwiperSlide} from "swiper/react";
 import Button from "../Button";
 import ProjectCard, {ProjectCardProps} from "../ProjectCard";
 import styles from "./ProjectCarousel.module.scss";
@@ -20,15 +20,18 @@ export interface ProjectCarouselProps {
  * Renders a carousel of project cards, with each slide being one project card.
  */
 function ProjectCarousel({projectData}: ProjectCarouselProps) {
+	const swiperRef = useRef<SwiperRef | null>(null);
+
 	// Create the project slides to enter in the carousel.
 	const projectSlides = projectData.map(({...rest}, index) => (
 		<SwiperSlide className={styles.slide} key={index}>
-			<ProjectCard {...rest} />
+			<ProjectCard {...rest} swiperRef={swiperRef} />
 		</SwiperSlide>
 	));
 
 	return (
 		<Swiper
+			ref={swiperRef}
 			className={styles.swiper}
 			modules={[Navigation, Pagination]}
 			slidesPerView={1}
