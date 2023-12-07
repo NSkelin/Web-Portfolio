@@ -7,7 +7,7 @@ import About from "../components/About";
 import AccentTitle from "../components/AccentTitle";
 import Contact from "../components/Contact";
 import Landing from "../components/Landing";
-import Projects from "../components/ProjectSection";
+import ProjectSection from "../components/ProjectSection";
 
 /**
  * Renders the main page of the portfolio. This includes a landing section, a projects section, an about section, and a contact section.
@@ -21,7 +21,7 @@ export default function MainPage() {
 			<Landing {...landingData} centerToRef={projectsRef}></Landing>
 
 			<main className={styles.main}>
-				<Projects ref={projectsRef} projectData={projectCardData} />
+				<ProjectSection ref={projectsRef} projectData={projectCardData} />
 				<About {...aboutData} centerToRef={footerRef} />
 			</main>
 

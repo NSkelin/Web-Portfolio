@@ -7,7 +7,7 @@ interface ProjectSectionProps extends ProjectCarouselProps {}
 /**
  * Renders a section for showing off projects. It comes with a title and carousel of project cards.
  */
-const Projects = forwardRef<HTMLElement, ProjectSectionProps>(function Projects({projectData}, ref) {
+const ProjectSection = forwardRef<HTMLElement, ProjectSectionProps>(function ProjectSection({projectData}, ref) {
 	return (
 		<section ref={ref} className={styles.projects}>
 			<AccentTitle title={"Projects"} />
@@ -17,4 +17,4 @@ const Projects = forwardRef<HTMLElement, ProjectSectionProps>(function Projects(
 	);
 });
 
-export default Projects;
+export default ProjectSection;
