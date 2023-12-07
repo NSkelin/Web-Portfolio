@@ -6,14 +6,14 @@
  * to fish through tons of components.
  */
 
-import {ProjectCardProps} from "@/components/ProjectCard";
+import {ProjectCarouselProps} from "@/components/ProjectCarousel";
 import {AWS, CSS3, Discord, Express, HTML5, JavaScript, Jest, MongoDB, Next, NodeMark, React, TypeScript} from "public/icons";
 import {cartcompanion1} from "public/projectImages/cartCompanion";
 import {d2statmap1} from "public/projectImages/d2StatMap";
 import {portfolio1} from "public/projectImages/portfolio";
 import {spotbot1, spotbot2, spotbot3} from "public/projectImages/spotBot";
 
-const projectCardData: ProjectCardProps[] = [
+const projectCardData: ProjectCarouselProps["projectData"] = [
 	{
 		title: "D2StatMap",
 		description: [
