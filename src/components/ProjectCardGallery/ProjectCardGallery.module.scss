@@ -45,7 +45,9 @@
 	justify-content: center;
 }
 .image,
-.thumb {
+.thumb,
+.thumbActive,
+.thumbInactive {
 	border-radius: 10px;
 }
 .image {
@@ -67,4 +69,23 @@
 .thumb {
 	height: 102px;
 	width: 136px;
+}
+.thumbActive,
+.thumbInactive {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.thumbInactive {
+	background: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(0.5px);
+
+	&:hover {
+		background: none;
+		backdrop-filter: none;
+	}
+}
+.thumbActive {
+	outline: solid 1px #797979;
+	outline-offset: -1px;
 }

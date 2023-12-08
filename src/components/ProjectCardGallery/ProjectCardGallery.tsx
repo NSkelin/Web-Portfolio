@@ -41,6 +41,7 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 	// Store thumbs swiper instance.
 	const [thumbsSwiper, setThumbsSwiper] = useState<SwiperTypes | null>(null);
 	const [open, setOpen] = useState(false);
+	const [activeSlide, setActiveSlide] = useState(0);
 
 	/**
 	 * Creates the image slide jsx elements from the prop data.
@@ -49,6 +50,7 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 		let imageSlides = [];
 		let thumbSlides = [];
 		for (let i = 0; i < images.length; i++) {
+			const thumbClass = activeSlide === i ? styles.thumbActive : styles.thumbInactive;
 			const {src, alt} = images[i];
 
 			imageSlides.push(
@@ -67,6 +69,7 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 			);
 			thumbSlides.push(
 				<SwiperSlide key={i} className={styles.slider}>
+					<div className={thumbClass}></div>
 					<Image className={styles.thumb} src={src} alt={alt} sizes="136px" />
 				</SwiperSlide>,
 			);
@@ -88,6 +91,7 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 					modules={[Thumbs]}
 					thumbs={{swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
 					touchEventsTarget={"container"}
+					onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
 					onTouchStart={(swiper) => {
 						// Prevent parent swiper from moving when user is swiping the gallery.
 
