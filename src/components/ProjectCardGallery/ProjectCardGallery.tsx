@@ -113,9 +113,10 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 	 */
 	function preventParentSwiperMovement(swiper: SwiperTypes) {
 		if (swiperRef.current?.swiper == null) return;
-
 		// Dont prevent parent swiper from moving if the gallery is too small to move (no overflow).
-		if (swiper.isBeginning && swiper.isEnd) return;
+		else if (swiper.isBeginning && swiper.isEnd) return;
+		// Swiper not allowed to move so dont block parent swiper.
+		else if (!swiper.allowTouchMove) return;
 
 		swiperRef.current.swiper.allowSlideNext = false;
 		swiperRef.current.swiper.allowSlidePrev = false;
