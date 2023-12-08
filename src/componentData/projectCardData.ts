@@ -8,9 +8,9 @@
 
 import {ProjectCarouselProps} from "@/components/ProjectCarousel";
 import {AWS, CSS3, Discord, Express, HTML5, JavaScript, Jest, MongoDB, Next, NodeMark, React, TypeScript} from "public/icons";
-import {cartcompanion1} from "public/projectImages/cartCompanion";
-import {d2statmap1} from "public/projectImages/d2StatMap";
-import {portfolio1} from "public/projectImages/portfolio";
+import {cartcompanion1, cartcompanion2, cartcompanion3, cartcompanion4} from "public/projectImages/cartCompanion";
+import {d2statmap1, d2statmap2, d2statmap3, d2statmap4} from "public/projectImages/d2StatMap";
+import {portfolio1, portfolio2, portfolio3} from "public/projectImages/portfolio";
 import {spotbot1, spotbot2, spotbot3} from "public/projectImages/spotBot";
 
 const projectCardData: ProjectCarouselProps["projectData"] = [
@@ -36,6 +36,18 @@ const projectCardData: ProjectCarouselProps["projectData"] = [
 			(Warlock, Hunter, Titan) and slot type (helmet, legs, Arms, Chest, class item). And options that can be independantly\
 			enabled / disabled.",
 			},
+			{
+				src: d2statmap2,
+				alt: "The first thing you see when you visit the site. It shows a login button that will redirect you to the Bungie.net login page.",
+			},
+			{
+				src: d2statmap3,
+				alt: "The first step of authenticating with Bungie.net, choosing which platform you play on.",
+			},
+			{
+				src: d2statmap4,
+				alt: "Profile selection. If you have multiple accounts you can choose which one to use.",
+			},
 		],
 		githubRepoURL: "https://github.com/NSkelin/d2statmap",
 		liveSiteURL: "https://d2statmap.vercel.app",
@@ -60,6 +72,15 @@ const projectCardData: ProjectCarouselProps["projectData"] = [
 				src: portfolio1,
 				alt: "The portfolios landing view. It includes a picture of the author, a call to action button to encourage users to continue downward,\
 			And a short introduction.",
+			},
+			{
+				src: portfolio2,
+				alt: "The projects carousel. It shows a list of all the projects in the portfolio. The current project is highlighted and the user can swipe\
+				to any of the other projects to view them.",
+			},
+			{
+				src: portfolio3,
+				alt: "The about me section. It includes a short description of the author, a list of skills, and a list of hobbies.",
 			},
 		],
 		githubRepoURL: "https://github.com/NSkelin/Web-Portfolio",
@@ -114,6 +135,18 @@ const projectCardData: ProjectCarouselProps["projectData"] = [
 				src: cartcompanion1,
 				alt: "A representation of the projects main logo. The logo is two lists mirrored towards each other with a cart behind\
 			each list mirrored away from each other, with the projects title 'Cart Compainion' in all uppercase underneath.",
+			},
+			{
+				src: cartcompanion2,
+				alt: "The login form for the project. It includes a username and password field, a login button, and a signup button.",
+			},
+			{
+				src: cartcompanion3,
+				alt: "The main page of the project. It includes all the users lists, and button to create, rename, and delete a list.",
+			},
+			{
+				src: cartcompanion4,
+				alt: "The view for a specific list. It includes all the items in the list, a button to add a new item, and buttons to edit and delete each item.",
 			},
 		],
 		githubRepoURL: "https://github.com/NSkelin/Quicklists",
