@@ -1,11 +1,11 @@
 import Image, {ImageProps} from "next/image";
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import "swiper/css";
 import "swiper/css/thumbs";
 import {Thumbs} from "swiper/modules";
 import {Swiper, SwiperRef, SwiperSlide} from "swiper/react";
-import {Swiper as SwiperTypes} from "swiper/types";
-import Lightbox, {SlideImage} from "yet-another-react-lightbox";
+import {SwiperOptions, Swiper as SwiperTypes} from "swiper/types";
+import Lightbox, {SlideImage, ViewCallbackProps} from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import styles from "./ProjectCardGallery.module.scss";
 
@@ -42,6 +42,67 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 	const [thumbsSwiper, setThumbsSwiper] = useState<SwiperTypes | null>(null);
 	const [open, setOpen] = useState(false);
 	const [activeSlide, setActiveSlide] = useState(0);
+	const imageSwiper = useRef<SwiperRef | null>(null);
+
+	/**
+	 * Slides the image swiper gallery to the given index.
+	 *
+	 * @param index The index to slide the gallery to.
+	 */
+	function slideGalleryTo(index: number) {
+		if (imageSwiper.current != null && imageSwiper.current.swiper != null) {
+			imageSwiper.current.swiper.slideTo(index);
+		}
+	}
+
+	/**
+	 * Updates the rest of the gallery to match the slide the lightbox is on.
+	 *
+	 * @param index The index of the slide the user has swiped to.
+	 */
+	function handleLightboxSlideChange({index}: ViewCallbackProps) {
+		setActiveSlide(index);
+		slideGalleryTo(index);
+	}
+
+	/**
+	 * Opens the lightbox to the clicked image.
+	 *
+	 * @param imageIndex The index of the slide containing the image to open in the lightbox.
+	 */
+	function handleImageClick(imageIndex: number) {
+		setOpen(true);
+		setActiveSlide(imageIndex);
+	}
+
+	/**
+	 * Updates the rest of the gallery to match the slide of the clicked thumb.
+	 *
+	 * @param swiper The swiper instance that was clicked.
+	 */
+	function handleThumbClick(swiper: SwiperTypes) {
+		const index = swiper.slides.indexOf(swiper.clickedSlide);
+		setActiveSlide(index);
+	}
+
+	/**
+	 * When the breakpoint changes, if the gallery is in desktop view, slide the gallery to the active slide.
+	 *
+	 * This is necessary because swiper (with slidesPerView="auto") sets the active slide as the left most viewable slide.
+	 * So if the active slide in state is set to one of those last images and the breakpoint changes to desktop, the main slide will be out of sync.
+	 *
+	 * @param swiper The swiper instance.
+	 * @param breakpoint The breakpoint that was changed to.
+	 */
+	function handleBreakpointChange(swiper: SwiperTypes, breakpoint: SwiperOptions) {
+		if (breakpoint.slidesPerView === 1) {
+			// This timeout is necessary or else the slide will not change.
+			// I tried as low as 0.1 and it still worked but i set it to 10 just incase the user lags or something.
+			setTimeout(() => {
+				slideGalleryTo(activeSlide);
+			}, 10);
+		}
+	}
 
 	/**
 	 * Creates the image slide jsx elements from the prop data.
@@ -56,7 +117,7 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 			imageSlides.push(
 				<SwiperSlide key={i} className={styles.slider}>
 					<Image
-						onClick={() => setOpen(true)}
+						onClick={() => handleImageClick(i)}
 						className={styles.image}
 						src={src}
 						alt={alt}
@@ -86,6 +147,7 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 		<div className={styles.gallery}>
 			<div className={styles.imageDisplay}>
 				<Swiper
+					ref={imageSwiper}
 					nested={true}
 					spaceBetween={10}
 					slidesPerView={"auto"}
@@ -93,7 +155,7 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 					modules={[Thumbs]}
 					thumbs={{swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
 					touchEventsTarget={"container"}
-					onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
+					onBreakpoint={handleBreakpointChange}
 					onTouchStart={(swiper) => {
 						// Prevent parent swiper from moving when user is swiping the gallery.
 
@@ -126,11 +188,14 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 					watchSlidesProgress
 					onSwiper={setThumbsSwiper}
 					touchEventsTarget={"container"}
+					onClick={handleThumbClick}
 				>
 					{thumbSlides}
 				</Swiper>
 			</div>
 			<Lightbox
+				index={activeSlide}
+				on={{view: handleLightboxSlideChange}}
 				open={open}
 				close={() => setOpen(false)}
 				slides={images.map(({src}) => src as SlideImage)}
