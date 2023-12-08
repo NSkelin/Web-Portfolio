@@ -105,6 +105,33 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 	}
 
 	/**
+	 * Prevents the parent swiper from changing slides if the gallery can slide (slide overflow).
+	 *
+	 * This is necessary to stop the parent slider from sliding with the gallery.
+	 *
+	 * @param swiper - The child swiper instance.
+	 */
+	function preventParentSwiperMovement(swiper: SwiperTypes) {
+		if (swiperRef.current?.swiper == null) return;
+
+		// Dont prevent parent swiper from moving if the gallery is too small to move (no overflow).
+		if (swiper.isBeginning && swiper.isEnd) return;
+
+		swiperRef.current.swiper.allowSlideNext = false;
+		swiperRef.current.swiper.allowSlidePrev = false;
+	}
+
+	/**
+	 * Allows the parent swiper to change slides.
+	 */
+	function allowParentSwiperMovement() {
+		// Allow parent swiper to move when user is not swiping the gallery and the gallery is not still transitioning.
+		if (swiperRef.current?.swiper == null) return;
+		swiperRef.current.swiper.allowSlideNext = true;
+		swiperRef.current.swiper.allowSlidePrev = true;
+	}
+
+	/**
 	 * Creates the image slide jsx elements from the prop data.
 	 */
 	function createImageSlides() {
@@ -156,24 +183,8 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 					thumbs={{swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
 					touchEventsTarget={"container"}
 					onBreakpoint={handleBreakpointChange}
-					onTouchStart={(swiper) => {
-						// Prevent parent swiper from moving when user is swiping the gallery.
-
-						// images.length is used to check if the mobile view has enough images to need moving. If it doesn't,
-						// then the parent swiper should not be prevented from moving.
-
-						// Swiper.height is used to check if the gallery is in desktop view. If it is, then the parent swiper should not be prevented from moving.
-						// Because the gallery is not swipable in desktop view, instead using thumbs to change the image.
-						if (swiperRef.current == null || images.length < 3 || swiper.height > 200) return;
-						swiperRef.current.swiper.allowSlideNext = false;
-						swiperRef.current.swiper.allowSlidePrev = false;
-					}}
-					onTransitionEnd={(swiper) => {
-						// Allow parent swiper to move when user is not swiping the gallery and the gallery is not still transitioning.
-						if (swiperRef.current == null || images.length < 3 || swiper.height > 200) return;
-						swiperRef.current.swiper.allowSlideNext = true;
-						swiperRef.current.swiper.allowSlidePrev = true;
-					}}
+					onTouchStart={preventParentSwiperMovement}
+					onTransitionEnd={allowParentSwiperMovement} // Keeps the parent still if the user swipes and lets go.
 				>
 					{imageSlides}
 				</Swiper>
@@ -189,6 +200,8 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 					onSwiper={setThumbsSwiper}
 					touchEventsTarget={"container"}
 					onClick={handleThumbClick}
+					onTouchStart={preventParentSwiperMovement}
+					onTransitionEnd={allowParentSwiperMovement} // Keeps the parent still if the user swipes and lets go.
 				>
 					{thumbSlides}
 				</Swiper>
