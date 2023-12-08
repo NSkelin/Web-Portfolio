@@ -66,15 +66,15 @@
 		width: 524px;
 	}
 }
-.thumb {
+.thumb,
+.thumbActive,
+.thumbInactive {
 	height: 102px;
 	width: 136px;
 }
 .thumbActive,
 .thumbInactive {
 	position: absolute;
-	height: 100%;
-	width: 100%;
 }
 .thumbInactive {
 	background: rgba(0, 0, 0, 0.2);
@@ -88,4 +88,9 @@
 .thumbActive {
 	outline: solid 1px #797979;
 	outline-offset: -1px;
+}
+.thumbContainer {
+	height: 104px;
+	width: 138px;
+	padding: 1px;
 }

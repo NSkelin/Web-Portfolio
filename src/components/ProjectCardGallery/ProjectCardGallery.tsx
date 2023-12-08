@@ -69,8 +69,10 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 			);
 			thumbSlides.push(
 				<SwiperSlide key={i} className={styles.slider}>
-					<div className={thumbClass}></div>
-					<Image className={styles.thumb} src={src} alt={alt} sizes="136px" />
+					<div className={styles.thumbContainer}>
+						<div className={thumbClass}></div>
+						<Image className={styles.thumb} src={src} alt={alt} sizes="136px" />
+					</div>
 				</SwiperSlide>,
 			);
 		}
