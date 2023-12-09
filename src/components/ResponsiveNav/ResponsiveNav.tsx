@@ -1,5 +1,5 @@
 import {Menu, MenuOpen} from "public/icons";
-import React, {useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {useSwiper} from "swiper/react";
 import Button from "../Button";
 import styles from "./ResponsiveNav.module.scss";
@@ -27,13 +27,16 @@ function ResponsiveNav({children}: ResponsiveNavProps) {
 	const swiper = useSwiper();
 
 	// Close navigation menu.
-	function collapseMenu(event: MouseEvent | TouchEvent | PointerEvent) {
-		if (navRef.current && !navRef.current.contains(event.target as Node)) {
-			if (menuState === "expanded") {
-				setMenuState("collapsed");
+	const collapseMenu = useCallback(
+		(event: MouseEvent | TouchEvent | PointerEvent) => {
+			if (navRef.current && !navRef.current.contains(event.target as Node)) {
+				if (menuState === "expanded") {
+					setMenuState("collapsed");
+				}
 			}
-		}
-	}
+		},
+		[menuState],
+	);
 
 	// Close navigation menu when the user clicks inside the swiper instance.
 	// Swiper blocks the click event from propagating to the document to make the swipe work smoothly.
@@ -49,7 +52,7 @@ function ResponsiveNav({children}: ResponsiveNavProps) {
 			// Unbind the event listener on clean up.
 			document.removeEventListener("mousedown", collapseMenu);
 		};
-	});
+	}, [collapseMenu]);
 
 	/**
 	 * Toggles the navigation menu between expanded / collapsed.
