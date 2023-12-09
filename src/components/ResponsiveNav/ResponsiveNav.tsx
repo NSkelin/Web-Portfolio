@@ -22,7 +22,6 @@ interface ResponsiveNavProps {
  */
 function ResponsiveNav({children}: ResponsiveNavProps) {
 	const [menuState, setMenuState] = useState<"collapsed" | "expanded">("collapsed");
-	const [navDisplay, setNavDisplay] = useState<"none" | "flex">("none");
 	const navRef = useRef<HTMLElement>(null);
 
 	// Collapses the navigation menu when the user clicks / taps outside the specified area.
@@ -32,7 +31,6 @@ function ResponsiveNav({children}: ResponsiveNavProps) {
 			if (navRef.current && !navRef.current.contains(event.target as Node)) {
 				if (menuState === "expanded") {
 					setMenuState("collapsed");
-					setNavDisplay("none");
 				}
 			}
 		}
@@ -49,8 +47,9 @@ function ResponsiveNav({children}: ResponsiveNavProps) {
 	 */
 	function toggleMenu() {
 		setMenuState(menuState === "collapsed" ? "expanded" : "collapsed");
-		setNavDisplay(navDisplay === "none" ? "flex" : "none");
 	}
+
+	const display = menuState === "collapsed" ? "none" : "flex";
 
 	return (
 		<nav className={styles.nav} ref={navRef}>
@@ -59,7 +58,7 @@ function ResponsiveNav({children}: ResponsiveNavProps) {
 					{navIcons[menuState]}
 				</Button>
 			</div>
-			<div className={styles.navList} style={{display: navDisplay}}>
+			<div className={styles.navList} style={{display: display}}>
 				{children}
 			</div>
 		</nav>
