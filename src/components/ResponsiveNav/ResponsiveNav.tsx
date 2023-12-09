@@ -1,5 +1,6 @@
 import {Menu, MenuOpen} from "public/icons";
 import React, {useEffect, useRef, useState} from "react";
+import {useSwiper} from "swiper/react";
 import Button from "../Button";
 import styles from "./ResponsiveNav.module.scss";
 
@@ -23,24 +24,32 @@ interface ResponsiveNavProps {
 function ResponsiveNav({children}: ResponsiveNavProps) {
 	const [menuState, setMenuState] = useState<"collapsed" | "expanded">("collapsed");
 	const navRef = useRef<HTMLElement>(null);
+	const swiper = useSwiper();
+
+	// Close navigation menu.
+	function collapseMenu(event: MouseEvent | TouchEvent | PointerEvent) {
+		if (navRef.current && !navRef.current.contains(event.target as Node)) {
+			if (menuState === "expanded") {
+				setMenuState("collapsed");
+			}
+		}
+	}
+
+	// Close navigation menu when the user clicks inside the swiper instance.
+	// Swiper blocks the click event from propagating to the document to make the swipe work smoothly.
+	swiper.on("touchStart", (swiper, event) => {
+		collapseMenu(event);
+	});
 
 	// Collapses the navigation menu when the user clicks / taps outside the specified area.
 	useEffect(() => {
-		// Close navigation menu.
-		function handleClickOutside(event: MouseEvent) {
-			if (navRef.current && !navRef.current.contains(event.target as Node)) {
-				if (menuState === "expanded") {
-					setMenuState("collapsed");
-				}
-			}
-		}
 		// Bind the event listener.
-		document.addEventListener("mousedown", handleClickOutside);
+		document.addEventListener("mousedown", collapseMenu);
 		return () => {
 			// Unbind the event listener on clean up.
-			document.removeEventListener("mousedown", handleClickOutside);
+			document.removeEventListener("mousedown", collapseMenu);
 		};
-	}, [menuState]);
+	});
 
 	/**
 	 * Toggles the navigation menu between expanded / collapsed.
