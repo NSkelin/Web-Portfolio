@@ -1,6 +1,6 @@
 import React, {ComponentProps} from "react";
 import ContactForm from "../ContactForm";
-import HyperLink, {HyperLinkProps} from "../HyperLink";
+import LinkButton, {LinkButtonProps} from "../LinkButton";
 import styles from "./Contact.module.css";
 
 export interface ContactProps {
@@ -16,7 +16,7 @@ export interface ContactProps {
 		 * The icon to place next to the hyperlink.
 		 */
 		Icon: React.ComponentType<ComponentProps<"svg">>;
-		href: HyperLinkProps["href"];
+		href: LinkButtonProps["href"];
 	}[];
 }
 /**
@@ -25,9 +25,9 @@ export interface ContactProps {
 function Contact({links}: ContactProps) {
 	const linkElement = links.map(({Icon, text, href}, index) => {
 		return (
-			<HyperLink key={index} href={href} style="text">
+			<LinkButton key={index} href={href} style="text">
 				<Icon className={styles.icon} /> {text}
-			</HyperLink>
+			</LinkButton>
 		);
 	});
 

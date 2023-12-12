@@ -1,8 +1,8 @@
 import React from "react";
 import {ButtonStyles} from "../Button";
-import styles from "./HyperLink.module.scss";
+import styles from "./LinkButton.module.scss";
 
-export interface HyperLinkProps {
+export interface LinkButtonProps {
 	/**
 	 * Pre-made styles that loosely follow googles material design.
 	 */
@@ -19,7 +19,7 @@ export interface HyperLinkProps {
 /**
  * Renders a hyperlink text with an icon next to it.
  */
-function HyperLink({style, href, children}: HyperLinkProps) {
+function LinkButton({style, href, children}: LinkButtonProps) {
 	return (
 		<a className={style} href={href}>
 			<div className={styles.stateLayer}>{children}</div>
@@ -27,4 +27,4 @@ function HyperLink({style, href, children}: HyperLinkProps) {
 	);
 }
 
-export default HyperLink;
+export default LinkButton;
