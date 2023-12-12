@@ -3,7 +3,7 @@ import React, {useRef, useState} from "react";
 import "swiper/css";
 import "swiper/css/thumbs";
 import {Thumbs} from "swiper/modules";
-import {Swiper, SwiperRef, SwiperSlide} from "swiper/react";
+import {Swiper, SwiperProps, SwiperRef, SwiperSlide} from "swiper/react";
 import {SwiperOptions, Swiper as SwiperTypes} from "swiper/types";
 import Lightbox, {SlideImage, ViewCallbackProps} from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -26,10 +26,13 @@ export interface ProjectCardGalleryProps {
 		alt: ImageProps["alt"];
 	}[];
 	/**
-	 * The reference to the parent swiper instance that the gallery is nested in.
-	 * Used to prevent the parent swiper from moving when the user is swiping the gallery.
+	 * The onTouchStart event handler for the swiper. This is called for BOTH the image swiper and the thumb swiper.
 	 */
-	swiperRef: React.MutableRefObject<null | SwiperRef>;
+	onTouchStart?: SwiperProps["onTouchStart"];
+	/**
+	 * The onTransitionEnd event handler for the swiper. This is called for BOTH the image swiper and the thumb swiper.
+	 */
+	onTransitionEnd?: SwiperProps["onTransitionEnd"];
 }
 /**
  * Renders a responsive gallery of images, for use with the ProjectCard component.
@@ -37,7 +40,7 @@ export interface ProjectCardGalleryProps {
  * On mobile and tablet the gallery will consist of a small carousel of images, with tablet being a bit bigger.
  * On desktop one image will be enlarged with a carousel of thumb images below for selecting the next image.
  */
-function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
+function ProjectCardGallery({images, onTouchStart, onTransitionEnd}: ProjectCardGalleryProps) {
 	// Store thumbs swiper instance.
 	const [thumbsSwiper, setThumbsSwiper] = useState<SwiperTypes | null>(null);
 	const [open, setOpen] = useState(false);
@@ -105,34 +108,6 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 	}
 
 	/**
-	 * Prevents the parent swiper from changing slides if the gallery can slide (slide overflow).
-	 *
-	 * This is necessary to stop the parent slider from sliding with the gallery.
-	 *
-	 * @param swiper - The child swiper instance.
-	 */
-	function preventParentSwiperMovement(swiper: SwiperTypes) {
-		if (swiperRef.current?.swiper == null) return;
-		// Dont prevent parent swiper from moving if the gallery is too small to move (no overflow).
-		else if (swiper.isBeginning && swiper.isEnd) return;
-		// Swiper not allowed to move so dont block parent swiper.
-		else if (!swiper.allowTouchMove) return;
-
-		swiperRef.current.swiper.allowSlideNext = false;
-		swiperRef.current.swiper.allowSlidePrev = false;
-	}
-
-	/**
-	 * Allows the parent swiper to change slides.
-	 */
-	function allowParentSwiperMovement() {
-		// Allow parent swiper to move when user is not swiping the gallery and the gallery is not still transitioning.
-		if (swiperRef.current?.swiper == null) return;
-		swiperRef.current.swiper.allowSlideNext = true;
-		swiperRef.current.swiper.allowSlidePrev = true;
-	}
-
-	/**
 	 * Creates the image slide jsx elements from the prop data.
 	 */
 	function createImageSlides() {
@@ -184,8 +159,8 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 					thumbs={{swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null}}
 					touchEventsTarget={"container"}
 					onBreakpoint={handleBreakpointChange}
-					onTouchStart={preventParentSwiperMovement}
-					onTransitionEnd={allowParentSwiperMovement} // Keeps the parent still if the user swipes and lets go.
+					onTouchStart={onTouchStart}
+					onTransitionEnd={onTransitionEnd}
 				>
 					{imageSlides}
 				</Swiper>
@@ -201,8 +176,8 @@ function ProjectCardGallery({images, swiperRef}: ProjectCardGalleryProps) {
 					onSwiper={setThumbsSwiper}
 					touchEventsTarget={"container"}
 					onClick={handleThumbClick}
-					onTouchStart={preventParentSwiperMovement}
-					onTransitionEnd={allowParentSwiperMovement} // Keeps the parent still if the user swipes and lets go.
+					onTouchStart={onTouchStart}
+					onTransitionEnd={onTransitionEnd}
 				>
 					{thumbSlides}
 				</Swiper>

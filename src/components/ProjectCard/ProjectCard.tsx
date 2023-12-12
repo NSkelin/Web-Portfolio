@@ -19,13 +19,14 @@ function ProjectCard({
 	liveSiteURL,
 	demoSiteURL,
 	technologies,
-	swiperRef,
+	onTouchStart,
+	onTransitionEnd,
 }: ProjectCardProps) {
 	return (
 		<article className={styles.projectCard}>
 			<ProjectCardHeader title={title} githubRepoURL={githubRepoURL} liveSiteURL={liveSiteURL} demoSiteURL={demoSiteURL} />
 			<div className={styles.content}>
-				<ProjectCardGallery swiperRef={swiperRef} images={images} />
+				<ProjectCardGallery onTouchStart={onTouchStart} onTransitionEnd={onTransitionEnd} images={images} />
 				<ProjectCardDetails description={description} technologies={technologies} />
 			</div>
 		</article>

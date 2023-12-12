@@ -1,10 +1,11 @@
 import {ArrowDownward} from "public/icons";
-import React, {useRef} from "react";
+import React, {useState} from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import {Navigation, Pagination} from "swiper/modules";
-import {Swiper, SwiperRef, SwiperSlide} from "swiper/react";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {Swiper as SwiperTypes} from "swiper/types";
 import Button from "../Button";
 import ProjectCard, {ProjectCardProps} from "../ProjectCard";
 import styles from "./ProjectCarousel.module.scss";
@@ -20,18 +21,33 @@ export interface ProjectCarouselProps {
  * Renders a carousel of project cards, with each slide being one project card.
  */
 function ProjectCarousel({projectData}: ProjectCarouselProps) {
-	const swiperRef = useRef<SwiperRef | null>(null);
+	const [allowSlide, setAllowSlide] = useState(true);
+
+	/**
+	 * Prevents the swiper from changing slides if the child gallery is sliding.
+	 *
+	 * This is stops the carousel from sliding when the child gallery reaches the end of its slides.
+	 *
+	 * @param swiper - The child swiper instance.
+	 */
+	function disallowSliding(swiper: SwiperTypes) {
+		// Dont prevent parent swiper from moving if the gallery is too small to move (no overflow).
+		if (swiper.isBeginning && swiper.isEnd) return;
+		// Swiper not allowed to move so dont block parent swiper.
+		else if (!swiper.allowTouchMove) return;
+
+		setAllowSlide(false);
+	}
 
 	// Create the project slides to enter in the carousel.
 	const projectSlides = projectData.map(({...rest}, index) => (
 		<SwiperSlide className={styles.slide} key={index}>
-			<ProjectCard {...rest} swiperRef={swiperRef} />
+			<ProjectCard {...rest} onTouchStart={disallowSliding} onTransitionEnd={() => setAllowSlide(true)} />
 		</SwiperSlide>
 	));
 
 	return (
 		<Swiper
-			ref={swiperRef}
 			className={styles.swiper}
 			modules={[Navigation, Pagination]}
 			slidesPerView={1}
@@ -45,6 +61,8 @@ function ProjectCarousel({projectData}: ProjectCarouselProps) {
 			longSwipes={false}
 			loop={true}
 			breakpoints={{905: {touchStartPreventDefault: true}}}
+			allowSlideNext={allowSlide}
+			allowSlidePrev={allowSlide}
 		>
 			{projectSlides}
 			<div className={styles.navContainer}>
