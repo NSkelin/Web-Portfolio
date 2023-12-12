@@ -4,29 +4,26 @@ import styles from "./HyperLink.module.scss";
 
 export interface HyperLinkProps {
 	/**
-	 * The text that will be a clickable hyperlink.
+	 * Pre-made styles that loosely follow googles material design.
 	 */
-	text?: string;
-	/**
-	 * The icon to place next to the hyperlink.
-	 */
-	Icon: React.ComponentType<ComponentProps<"svg">>;
+	style: ButtonStyles;
 	/**
 	 * The destination clicking the link leads to.
 	 */
 	href: string;
+	/**
+	 * The content to display inside the link.
+	 */
+	children: React.ReactNode;
 }
 /**
  * Renders a hyperlink text with an icon next to it.
  */
-function HyperLink({text = "link", Icon, href}: HyperLinkProps) {
+function HyperLink({style, href, children}: HyperLinkProps) {
 	return (
-		<div className={styles.container}>
-			<a className={styles.link} href={href}>
-				<Icon className={styles.icon} />
-				<span className={styles.text}>{text}</span>
-			</a>
-		</div>
+		<a className={style} href={href}>
+			<div className={styles.stateLayer}>{children}</div>
+		</a>
 	);
 }
 

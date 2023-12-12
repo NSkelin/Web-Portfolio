@@ -5,10 +5,10 @@
  * to fish through tons of components.
  */
 
-import {HyperLinkProps} from "@/components/HyperLink";
+import {ContactProps} from "@/components/Contact";
 import {GithubMark, LinkedIn} from "public/icons";
 
-const socialLinks: HyperLinkProps[] = [
+const socialLinks: ContactProps["links"] = [
 	{
 		Icon: GithubMark,
 		text: "Github",

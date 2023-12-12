@@ -1,20 +1,34 @@
-import React from "react";
+import React, {ComponentProps} from "react";
 import ContactForm from "../ContactForm";
 import HyperLink, {HyperLinkProps} from "../HyperLink";
 import styles from "./Contact.module.css";
 
-interface ContactProps {
+export interface ContactProps {
 	/**
 	 * The links that will be placed under the social links area.
 	 */
-	links: HyperLinkProps[];
+	links: {
+		/**
+		 * The text that will be a clickable hyperlink.
+		 */
+		text?: string;
+		/**
+		 * The icon to place next to the hyperlink.
+		 */
+		Icon: React.ComponentType<ComponentProps<"svg">>;
+		href: HyperLinkProps["href"];
+	}[];
 }
 /**
  * Renders a contact section with social links list and a message form that sends a users message to your email.
  */
 function Contact({links}: ContactProps) {
 	const linkElement = links.map(({Icon, text, href}, index) => {
-		return <HyperLink key={index} text={text} Icon={Icon} href={href} />;
+		return (
+			<HyperLink key={index} href={href} style="text">
+				<Icon className={styles.icon} /> {text}
+			</HyperLink>
+		);
 	});
 
 	return (

@@ -1,16 +1,2 @@
-.container {
-    padding: 3px;
-}
-
-.link {
-    display: flex;
-    align-items: center;
-    max-width: fit-content;
-}
-
-.text {
-    padding-left: 10px;
-}
-.icon {
-    height: 24px;
-}
+@use "src/sassPartials/fonts";
+@use "src/components/Button/Button.module.scss";
