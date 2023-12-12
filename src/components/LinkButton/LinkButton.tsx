@@ -21,7 +21,7 @@ export interface LinkButtonProps {
  */
 function LinkButton({style, href, children}: LinkButtonProps) {
 	return (
-		<a className={style} href={href}>
+		<a className={styles[style]} href={href}>
 			<div className={styles.stateLayer}>{children}</div>
 		</a>
 	);
