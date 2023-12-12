@@ -4,7 +4,7 @@ import styles from "./Button.module.scss";
 /**
  * Pre-made styles that loosely follow googles material design.
  */
-type ButtonStyles = "fab" | "filled" | "outlined" | "iconButton" | "text";
+export type ButtonStyles = "fab" | "filled" | "outlined" | "iconButton" | "text";
 
 interface ButtonProps
 	extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
