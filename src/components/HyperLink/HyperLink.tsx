@@ -1,5 +1,6 @@
-import React, {ComponentProps} from "react";
-import styles from "./HyperLink.module.css";
+import React from "react";
+import {ButtonStyles} from "../Button";
+import styles from "./HyperLink.module.scss";
 
 export interface HyperLinkProps {
 	/**
