@@ -8,47 +8,25 @@
 	align-items: center;
 	background-color: #373737;
 
-	// Tablet.
+	// Tablet only.
 	@media only screen and (min-width: 600px) and (max-width: 904px) {
 		padding: 20px 35px;
 	}
 
-	// Desktop.
+	// Desktop only.
 	@media only screen and (min-width: 905px) {
 		padding: 30px 35px;
 	}
-	a {
-		font-size: fonts.calcRem(14px);
-		line-height: fonts.calcRem(20px);
-	}
 }
-.materialSymbol {
+.buttonIcon,
+.buttonIconAlt {
 	fill: white;
 	height: 18px;
 	width: 18px;
 }
-.stateLayer {
-	padding: 15px 30px;
-}
-.outline {
-	border-bottom: 1px solid #5a5a5a;
-
-	// Desktop.
+.buttonIconAlt {
+	// Desktop only.
 	@media only screen and (min-width: 905px) {
-		@include button.outlined;
-
-		padding: 0px;
-	}
-}
-.fill {
-	// Desktop.
-	@media only screen and (min-width: 905px) {
-		@include button.filled;
-
-		padding: 0px;
-
-		.materialSymbol {
-			fill: #00164d;
-		}
+		fill: #00164d;
 	}
 }

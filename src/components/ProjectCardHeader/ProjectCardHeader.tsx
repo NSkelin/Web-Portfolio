@@ -1,5 +1,6 @@
 import {GithubMark, OpenInNew} from "public/icons";
-import React, {ComponentProps} from "react";
+import React, {useEffect, useState} from "react";
+import LinkButton from "../LinkButton";
 import ResponsiveNav from "../ResponsiveNav";
 import styles from "./ProjectCardHeader.module.scss";
 
@@ -27,36 +28,47 @@ export interface ProjectCardHeaderProps {
  * The header contains the projects title and links to further resources such as the source code and live sites running the project.
  */
 function ProjectCardHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: ProjectCardHeaderProps) {
-	/**
-	 * Creates a link button for the header.
-	 *
-	 * @param style The style to apply to the link button.
-	 * @param href The URL to link to.
-	 * @param text The text to display on the link button.
-	 * @param Icon The icon to display on the link button.
-	 */
-	function createLinkButton(style: string, href: string, text: string, Icon: React.ComponentType<ComponentProps<"svg">>) {
-		return (
-			<a className={style} href={href}>
-				<div className={styles.stateLayer}>
-					<Icon className={styles.materialSymbol} />
-					{text}
-				</div>
-			</a>
-		);
-	}
+	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const desktopWidthBreakpoint = 905;
 
-	const github = githubRepoURL ? createLinkButton(styles.outline, githubRepoURL, "GitHub", GithubMark) : null;
-	const view = liveSiteURL ? createLinkButton(styles.fill, liveSiteURL, "Live", OpenInNew) : null;
-	const demo = demoSiteURL ? createLinkButton(styles.outline, demoSiteURL, "Demo", OpenInNew) : null;
+	// Keep the windowWidth state in sync with the browser window width.
+	useEffect(() => {
+		function handleResize() {
+			setWindowWidth(window.innerWidth);
+		}
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
+
+	const githubButton = githubRepoURL ? (
+		<LinkButton href={githubRepoURL} style={windowWidth >= desktopWidthBreakpoint ? "outlined" : "text"}>
+			<GithubMark className={styles.buttonIcon} />
+			GitHub
+		</LinkButton>
+	) : null;
+	const liveSiteButton = liveSiteURL ? (
+		<LinkButton href={liveSiteURL} style={windowWidth >= desktopWidthBreakpoint ? "filled" : "text"}>
+			<OpenInNew className={styles.buttonIconAlt} />
+			Live
+		</LinkButton>
+	) : null;
+	const DemoButton = demoSiteURL ? (
+		<LinkButton href={demoSiteURL} style={windowWidth >= desktopWidthBreakpoint ? "outlined" : "text"}>
+			<OpenInNew className={styles.buttonIcon} />
+			Demo
+		</LinkButton>
+	) : null;
 
 	return (
 		<header className={styles.header}>
 			<h3>{title}</h3>
 			<ResponsiveNav>
-				{github}
-				{demo}
-				{view}
+				{githubButton}
+				{DemoButton}
+				{liveSiteButton}
 			</ResponsiveNav>
 		</header>
 	);
