@@ -28,7 +28,7 @@ export interface ProjectCardHeaderProps {
  * The header contains the projects title and links to further resources such as the source code and live sites running the project.
  */
 function ProjectCardHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: ProjectCardHeaderProps) {
-	const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+	const [windowWidth, setWindowWidth] = useState(1000);
 	const desktopWidthBreakpoint = 905;
 
 	// Keep the windowWidth state in sync with the browser window width.
@@ -36,6 +36,9 @@ function ProjectCardHeader({title, githubRepoURL, liveSiteURL, demoSiteURL}: Pro
 		function handleResize() {
 			setWindowWidth(window.innerWidth);
 		}
+
+		// Set the initial window width on first load.
+		setWindowWidth(window.innerWidth);
 
 		window.addEventListener("resize", handleResize);
 		return () => {
