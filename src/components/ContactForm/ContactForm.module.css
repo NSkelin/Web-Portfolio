@@ -23,24 +23,19 @@
     gap: 5px;
 }
 .input,
-.textArea,
-.inputError,
-.textAreaError {
-    padding: 10px;
-    border-radius: 5px;
-    border: 0;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+.textArea {
     width: 100%;
-    box-sizing: border-box;
+
+    --md-filled-text-field-supporting-text-color: white;
+    --md-filled-text-field-focus-supporting-text-color: white;
+    --md-filled-text-field-hover-supporting-text-color: white;
+
+    --md-filled-text-field-error-supporting-text-color: red;
+    --md-filled-text-field-error-focus-supporting-text-color: red;
+    --md-filled-text-field-error-hover-supporting-text-color: red;
 }
-.textArea, .textAreaError {
+.textArea {
     resize: none;
-}
-.inputWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 100%;
 }
 .submission {
     display: flex;
@@ -51,10 +46,6 @@
 
 /* Error / success specific styling */
 
-.inputError,
-.textAreaError {
-    outline: 2px solid red;
-}
 .errorMessage,
 .successMessage {
     margin: 0;

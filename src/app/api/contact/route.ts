@@ -45,8 +45,13 @@ export async function POST(req: Request) {
 		});
 	}
 
-	// Get email and message from body.
-	const {email, message} = await req.json();
+	// Read the FormData from the request.
+	const formData = await req.formData();
+
+	// Get email and message from FormData.
+	const email = formData.get("email");
+	const message = formData.get("message");
+
 	if (typeof email !== "string") {
 		return new Response("Email must be a string.", {
 			status: 400,
