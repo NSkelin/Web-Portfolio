@@ -1,7 +1,7 @@
 import React, {ComponentProps} from "react";
 import ContactForm from "../ContactForm";
 import LinkButton, {LinkButtonProps} from "../LinkButton";
-import styles from "./Contact.module.css";
+import styles from "./Contact.module.scss";
 
 export interface ContactProps {
 	/**
