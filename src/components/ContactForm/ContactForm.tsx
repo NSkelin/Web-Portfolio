@@ -1,7 +1,7 @@
 import "@material/web/textfield/filled-text-field.js";
 import React, {useRef, useState} from "react";
 import Button from "../Button";
-import styles from "./ContactForm.module.css";
+import styles from "./ContactForm.module.scss";
 
 /**
  * Renders a simple contact form that relays their message to a set email.
