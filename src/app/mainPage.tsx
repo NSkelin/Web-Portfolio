@@ -26,7 +26,6 @@ export default function MainPage() {
 			</main>
 
 			<footer ref={footerRef} className={styles.footer}>
-				<AccentTitle title={"Get in Touch"} />
 				<Contact links={socialLinks} />
 			</footer>
 		</div>

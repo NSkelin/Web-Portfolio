@@ -32,14 +32,14 @@ function Contact({links}: ContactProps) {
 	});
 
 	return (
-		<section className={styles.footer}>
+		<>
 			<ContactForm />
 
 			<section className={styles.socials}>
-				<h2 className={styles.title}>Social links</h2>
+				<h2 className={styles.title}>Social</h2>
 				<address className={styles.contentWrapper}>{linkElement}</address>
 			</section>
-		</section>
+		</>
 	);
 }
 
