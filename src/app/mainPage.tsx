@@ -3,9 +3,9 @@ import React, {useRef} from "react";
 import {aboutData, landingData, projectCardData, socialLinks} from "../componentData";
 import styles from "../pageStyles/index.module.scss";
 
+import ContactForm from "@/components/ContactForm";
+import SocialLinks from "@/components/SocialLinks";
 import About from "../components/About";
-import AccentTitle from "../components/AccentTitle";
-import Contact from "../components/Contact";
 import Landing from "../components/Landing";
 import ProjectSection from "../components/ProjectSection";
 
@@ -26,7 +26,8 @@ export default function MainPage() {
 			</main>
 
 			<footer ref={footerRef} className={styles.footer}>
-				<Contact links={socialLinks} />
+				<ContactForm />
+				<SocialLinks links={socialLinks} />
 			</footer>
 		</div>
 	);

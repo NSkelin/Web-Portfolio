@@ -1,9 +1,8 @@
 import React, {ComponentProps} from "react";
-import ContactForm from "../ContactForm";
 import LinkButton, {LinkButtonProps} from "../LinkButton";
-import styles from "./Contact.module.scss";
+import styles from "./SocialLinks.module.scss";
 
-export interface ContactProps {
+export interface SocialLinksProps {
 	/**
 	 * The links that will be placed under the social links area.
 	 */
@@ -19,10 +18,7 @@ export interface ContactProps {
 		href: LinkButtonProps["href"];
 	}[];
 }
-/**
- * Renders a contact section with social links list and a message form that sends a users message to your email.
- */
-function Contact({links}: ContactProps) {
+function SocialLinks({links}: SocialLinksProps) {
 	const linkElement = links.map(({Icon, text, href}, index) => {
 		return (
 			<LinkButton key={index} href={href} style="text">
@@ -32,15 +28,11 @@ function Contact({links}: ContactProps) {
 	});
 
 	return (
-		<>
-			<ContactForm />
-
-			<section className={styles.socials}>
-				<h2 className={styles.title}>Social</h2>
-				<address className={styles.contentWrapper}>{linkElement}</address>
-			</section>
-		</>
+		<section className={styles.socials}>
+			<h2 className={styles.title}>Social</h2>
+			<address className={styles.contentWrapper}>{linkElement}</address>
+		</section>
 	);
 }
 
-export default Contact;
+export default SocialLinks;
