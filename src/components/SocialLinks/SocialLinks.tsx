@@ -28,9 +28,10 @@ function SocialLinks({links}: SocialLinksProps) {
 	});
 
 	return (
-		<section className={styles.socials}>
+		<section className={styles.wrapper}>
 			<h2 className={styles.title}>Social</h2>
-			<address className={styles.contentWrapper}>{linkElement}</address>
+			<div className={styles.line}></div>
+			<address className={styles.address}>{linkElement}</address>
 		</section>
 	);
 }
