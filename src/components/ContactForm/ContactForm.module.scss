@@ -1,85 +1,72 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    max-width: 721px;
-    background: #4B4B4B;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: #373737;
+	border-radius: 10px;
+	padding: 50px 30px;
+	gap: 20px;
 }
-.title {
-    padding: 25px 25px;
-    gap: 10px;
-
-    background: #373737;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.contentWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    gap: 5px;
+.line {
+	height: 2px;
+	width: 100%;
+	background-color: #e0e0e0;
 }
 .input,
 .textArea {
-    width: 100%;
+	width: 100%;
 
-    --md-filled-text-field-supporting-text-color: white;
-    --md-filled-text-field-focus-supporting-text-color: white;
-    --md-filled-text-field-hover-supporting-text-color: white;
+	// Background colors
+	--md-sys-color-primary: #e0e0e0;
+	--md-sys-color-surface-container-highest: #4b4b4b;
 
-    --md-filled-text-field-error-supporting-text-color: red;
-    --md-filled-text-field-error-focus-supporting-text-color: red;
-    --md-filled-text-field-error-hover-supporting-text-color: red;
+	//Default colors
+	--md-filled-text-field-input-text-color: white;
+	--md-filled-text-field-label-text-color: #e0e0e0;
+	--md-filled-text-field-supporting-text-color: #e0e0e0;
+	// --- Hover
+	--md-filled-text-field-hover-input-text-color: white;
+	--md-filled-text-field-hover-label-text-color: #e0e0e0;
+	--md-filled-text-field-hover-supporting-text-color: #e0e0e0;
+	// --- Focus
+	--md-filled-text-field-focus-input-text-color: white;
+	--md-filled-text-field-focus-label-text-color: #e0e0e0;
+	--md-filled-text-field-focus-supporting-text-color: #e0e0e0;
+
+	// Error colors
+	--md-filled-text-field-error-input-text-color: white;
+	--md-filled-text-field-error-label-text-color: #ffb9b9;
+	--md-filled-text-field-error-supporting-text-color: #ffb9b9;
+	// --- Hover
+	--md-filled-text-field-error-hover-input-text-color: white;
+	--md-filled-text-field-error-hover-label-text-color: #ffb9b9;
+	--md-filled-text-field-error-hover-supporting-text-color: #ffb9b9;
+	// --- Focus
+	--md-filled-text-field-error-focus-input-text-color: white;
+	--md-filled-text-field-error-focus-label-text-color: #ffb9b9;
+	--md-filled-text-field-error-focus-supporting-text-color: #ffb9b9;
 }
 .textArea {
-    resize: none;
+	resize: none;
 }
 .submission {
-    display: flex;
-    -ms-flex-align: center;
-    gap: 5px;
-    width: 100%;
+	display: flex;
+	-ms-flex-align: center;
+	gap: 5px;
+	width: 100%;
 }
 
 /* Error / success specific styling */
 
 .errorMessage,
 .successMessage {
-    margin: 0;
-    padding: 0;
-    min-height: 30px;
+	margin: 0;
+	padding: 0;
+	min-height: 30px;
+	flex: 1;
 }
 .errorMessage {
-    color: red;
+	color: #ffb9b9;
 }
 .successMessage {
-    color: lightgreen;
-}
-
-/*tablet*/
-@media only screen and (min-width: 430px) and (max-width: 960px) {
-    .form {
-        /* padding: 15px; */
-    }
-}
-/*desktop*/
-@media only screen and (min-width: 961px) {
-    .contentWrapper {
-        padding: 50px;
-        gap: 50px;
-    }
-}
-/*tablet & desktop*/
-@media only screen and (min-width: 430px) {
-    /* .form {
-        flex: 2;
-    }
-    .input,
-    .textArea,
-    .button {
-        font-size: 24px;
-    } */
+	color: lightgreen;
 }

@@ -47,42 +47,39 @@ function ContactForm() {
 	return (
 		<form className={styles.form} onSubmit={handleSubmit}>
 			<h2 className={styles.title}>Send a message</h2>
-			<div className={styles.contentWrapper}>
+			<div className={styles.line}></div>
+			{/* @ts-expect-error - Component doesnt exist on type 'JSX.IntrinsicElements'. */}
+			<md-filled-text-field
+				ref={emailRef}
+				class={styles.input}
+				type="email"
+				placeholder="youremail@gmail.com"
+				label="Email"
+				required
+				name="email"
+				supporting-text="I will reply to this email address."
+			>
 				{/* @ts-expect-error - Component doesnt exist on type 'JSX.IntrinsicElements'. */}
-				<md-filled-text-field
-					ref={emailRef}
-					class={styles.input}
-					type="email"
-					placeholder="youremail@gmail.com"
-					label="Email"
-					required
-					name="email"
-					supporting-text="I will reply to this email address."
-				>
-					{/* @ts-expect-error - Component doesnt exist on type 'JSX.IntrinsicElements'. */}
-				</md-filled-text-field>
+			</md-filled-text-field>
+			{/* @ts-expect-error - Component doesnt exist on type 'JSX.IntrinsicElements'. */}
+			<md-filled-text-field
+				ref={messageRef}
+				class={styles.textArea}
+				type="textarea"
+				label="Message"
+				placeholder="Hello, I would like to..."
+				rows={7}
+				required
+				name="message"
+				supporting-text="What would you like to say?"
+			>
 				{/* @ts-expect-error - Component doesnt exist on type 'JSX.IntrinsicElements'. */}
-				<md-filled-text-field
-					ref={messageRef}
-					class={styles.textArea}
-					type="textarea"
-					label="Message"
-					placeholder="Hello, I would like to..."
-					rows={7}
-					required
-					name="message"
-					supporting-text="What would you like to say?"
-				>
-					{/* @ts-expect-error - Component doesnt exist on type 'JSX.IntrinsicElements'. */}
-				</md-filled-text-field>
-				<div className={styles.submission}>
-					<Button buttonStyle="filled" type="submit">
-						Submit
-					</Button>
-					<strong className={summaryError === true ? styles.errorMessage : styles.successMessage}>
-						{summaryMessage}
-					</strong>
-				</div>
+			</md-filled-text-field>
+			<div className={styles.submission}>
+				<strong className={summaryError === true ? styles.errorMessage : styles.successMessage}>{summaryMessage}</strong>
+				<Button buttonStyle="filled" type="submit">
+					Send
+				</Button>
 			</div>
 		</form>
 	);
