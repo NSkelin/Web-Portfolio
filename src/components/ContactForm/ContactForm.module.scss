@@ -16,11 +16,13 @@
 	width: 100%;
 
 	// Background colors
-	--md-sys-color-primary: #e0e0e0;
-	--md-sys-color-surface-container-highest: #4b4b4b;
+	--md-filled-text-field-hover-active-indicator-color: #e0e0e0;
+	--md-filled-text-field-focus-active-indicator-color: #e0e0e0;
+	--md-filled-text-field-container-color: #4b4b4b;
 
 	//Default colors
 	--md-filled-text-field-input-text-color: white;
+	--md-filled-text-field-input-text-placeholder-color: #bfbfbf;
 	--md-filled-text-field-label-text-color: #e0e0e0;
 	--md-filled-text-field-supporting-text-color: #e0e0e0;
 	// --- Hover
