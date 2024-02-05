@@ -47,7 +47,6 @@ function ContactForm() {
 	return (
 		<form className={styles.form} onSubmit={handleSubmit}>
 			<h2 className={styles.title}>Send a message</h2>
-			<div className={styles.line}></div>
 			{/* @ts-expect-error - Component doesnt exist on type 'JSX.IntrinsicElements'. */}
 			<md-filled-text-field
 				ref={emailRef}
