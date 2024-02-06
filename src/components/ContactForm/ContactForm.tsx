@@ -6,8 +6,8 @@ import styles from "./ContactForm.module.scss";
 
 const formMessages = {
 	sending: null,
-	success: "Success! Message sent. I will reply soon.",
-	error: "Failed to send, please try again later.",
+	success: "Thanks for sending a message! I will get in touch soon.",
+	error: "Sorry, your message failed to send. Please try again later.",
 	waiting: null,
 };
 
