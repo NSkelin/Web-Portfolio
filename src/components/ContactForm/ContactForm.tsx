@@ -1,4 +1,5 @@
 import "@material/web/textfield/filled-text-field.js";
+import {Checkmark, Loading, Send, X} from "public/icons";
 import React, {useRef, useState} from "react";
 import Button from "../Button";
 import styles from "./ContactForm.module.scss";
@@ -7,13 +8,6 @@ const formMessages = {
 	sending: null,
 	success: "Success! Message sent. I will reply soon.",
 	error: "Failed to send, please try again later.",
-	waiting: null,
-};
-
-const submitButtonIcons = {
-	sending: "loading icon",
-	success: "checkmark icon",
-	error: "X icon",
 	waiting: null,
 };
 
@@ -26,9 +20,14 @@ function ContactForm() {
 	const emailRef = useRef<HTMLInputElement>(null);
 	const messageRef = useRef<HTMLTextAreaElement>(null);
 
-	const buttonIcon = submitButtonIcons["waiting"];
 	const formMessage = formMessages[formResponse];
 	const formResponseStyle = formResponse === "error" ? styles.errorMessage : styles.successMessage;
+
+	// Icon styles to animate the form submit button.
+	const sendIconStyle = formResponse === "waiting" ? styles.iconExpanded : styles.iconCollapsed;
+	const loadingIconStyle = formResponse === "sending" ? styles.loadingIcon : styles.iconCollapsed;
+	const checkmarkIconStyle = formResponse === "success" ? styles.iconExpanded : styles.iconCollapsed;
+	const xIconStyle = formResponse === "error" ? styles.iconExpanded : styles.iconCollapsed;
 
 	/**
 	 * Sends the form to the server for further processing.
@@ -98,10 +97,16 @@ function ContactForm() {
 			>
 				{/* @ts-expect-error - Component doesnt exist on type 'JSX.IntrinsicElements'. */}
 			</md-filled-text-field>
-			<div className={styles.submission}>
+			<div className={styles.submissionArea}>
 				<strong className={formResponseStyle}>{formMessage}</strong>
 				<Button buttonStyle="filled" type="submit">
-					{buttonIcon} Send
+					<div className={styles.iconWrapper}>
+						<Send className={sendIconStyle} />
+						<Loading className={loadingIconStyle} />
+						<Checkmark className={checkmarkIconStyle} />
+						<X className={xIconStyle} />
+					</div>
+					Send
 				</Button>
 			</div>
 		</form>
