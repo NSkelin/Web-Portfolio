@@ -3,15 +3,32 @@ import React, {useRef, useState} from "react";
 import Button from "../Button";
 import styles from "./ContactForm.module.scss";
 
+const formMessages = {
+	sending: null,
+	success: "Success! Message sent. I will reply soon.",
+	error: "Failed to send, please try again later.",
+	waiting: null,
+};
+
+const submitButtonIcons = {
+	sending: "loading icon",
+	success: "checkmark icon",
+	error: "X icon",
+	waiting: null,
+};
+
 /**
  * Renders a simple contact form that relays their message to a set email.
  * The form accepts a users email address (for replying to) and their message.
  */
 function ContactForm() {
-	const [summaryMessage, setSummaryMessage] = useState("");
-	const [summaryError, setSummaryError] = useState(false);
+	const [formResponse, setFormResponse] = useState<"sending" | "success" | "error" | "waiting">("waiting");
 	const emailRef = useRef<HTMLInputElement>(null);
 	const messageRef = useRef<HTMLTextAreaElement>(null);
+
+	const buttonIcon = submitButtonIcons["waiting"];
+	const formMessage = formMessages[formResponse];
+	const formResponseStyle = formResponse === "error" ? styles.errorMessage : styles.successMessage;
 
 	/**
 	 * Sends the form to the server for further processing.
@@ -21,26 +38,33 @@ function ContactForm() {
 	 */
 	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault(); // Stop form from auto submitting.
-		// @ts-expect-error - reset() exists on webcomponent but not on type 'HTMLInputElement'.
-		emailRef?.current?.reset();
-		// @ts-expect-error - reset() exists on webcomponent but not on type 'HTMLTextAreaElement'.
-		messageRef?.current?.reset();
 
+		// Update button icon to loading.
+		setFormResponse("sending");
+
+		// Send the form data to the server.
 		const formData = new FormData(e.currentTarget);
-
-		// Call server
 		const res = await fetch("/api/contact", {
 			method: "POST",
 			body: formData,
 		});
 
-		// Update UI depending on success / error.
-		if (res.status === 500) {
-			setSummaryMessage("Failed to send, please try again later.");
-			setSummaryError(true);
-		} else if (res.status === 200) {
-			setSummaryMessage("Success! Message sent. I will reply soon.");
-			setSummaryError(false);
+		// Update UI depending on the response from the server.
+		if (res.status === 200) {
+			setFormResponse("success");
+
+			// Clear the form inputs after a successful submission.
+			// @ts-expect-error - reset() exists on webcomponent but not on type 'HTMLInputElement'.
+			emailRef?.current?.reset();
+			// @ts-expect-error - reset() exists on webcomponent but not on type 'HTMLTextAreaElement'.
+			messageRef?.current?.reset();
+
+			// Have the form response clear after a few seconds incase the user wants to send another message.
+			setTimeout(() => {
+				setFormResponse("waiting");
+			}, 10000);
+		} else {
+			setFormResponse("error");
 		}
 	}
 
@@ -75,9 +99,9 @@ function ContactForm() {
 				{/* @ts-expect-error - Component doesnt exist on type 'JSX.IntrinsicElements'. */}
 			</md-filled-text-field>
 			<div className={styles.submission}>
-				<strong className={summaryError === true ? styles.errorMessage : styles.successMessage}>{summaryMessage}</strong>
+				<strong className={formResponseStyle}>{formMessage}</strong>
 				<Button buttonStyle="filled" type="submit">
-					Send
+					{buttonIcon} Send
 				</Button>
 			</div>
 		</form>
