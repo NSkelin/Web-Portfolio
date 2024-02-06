@@ -26,8 +26,10 @@ export default function MainPage() {
 			</main>
 
 			<footer ref={footerRef} className={styles.footer}>
-				<ContactForm />
-				<SocialLinks links={socialLinks} />
+				<div className={styles.footerWrapper}>
+					<ContactForm />
+					<SocialLinks links={socialLinks} />
+				</div>
 			</footer>
 		</div>
 	);
